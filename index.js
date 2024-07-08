@@ -9,17 +9,6 @@ import wisp from "wisp-server-node";
 
 const app = express();
 
-// Middleware to set COOP and COEP headers
-app.use((req, res, next) => {
-  res.setHeader("Cross-Origin-Opener-Policy", "same-origin");
-  res.setHeader("Cross-Origin-Embedder-Policy", "require-corp");
-  res.setHeader("Access-Control-Allow-Origin", req.headers.origin || "*");
-  res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
-  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
-  next();
-});
-
-// Serve static files
 app.use(express.static("public"));
 app.use("/uv/", express.static(uvPath));
 app.use("/epoxy/", express.static(epoxyPath));
@@ -31,21 +20,13 @@ app.use((req, res) => {
   res.sendFile(join(publicPath, "404.html"));
 });
 
-const server = createServer(app);
+const server = createServer();
 
 server.on("request", (req, res) => {
-  if (req.method === "OPTIONS") {
-    res.setHeader("Access-Control-Allow-Origin", req.headers.origin || "*");
-    res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
-    res.setHeader("Access-Control-Allow-Headers", "Content-Type");
-    res.setHeader("Access-Control-Max-Age", "86400");
-    res.end();
-    return;
-  }
-
+  res.setHeader("Cross-Origin-Opener-Policy", "same-origin");
+  res.setHeader("Cross-Origin-Embedder-Policy", "require-corp");
   app(req, res);
 });
-
 server.on("upgrade", (req, socket, head) => {
   if (req.url.endsWith("/wisp/"))
     wisp.routeRequest(req, socket, head);
