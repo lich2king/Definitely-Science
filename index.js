@@ -1,7 +1,11 @@
 import express from "express";
 import { createServer } from "node:http";
+import { uvPath } from "@titaniumnetwork-dev/ultraviolet";
+import { epoxyPath } from "@mercuryworkshop/epoxy-transport";
+import { baremuxPath } from "@mercuryworkshop/bare-mux/node";
 import { join } from "node:path";
 import { hostname } from "node:os";
+import wisp from "wisp-server-node";
 
 import { createBareServer } from "@tomphttp/bare-server-node";
 import cors from "cors";
@@ -12,6 +16,9 @@ const bareServer = createBareServer("/ov/")
 
 
 app.use(express.static("public"));
+app.use("/uv/", express.static(uvPath));
+app.use("/epoxy/", express.static(epoxyPath));
+app.use("/baremux/", express.static(baremuxPath));
 
 app.use("ov", cors({ origin: true }));
 
@@ -33,11 +40,16 @@ server.on("request", (req, res) => {
 })
 
 server.on("upgrade", (req, socket, head) => {
-  if (bareServer.shouldRoute(req)) {
+  if (req.url.endsWith("/wisp/"))
+    wisp.routeRequest(req, socket, head);
+  else
+  {
+	  if (bareServer.shouldRoute(req)) {
 		bareServer.routeUpgrade(req, socket, head);
 	  } else {
 		socket.end();
 	  }
+  }
 });
 
 let port = parseInt(process.env.PORT || "");

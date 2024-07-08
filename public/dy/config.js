@@ -1,5 +1,5 @@
 self.__dynamic$config = {
-  prefix: "/eclipse/q/",
+  prefix: "/a/q/",
   encoding: "xor",
   mode: "production",
   logLevel: 0,
