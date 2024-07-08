@@ -54,7 +54,7 @@ app.use((req, res) => {
   res.sendFile(join(publicPath, "404.html"));
 });
 
-const server = createServer(app);
+const server = createServer();
 
 server.on("request", (req, res) => {
   res.setHeader("Cross-Origin-Opener-Policy", "same-origin");
