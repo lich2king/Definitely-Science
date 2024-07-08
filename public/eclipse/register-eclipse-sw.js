@@ -21,7 +21,7 @@ async function registerEclipseSW() {
   }
 
 	navigator.serviceWorker.register(eclipseSW, {
-		scope: "/a/",
+		scope: "/eclipse/",
 	  })
 
   //await navigator.serviceWorker.register(stockSW);

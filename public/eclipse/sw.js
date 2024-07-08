@@ -18,7 +18,7 @@ self.addEventListener("fetch", (event) => {
         return await dynamic.fetch(event)
       }
 
-      if (event.request.url.startsWith(location.origin + "/a/")) {
+      if (event.request.url.startsWith(location.origin + "/eclipse/")) {
         return await uv.fetch(event)
       }
 
