@@ -12,9 +12,18 @@ const app = express();
 app.use((req, res, next) => {
   res.setHeader("Cross-Origin-Opener-Policy", "same-origin");
   res.setHeader("Cross-Origin-Embedder-Policy", "require-corp");
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
-  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+  next();
+});
+
+app.use((req, res, next) => {
+  const origin = req.headers.origin;
+
+  if (!origin || origin === req.hostname) {
+    res.setHeader("Cross-Origin-Resource-Policy", "same-site");
+  } else {
+    res.setHeader("Cross-Origin-Resource-Policy", "cross-origin");
+  }
+
   next();
 });
 
