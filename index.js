@@ -17,7 +17,6 @@ const bareServer = createBareServer("/ov/")
 
 app.use(express.static("public"));
 app.use("/uv/", express.static(uvPath));
-app.use("/eclipse/", express.static(uvPath));
 app.use("/epoxy/", express.static(epoxyPath));
 app.use("/baremux/", express.static(baremuxPath));
 
