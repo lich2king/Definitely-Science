@@ -1,0 +1,124 @@
+#scisuggests {
+    margin-top: 20vh;
+    margin-right: 3vw;
+    float: right;
+    width: 40vw;
+    height: 50vh;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    grid-template-columns: auto auto;
+    gap: 2vw;
+    padding: 10px;
+}
+
+#scisuggests img {
+    width: 13vw;
+    height: 13vh;
+    border-radius: 30px;
+    transition: all 0.1s;
+}
+
+#scisuggests img:hover {
+    transform: scale(1.05);
+}
+
+#info {
+    width: 100vw;
+    text-align: center;
+}
+
+#info p {
+    color: var(--light-color);
+    font-size: 1.5vw;
+    font-family: 'Rubik', sans-serif;
+}
+
+#searchcat {
+    margin-top: 80px;
+    width: 100vw;
+    height: 50px;
+    margin-bottom: 10vh;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#firstcatrow {
+    width: 100vw;
+    height: 5vh;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto;
+    gap: 1vw;
+    justify-content: center;
+    text-align: center;
+}
+
+/* searchbar */
+
+input[type='text'] {
+    background-image: url('/assets/styles/search--v1.png');
+    background-size: 1.25vw;
+    background-position: 10px calc(50%);
+    background-repeat: no-repeat;
+    padding-left: 2.5%;
+}
+
+.selectedCategory {
+    opacity: 1;
+}
+
+.unselectedCategory {
+    opacity: 0.45;
+}
+
+#topText {
+    margin-top: 180px;
+    color: var(--light-color);
+    text-align: center;
+}
+
+#noSearch {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+#noSearch p {
+    color: var(--light-color);
+    font-size: 1vw;
+    font-family: 'Rubik', sans-serif;
+    margin: 0%;
+    padding: 0%;
+}
+
+#newbanner {
+    position: absolute;
+    top: -5%;
+    left: -5%;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+#newbanner img {
+    width: 80px;
+    height: 80px;
+}
+
+#filteredGames {
+    display: flex;
+    width: 100vw;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+#adhorz {
+    margin-left: 50%;
+    transform: translateX(-50%);
+    width: 800px;
+    height: 100px;
+    margin-top: 30px;
+}

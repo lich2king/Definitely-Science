@@ -1,0 +1,397 @@
+/* // READY */
+
+html {
+    overflow-x: hidden;
+}
+
+#mainBody {
+    margin-top: 5%;
+}
+
+@media screen and (max-width: 680px) {
+    #mainBody {
+        margin-top: 20%;
+    }
+}
+
+.gamepass-header {
+    display: flex;
+    flex: 1;
+    padding: 15px;
+    background-color: #340060;
+    font-size: 25px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.gamepass-header h1 {
+    color: white;
+    font-family: 'Rubik';
+    font-style: normal;
+}
+
+.product-container {
+    display: flex;
+    margin-top: 0;
+    flex: 1;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    gap: 30px;
+    padding: 5%;
+}
+
+.p-view {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    margin-top: 0;
+    max-height: 298px;
+    min-width: fit-content;
+    min-height: fit-content;
+    text-align: left;
+    align-content: center;
+    justify-content: center;
+    font-size: 25px;
+    background-color: #B115BE;
+    border-radius: 20px;
+    transition: all 0.1s;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-top: 15px;
+    padding: 20px;
+    cursor: pointer;
+}
+
+.p-view:hover {
+    transform: scale(1.02);
+}
+
+#pin {
+    position: absolute;
+    top: -15%;
+    left: 85%;
+    border: none;
+    background-color: transparent;
+    transition: all 0.1s;
+    cursor: pointer;
+}
+
+#pin:hover {
+    transform: scale(1.1);
+}
+
+#pin img {
+    width: 125px;
+    height: 125px;
+}
+
+.whygoprem-container {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+}
+
+.whygoprem-container h1 {
+    color: white;
+}
+
+.btn {
+    width: 100%;
+    display: flex;
+    cursor: pointer;
+    padding: 12px;
+    background-color: #340060;
+    color: white;
+    text-align: center;
+    min-width: 75%;
+    align-content: center;
+    justify-content: center;
+    border-width: 0;
+    outline-width: 0;
+    font-size: 20px;
+    border-radius: 10px;
+    transition: all 0.1s;
+}
+
+.btn.deal {
+    background-color: #FFCD1F;
+    color: var(--dark-accent);
+}
+
+.btn:hover {
+    opacity: .9;
+}
+
+.why-rows {
+    display: flex;
+    flex: 1;
+    align-content: center;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+    padding: 5%;
+}
+
+.img-label {
+    padding: 20px;
+    border-radius: 25%;
+    background: #340060;
+    max-width: 40%;
+    max-height: 40%;
+    transition: all 0.1s;
+}
+
+.img-label:hover {
+    transform: scale(1.05);
+}
+
+.c-items {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-items: center;
+    gap: 2px;
+}
+
+.c-item h1 {
+    font-size: 35px;
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: white;
+    margin-top: 0%;
+}
+
+.c-item {
+    width: 320px;
+}
+
+.c-item p {
+    line-height: 25px;
+}
+
+.p-view h1 {
+    color: white;
+}
+
+.p-view .savePopup {
+    position: absolute;
+    top: -7%;
+    left: 5%;
+    background-color: var(--dark-accent);
+    padding: 7px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    background-color: #FFCD1F;
+    color: var(--dark-accent);
+    font-weight: bold;
+}
+
+.p-view h3 {
+    font-size: 40px;
+    color: white;
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: white;
+    margin-bottom: 30px;
+    margin-top: 0%;
+}
+
+.p-view h3 span {
+    font-size: 15px;
+}
+
+.p-view p {
+    color: white;
+    font-size: 15px;
+    margin: 0%;
+}
+
+.reason {
+    width: 300px;
+    text-align: center;
+}
+
+.reason p {
+    margin-top: 40px;
+    font-size: 20px;
+    color: white;
+}
+
+.question-container {
+    padding-top: 5vh;
+    width: 1000px;
+}
+
+.question {
+    width: 1000px;
+    height: 90px;
+    border-bottom: 2px solid white;
+    display: flex;
+    flex: 1;
+    align-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+    cursor: pointer;
+}
+
+.question p {
+    margin: 0;
+    margin-left: 10px;
+    font-size: 25px;
+    color: var(--light-color);
+}
+
+.question input {
+    margin-left: auto;
+    margin-right: 10px;
+    width: 25px;
+}
+
+.answer div {
+    color: white;
+    font-size: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-family: 'Rubik';
+}
+
+.answer {
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+.answer ul {
+    margin: 0%;
+}
+
+.answer a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+.answer li {
+    color: #bdbdbd;
+}
+
+.thankyou-container {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    color: white;
+    margin-bottom: 300px;
+}
+
+
+/*Status page*/
+
+#accountoptions {
+    margin-top: 150px;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.accountoption {
+    width: 100%;
+    display: flex;
+    gap: 1vw;
+    margin-left: 43%;
+}
+
+.accountoption input {
+    width: 1%;
+    height: 1%;
+}
+
+.accountoption p {
+    margin: 0%;
+    margin-bottom: 1.25vh;
+    color: var(--light-color);
+    font-weight: 900;
+    font-size: 1vw;
+    font-family: 'Rubik';
+}
+
+.accountoption p .span {
+    font-weight: 100;
+}
+
+.unsubscribe {
+    color: red;
+    opacity: 0.9;
+    text-align: center;
+    cursor: pointer;
+}
+
+.unsubscribe:hover {
+    opacity: 1;
+}
+
+li {
+    margin-top: 10px;
+}
+
+li a {
+    color: var(--light-color);
+}
+
+li a:hover {
+    color: var(--accent-color);
+}
+
+.statusContainer {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    color: white;
+    margin-bottom: 300px;
+}
+
+.statusContainer h1 {
+    font-size: 20px;
+    font-weight: 100;
+}
+
+.swal-button--unsubscribe {
+    background-color: red;
+}
+
+#backgroundsvg {
+    position: absolute;
+    right: 50%;
+    top: 10%;
+    transform: translate(50%, 0);
+    width: 900px;
+    height: 700px;
+    z-index: -1;
+}
+
+#toptext {
+    padding-top: 10px;
+    text-align: center;
+    color: white;
+}
+
+#toptext h1 {
+    font-weight: normal;
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+#toptext h1.title {
+    font-weight: bold;
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: white;
+}
+
+#toptext p {
+    padding: 0;
+    margin: 0;
+    font-size: 1.4rem;
+}

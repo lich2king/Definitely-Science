@@ -1,0 +1,27 @@
+body {
+    color: var(--light-color);
+}
+
+#survey {
+    text-align: center;
+    padding-top: 100px;
+}
+#survey input {
+    margin: 10px;
+}
+#survey label {
+    font-size: 13pt;
+}
+#survey button {
+    padding: 15px;
+    font-size: 1.25vw;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+#back-login {
+    text-align: center;
+    color: var(--light-color);
+}
+#back-login:hover {
+    color: var(--accent-color);
+}

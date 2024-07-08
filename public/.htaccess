@@ -1,0 +1,17 @@
+Options All -Indexes
+Header set Access-Control-Allow-Origin "*"
+Header set Access-Control-Allow-Methods "GET,PUT,POST,DELETE"
+Header set Access-Control-Allow-Headers "Content-Type, Authorization" 
+AddType application/wasm .wasm
+
+RewriteEngine on
+
+#1)externally redirect "/file.php" to "/file"   
+RewriteCond %{THE_REQUEST} /([^.]+)\.php [NC]
+RewriteRule ^ /%1 [NC,L,R]
+#2)Internally map "/file" back to "/file.php"
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.*?)/?$ /$1.php [NC,L]
+
+Header set X-Frame-Options "ALLOW-FROM *";
+Header set Content-Security-Policy "frame-ancestors *";

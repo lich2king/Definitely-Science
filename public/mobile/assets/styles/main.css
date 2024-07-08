@@ -1,0 +1,264 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300&family=Rubik&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Spline+Sans:wght@500&display=swap');
+:root {
+    --light-color: #ffffff;
+    --background-color: #1f0336;
+    --dark-color: #000000;
+    --accent-color: #f75dfc;
+    --dark-accent: #340060;
+    --box-shadow-color: #ccc;
+    --error-color: #cf1a32;
+}
+
+[theme='dark'] {
+    --light-color: #000000;
+    --dark-color: #ffffff;
+    --box-shadow-color: #000000;
+}
+
+html {
+    overflow-x: hidden;
+    /* prevent highlight */
+    -webkit-user-select: none;
+    /* Safari */
+    -ms-user-select: none;
+    /* IE 10 and IE 11 */
+    user-select: none;
+    /* Standard syntax */
+}
+
+.error {
+    color: var(--error-color);
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: var(--background-color);
+    background-image: url('../background.svg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin-top: 1vw;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+p2,
+a,
+li,
+label {
+    font-family: 'Rubik', sans-serif;
+}
+
+.selected a {
+    border-bottom: 2px solid var(--dark-color);
+}
+
+.not-selectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#fixedElements {
+    min-width: 100px;
+    max-width: 100px;
+    max-height: 100px;
+    min-height: 100px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    overflow: hidden;
+    position: sticky;
+    top: 2vw;
+    left: 0%;
+    z-index: 100;
+}
+
+#fixedElements .top {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+#fixedElements .top img {
+    width: 40px;
+    height: 40px;
+}
+
+#fixedElements .top p {
+    font-size: 0.9rem;
+    font-weight: bold;
+    padding: 0;
+    margin: 0;
+}
+
+#fixedElements .horizontalmidline {
+    width: 100%;
+    height: 1px;
+    background-color: #dfdfdf;
+}
+
+#fixedElements .bottom {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 100%;
+}
+
+#fixedElements .bottom .verticalmidline {
+    width: 1px;
+    height: 100%;
+    background-color: #dfdfdf;
+}
+
+#fixedElements .bottom button {
+    width: 100px;
+    height: 50px;
+    background-color: white;
+    border: none;
+    border-top: 1px solid #dfdfdf;
+}
+
+#fixedElements .bottom button img {
+    width: 20px;
+    height: 20px;
+}
+
+#gameOffset {
+    min-width: 100px;
+    max-width: 100px;
+    max-height: 100px;
+    min-height: 100px;
+}
+
+/*Game Div stuff*/
+
+#games {
+    padding: 2vw;
+    /* z-index: 0;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    gap: 3vw;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 10vh; */
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    gap: 2vw;
+    flex-wrap: wrap;
+    /* 304 x 162  */
+}
+
+#gameDiv {
+    position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-width: 100px;
+    max-width: 100px;
+    max-height: 100px;
+    min-height: 100px;
+    /* width: 15vw;
+    height: 15vh; */
+    border-radius: 15px;
+    text-align: center;
+    transition: 0.1s;
+    /* filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.6)); */
+}
+
+/* For Mobile @media screen and (max-width: 540px) {
+    #gameDiv {
+        min-width: 100px;
+        max-width: 100px;
+        max-height: 100px;
+        min-height: 100px;
+    }
+    #fixedElements {
+        min-width: 150px;
+        max-width: 150px;
+        max-height: 100px;
+        min-height: 100px;
+    }
+}
+
+
+
+@media screen and (min-width: 540px) and (max-width: 780px) {
+    #gameDiv {
+        min-width: 400px;
+        max-width: 400px;
+        max-height: 400px;
+        min-height: 400px;
+    }
+    #fixedElements {
+        min-width: 600px;
+        max-width: 600px;
+        max-height: 400px;
+        min-height: 400px;
+    }
+} */
+
+#gameDiv input {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+}
+
+#gameDiv:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+/*search bar*/
+
+input[type='text'] {
+    width: 45vw;
+    height: 50px;
+    box-sizing: border-box;
+    /* border: 2px solid var(--dark-color); */
+    border: none;
+    border-radius: 20px;
+    font-size: 20px;
+    background-color: var(--light-color);
+    outline: none;
+    background-image: url('https://img.icons8.com/material-outlined/24/000000/search--v1.png');
+    background-size: 20px;
+    background-position: 10px center;
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 50px;
+    transition: width 0.4s ease-in-out;
+    margin-bottom: 3%;
+    color: var(--dark-color);
+}
+
+#newbanner {
+    position: absolute;
+    top: -5%;
+    left: -5%;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+#newbanner img {
+    width: 80px;
+    height: 80px;
+}

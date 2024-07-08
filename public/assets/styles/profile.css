@@ -1,0 +1,274 @@
+#nameheader {
+    margin-top: 80px;
+    text-align: center;
+    color: var(--light-color);
+    font-size: 1.5vw;
+    font-family: 'Rubik';
+}
+
+#accountoptions {
+    margin-top: 150px;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.accountoption {
+    width: 350px;
+    display: flex;
+    gap: 1vw;
+    justify-content: start;
+    align-items: center;
+}
+
+.accountoption.mini {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.accountoption.mini div {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.accountoption input {
+    width: 15px;
+}
+
+.accountoption p {
+    margin: 0%;
+    color: var(--light-color);
+    font-weight: 900;
+    font-size: 1.2rem;
+    font-family: 'Rubik';
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.accountoption p span {
+    font-weight: 100;
+}
+
+#highscores {
+    margin-top: 12vh;
+}
+
+#highscores {
+    margin-left: 3vw;
+}
+.label {
+    font-size: 1.5vw;
+    font-family: 'Rubik';
+    color: var(--light-color);
+}
+
+.highcontainer {
+    width: 100vw;
+    height: 200px;
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    padding: 15px;
+    gap: 2vw;
+    margin-right: 4vw;
+    margin-bottom: 5vh;
+}
+
+.highcontainer p {
+    color: var(--light-color);
+}
+
+.highscore {
+    background-color: #340060;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.1s;
+    cursor: pointer;
+}
+
+.highscore:hover {
+    transform: scale(1.05);
+}
+
+.highscore h1,
+.highscore p {
+    margin: 0;
+}
+
+.highscore img {
+    width: 70px;
+    margin-bottom: 1vh;
+}
+
+.highscore h1 {
+    font-size: 20px;
+    font-family: 'Rubik';
+    color: var(--light-color);
+    margin-bottom: 0.5vh;
+}
+
+.highscore p {
+    font-size: 20px;
+    font-family: 'Rubik';
+    color: var(--light-color);
+    text-shadow: var(--dark-color) 1px 0 10px;
+}
+
+#arrow {
+    align-self: center;
+    min-width: 225px;
+    max-width: 225px;
+    max-height: 120px;
+    min-height: 120px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 30px;
+    text-align: center;
+    transition: 0.1s;
+    display: flex;
+    align-items: center;
+}
+
+#arrow input {
+    min-width: 50px;
+    max-width: 50px;
+    max-height: 75px;
+    min-height: 75px;
+    border-radius: 30px;
+    transition: 0.1s;
+}
+
+#arrow input:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+.logout {
+    color: red;
+    opacity: 0.9;
+    text-align: center;
+    cursor: pointer;
+}
+
+.logout:hover {
+    opacity: 1;
+}
+
+#gameDiv:hover > button {
+    opacity: 1;
+    top: -10%;
+}
+
+#miniSelectPopup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+}
+
+#miniSelectPopup .popup {
+    width: 60vw;
+    height: 75%;
+    background-color: white;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden;
+}
+
+#miniSelectPopup .popup .topbar {
+    width: 100%;
+    height: 10%;
+    background-color: rgba(0, 0, 0, 0.032);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#miniSelectPopup .popup .topbar p {
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+#miniSelectPopup .popup .topbar button {
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    border: none;
+    margin-right: 30px;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: all 0.1s;
+}
+
+#miniSelectPopup .popup .topbar button:hover {
+    scale: 1.1;
+    opacity: 1;
+}
+
+#miniSelectPopup .popup .topbar button img {
+    width: 20px;
+    height: 20px;
+}
+
+#miniSelectPopup .popup .content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-left: 30px;
+}
+
+#miniSelectPopup .popup .content p:not(:first-child) {
+    margin-top: 40px;
+}
+
+#miniSelectPopup .popup .content div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+#miniSelectPopup .popup .content div .minis {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: flex-start;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+#miniSelectPopup .popup .content div .minis img {
+    width: 50px;
+    height: 50px;
+    filter: grayscale(100%);
+    cursor: pointer;
+}
+
+#miniSelectPopup .popup .content div .minis img.selected {
+    filter: grayscale(0%);
+    outline: 2px solid var(--accent-color);
+    border-radius: 8px;
+}

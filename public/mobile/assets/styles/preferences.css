@@ -1,0 +1,39 @@
+#survey {
+    text-align: center;
+}
+
+#survey div {
+    padding-bottom: 5vh;
+}
+
+#survey label {
+    font-size: 5vw;
+}
+
+#survey input,
+#survey select {
+    width: 61vw;
+    height: 10vw;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    background-color: var(--light-color);
+    border: 4px solid var(--accent-color);
+    border-radius: 4px;
+    color: var(--dark-color);
+    box-sizing: border-box;
+    outline: none;
+    font-size: 5vw;
+}
+
+#survey button {
+    font-size: 10vw;
+    width: 40vw;
+    height: 15vw;
+    color: var(--light-color);
+    background-color: var(--accent-color);
+    border: 0px;
+    border-radius: 10px;
+    margin-bottom: 2%;
+    cursor: pointer;
+}

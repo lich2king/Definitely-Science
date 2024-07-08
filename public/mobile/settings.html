@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta property="og:title" content="Totally Science">
+    <meta property="og:site_name" content="Totally Science">
+    <meta property="og:url" content="">
+    <meta property="og:description" content="The best place for 'Learning Science!'">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://totallyscience.co/assets/images/logo.png">
+
+    <title>Totally Science</title>
+
+
+
+    <link rel='stylesheet' href='assets/styles/preferences.css'>
+    <link rel='stylesheet' href='assets/styles/main.css'>
+
+    <link rel="icon" href="assets/images/logo.png">
+    <!--Google Adsense-->
+    <script data-ad-client="ca-pub-3486863589051210" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y14RZLW8H8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-Y14RZLW8H8');
+    </script>
+</head>
+
+<body>
+
+    <section id="fixedElementsSection">
+        <div id="fixedElements">
+            <button onclick="window.open('index.html', '_self')" id="backarrow"><img id="backarrowLogo" src="../assets/images/backarrow-light.svg"></button>
+            <button onclick="openSchoolSite()" id="alert"><img id="alertIcon" src="../assets/images/exclamation-light.svg"></button>
+        </div>
+    </section>
+
+
+    <form id="survey">
+        <div>
+            <label for="website">What's your school website?</label><br>
+            <select name="website" id="website">
+                    <option value="gc">Google Classroom</option>
+                    <option value="canvas">Canvas</option>
+                    <option value="newtab">Google</option>
+                </select>
+        </div>
+        <div>
+            <label for="theme">Choose a theme</label><br>
+            <select name="theme" id="theme">
+                    <option value="light">Light</option>
+                    <option value="dark">Dark</option>
+                </select>
+        </div>
+
+        <button id="save-button">Save</button>
+    </form>
+
+
+    <script src="assets/scripts/main.js?v7"></script>
+    <script src="assets/scripts/settings.js?v7"></script>
+</body>
+
+</html>

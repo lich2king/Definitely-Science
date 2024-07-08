@@ -1,0 +1,500 @@
+h2,
+h3,
+h4,
+li {
+    color: var(--light-color);
+}
+
+#game-title {
+    margin-top: 25px;
+    text-align: center;
+    color: var(--light-color);
+}
+
+#gameframe {
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#gameframe .ad {
+    width: 10vw;
+    overflow: hidden;
+    margin-left: 2vw;
+    margin-right: 2vw;
+    border-radius: 10px;
+}
+
+#gameframe .chat {
+    width: 20vw;
+    overflow: hidden;
+    margin-right: 2vw;
+    border-radius: 10px;
+    height: 70vh;
+    background-color: var(--dark-accent);
+    border: 2px solid var(--accent-color);
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+}
+
+#gameframe .chat .top {
+    height: 5vh;
+    width: 100%;
+    background-color: var(--accent-color);
+    text-align: center;
+}
+
+#gameframe .chat .top p {
+    color: var(--light-color);
+    font-size: 1rem;
+}
+
+#gameframe .chat .content {
+    height: 60vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 10px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding-bottom: 10%;
+    scroll-behavior: smooth;
+}
+
+#gameframe .chat .content div {
+    display: flex;
+    flex-direction: column;
+    margin-left: 2%;
+    width: 100%;
+    align-items: start;
+    justify-content: start;
+}
+
+#gameframe .chat .content div.server {
+    margin-top: 10px;
+}
+
+#gameframe .chat .content div .nameBar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+#gameframe .chat .content div .nameBar img {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+}
+
+#gameframe .chat .content div .nameBar p {
+    color: var(--light-color);
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+#gameframe .chat .content div .message {
+    color: var(--light-color);
+    word-break: break-all;
+    font-size: 1rem;
+    margin: 0%;
+    margin-left: 2%;
+    margin-right: 5%;
+}
+
+#gameframe .chat .content div.server .message {
+    color: rgb(202, 202, 202);
+}
+
+#gameframe .chat .write {
+    height: 5vh;
+    width: 100%;
+    background-color: var(--accent-color);
+    display: flex;
+    align-items: center;
+}
+
+#gameframe .chat .write input {
+    width: 95%;
+    height: 70%;
+    margin-left: 2.5%;
+    margin-top: 1.5%;
+    margin-bottom: 1.5%;
+    border-radius: 6px;
+    border: none;
+    background-color: white;
+    color: var(--dark-color);
+    padding-left: 3%;
+    font-size: 0.9rem;
+}
+
+#gameframe .chat .write button {
+    width: auto;
+    height: 80%;
+    margin-top: 1.5%;
+    margin-bottom: 1.5%;
+    margin-left: 1.5%;
+    margin-right: 1.5%;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    transition: all 0.1s;
+}
+
+#gameframe .chat .write button:hover {
+    scale: 1.15;
+}
+
+#gameframe .chat .write button img {
+    width: 20px;
+}
+
+#adframe {
+    border: none;
+}
+
+#gameframe .gameDisplay {
+    margin: auto;
+    width: 70vw;
+    background-color: rgb(25, 31, 38);
+    border: 3px solid var(--accent-color);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+#gameframe .game {
+    margin: auto;
+    width: 100%;
+    height: 70vh;
+    background-color: rgb(25, 31, 38);
+    background-image: url('../../assets/images/icons/loading.gif');
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow: hidden;
+}
+
+#gameframe .game iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+#gameframe .options {
+    margin: auto;
+    width: 100%;
+    height: 35px;
+    background-color: var(--accent-color);
+    display: flex;
+    align-items: center;
+}
+
+#gameframe .options .left,
+#gameframe .options .right {
+    width: 50%;
+    height: 100%;
+}
+
+#gameframe .options .left {
+    display: flex;
+    align-items: center;
+}
+
+#gameframe .options .left div {
+    color: white;
+    font-family: 'Rubik';
+    font-size: 0.8rem;
+    /* text-shadow: var(--dark-color) 1px 0 10px; */
+    height: 0.5rem;
+}
+
+#gameframe .options .left .text-button {
+    margin-left: 1vw;
+    height: 25px;
+}
+
+#gameframe .options .right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+#gameframe .options .right .game-button {
+    float: right;
+    margin-right: 1vw;
+    height: 20px;
+}
+
+.game-button,
+.text-button {
+    position: relative;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: 0.1s;
+}
+
+.game-button:hover,
+.text-button:hover {
+    transform: scale(1.125);
+}
+
+.game-button img,
+.text-button img {
+    height: 100%;
+}
+
+.button-effect-a:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -35px 0 0 -35px;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    opacity: 0;
+}
+
+.button-effect-a.button-click:after {
+    -webkit-animation: anim-effect-a 0.3s forwards;
+}
+
+@-webkit-keyframes anim-effect-a {
+    0% {
+        -webkit-transform: scale3d(0.2, 0.2, 1);
+    }
+    25%,
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        -webkit-transform: scale3d(0.5, 0.5, 1);
+    }
+}
+
+.hover-text:before {
+    position: absolute;
+    content: attr(data-hover);
+    text-align: center;
+    visibility: hidden;
+    opacity: 0;
+    border-radius: 10px;
+    z-index: 1;
+    top: 150%;
+    padding: 0.5vh 0.5vw 0.5vh 0.5vw;
+    background-color: var(--accent-color);
+    color: var(--light-color);
+    transition: opacity 0.3s ease-in-out;
+}
+
+.hover-text:hover:before {
+    opacity: 1;
+    visibility: visible;
+}
+
+#info {
+    margin: auto;
+    padding-top: 30px;
+    width: 70vw;
+    margin-bottom: 50px;
+}
+
+#info .container {
+    border-radius: 20px;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    padding-left: 1vw;
+    width: 100%;
+    background-color: var(--accent-color);
+    font-family: 'Rubik';
+}
+
+#info .segmentAd {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+}
+
+#info .segmentAd .text {
+    width: 50vw;
+}
+
+#info .segmentAd .ad {
+    width: 320px;
+    height: 100px;
+    margin-right: 15px;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: var(--light-color);
+    text-align: center;
+    box-shadow: 0 1em 2em -0.5em rgba(0, 0, 0, 0.35);
+    padding: 1%;
+}
+
+.descAd {
+    width: 301px;
+    height: 100px;
+}
+
+#info h1,
+#info p {
+    font-size: 1vw;
+    color: var(--light-color);
+    margin-right: 5%;
+}
+
+#info h1 {
+    font-size: 1.5vw;
+    margin-top: 0;
+}
+
+#info p {
+    line-height: 3vh;
+}
+
+#info .break {
+    height: 1vh;
+    width: 0.1vw;
+}
+
+.adhorz {
+    margin-left: 50%;
+    transform: translateX(-50%);
+    width: 800px;
+    height: 100px;
+    margin-top: 30px;
+}
+
+#shareCon {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    z-index: 100;
+}
+
+#shareCon .innerCon {
+    background-color: var(--accent-color);
+    width: 512px;
+    height: 240px;
+    border-radius: 10px;
+    text-align: center;
+    filter: opacity(1);
+    position: fixed;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    animation: fadeInAnimation ease 0.25s;
+}
+
+#shareCon.hide {
+    transition: 0.25s;
+    opacity: 0;
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+#shareCon.ghost {
+    pointer-events: none;
+}
+
+#shareCon h1 {
+    color: var(--light-color);
+    margin-top: 15px;
+    margin-bottom: 0px;
+}
+
+#shareCon .platforms {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+}
+
+#shareCon .platforms img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    overflow: hidden;
+    object-fit: contain;
+}
+
+#shareCon input {
+    margin-top: 10px;
+    margin-bottom: 15px;
+    text-align: center;
+    width: 90%;
+    font-size: 0.9rem;
+    color: var(--dark-color);
+}
+
+#shareCon buttonsCon {
+    display: flex;
+}
+
+#shareCon button {
+    cursor: pointer;
+    width: 100px;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+}
+
+#shareCon .copy {
+    background-color: var(--dark-accent);
+}
+
+#shareCon .cancel {
+    background-color: var(--accent-color);
+    color: var(--dark-accent);
+}
+
+#articleDiv {
+    margin: auto;
+    padding-top: 30px;
+    width: 70vw;
+    margin-bottom: 50px;
+}
+
+#articleDiv .container {
+    border-radius: 20px;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    padding-left: 1vw;
+    width: 100%;
+    background-color: var(--accent-color);
+    font-family: 'Rubik';
+}
+
+#articleDiv h1,
+#article h1,
+#article p,
+#article li,
+#article ul,
+#article ol,
+#article h2,
+#article h3,
+#article h4,
+#article h5 {
+    color: var(--background-color);
+}
