@@ -16,18 +16,25 @@ app.use((req, res, next) => {
 });
 
 app.use((req, res, next) => {
-  const origin = req.headers.origin;
-
-  if (!origin || origin === req.hostname) {
+  if (req.headers.origin === req.hostname || req.headers.origin === `http://${hostname()}:${port}`) {
     res.setHeader("Cross-Origin-Resource-Policy", "same-site");
   } else {
     res.setHeader("Cross-Origin-Resource-Policy", "cross-origin");
   }
-
   next();
 });
 
-app.use(express.static("public"));
+app.use(express.static("public", {
+  setHeaders: (res, path) => {
+    res.setHeader("Cross-Origin-Opener-Policy", "same-origin");
+    res.setHeader("Cross-Origin-Embedder-Policy", "require-corp");
+    res.setHeader("Cross-Origin-Resource-Policy", "same-site");
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
+    res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+  }
+}));
+
 app.use("/uv/", express.static(uvPath));
 app.use("/epoxy/", express.static(epoxyPath));
 app.use("/baremux/", express.static(baremuxPath));
@@ -47,7 +54,7 @@ app.use((req, res) => {
   res.sendFile(join(publicPath, "404.html"));
 });
 
-const server = createServer();
+const server = createServer(app);
 
 server.on("request", (req, res) => {
   res.setHeader("Cross-Origin-Opener-Policy", "same-origin");
