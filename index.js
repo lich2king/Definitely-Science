@@ -9,43 +9,11 @@ import wisp from "wisp-server-node";
 
 const app = express();
 
-app.use((req, res, next) => {
-  res.setHeader("Cross-Origin-Opener-Policy", "same-origin");
-  res.setHeader("Cross-Origin-Embedder-Policy", "require-corp");
-  next();
-});
 
-app.use((req, res, next) => {
-  if (req.headers.origin === req.hostname || req.headers.origin === `http://${hostname()}:${port}`) {
-    res.setHeader("Cross-Origin-Resource-Policy", "same-site");
-  } else {
-    res.setHeader("Cross-Origin-Resource-Policy", "cross-origin");
-  }
-  next();
-});
-
-app.use(express.static("public", {
-  setHeaders: (res, path) => {
-    res.setHeader("Cross-Origin-Opener-Policy", "same-origin");
-    res.setHeader("Cross-Origin-Embedder-Policy", "require-corp");
-    res.setHeader("Cross-Origin-Resource-Policy", "same-site");
-    res.setHeader("Access-Control-Allow-Origin", "*");
-    res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
-    res.setHeader("Access-Control-Allow-Headers", "Content-Type");
-  }
-}));
-
+app.use(express.static("public"));
 app.use("/uv/", express.static(uvPath));
 app.use("/epoxy/", express.static(epoxyPath));
 app.use("/baremux/", express.static(baremuxPath));
-
-app.options("*", (req, res) => {
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
-  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
-  res.setHeader("Access-Control-Max-Age", "86400");
-  res.status(204).end();
-});
 
 
 // Error for everything else
