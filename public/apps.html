@@ -371,8 +371,13 @@ END INCLUDE "assets/includes/navbar.html"
 	<a class="tn_banner" target="_blank" href="https://random-proxy.com">More apps on alternative domains: Random-Proxy.com</a><br>
 	<a class="tn_banner" target="_blank" href="https://classroomcommunity.com/">Classroom.Community</a><br>
 	
-
+	<a class="tn_banner">Apps</a><br>
     <div id="apps"></div>
+	
+	<br><br>
+	<a class="tn_banner">Epoxy apps</a><br>
+	
+	<div id="apps2"></div>
 	
 	<!--<div style="width: 100vw; display: flex; align-items: center; justify-content: center; color: white;">
     <h1>Looking for links</h1>
@@ -442,8 +447,9 @@ END INCLUDE "assets/includes/footer.html"
                 // let json = await response.json();
                 // setPointsDisplay(json.points || 0, json.username || "");
             // }
-
+	
             const appContainer = document.getElementById('apps');
+			const app2Container = document.getElementById('apps2');
 
             //let appsRes = await fetcher(`/apps`);
             //let apps = await appsRes.json();
@@ -461,6 +467,17 @@ END INCLUDE "assets/includes/footer.html"
                     `;
 
                 appContainer.innerHTML += appDiv;
+				
+				
+				const app2Div = `
+                        <div onclick="window.open('app2.html?app=${apps[app].name}', '_self')" class="card game">
+                            <img src="${apps[app].image}" style="background-color: #ffffff;">
+                            <h1>${apps[app].name}</h1>
+                            <button class="launch">Launch</button>
+                        </div>
+                    `;
+
+                app2Container.innerHTML += app2Div;
             }
         });
 		
