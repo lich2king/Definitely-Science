@@ -26,7 +26,7 @@ app.use("ov", cors({ origin: true }));
 // Error for everything else
 app.use((req, res) => {
   res.status(404);
-  res.sendFile(join(publicPath, "404.html"));
+  res.sendFile(join("public", "404.html"));
 });
 
 const server = createServer();
