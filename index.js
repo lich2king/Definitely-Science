@@ -10,6 +10,7 @@ import wisp from "wisp-server-node";
 import { createBareServer } from "@tomphttp/bare-server-node";
 import cors from "cors";
 
+const path = require('path');
 
 const app = express();
 const bareServer = createBareServer("/ov/")
