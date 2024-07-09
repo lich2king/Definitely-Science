@@ -34,7 +34,7 @@ app.use("ov", cors({ origin: true }));
 app.use((req, res) => {
   res.status(404);
   //res.sendFile(join("public", "404.html"));
-  res.sendFile(path.join(__dirname, '404.html'));
+  res.sendFile(path.join(__dirname, 'public', '404.html'));
 });
 
 const server = createServer();
