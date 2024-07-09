@@ -10,7 +10,12 @@ import wisp from "wisp-server-node";
 import { createBareServer } from "@tomphttp/bare-server-node";
 import cors from "cors";
 
-const path = require('path');
+import path from 'path';
+import { dirname } from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
 
 const app = express();
 const bareServer = createBareServer("/ov/")
