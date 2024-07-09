@@ -157,6 +157,11 @@ END INCLUDE "assets/includes/head.html"
         margin: auto;
         margin-top: 140px;
     }
+	
+	#apps2 {
+        margin: auto;
+        margin-top: 140px;
+    }
 
     body,
     html {
@@ -277,6 +282,14 @@ END INCLUDE "assets/includes/head.html"
         justify-items: center;
         grid-template-columns: auto auto auto;
     }
+	
+	div#apps2 {
+        max-width: 1100px;
+        display: grid;
+        grid-template-rows: auto;
+        justify-items: center;
+        grid-template-columns: auto auto auto;
+    }
 
     div.card.game {
         margin-bottom: 60px;
@@ -288,9 +301,23 @@ END INCLUDE "assets/includes/head.html"
             grid-template-columns: auto auto;
         }
     }
+	
+	@media (max-width: 1200px) {
+        div#apps2 {
+            max-width: 800px;
+            grid-template-columns: auto auto;
+        }
+    }
 
     @media (max-width: 900px) {
         div#apps {
+            max-width: 400px;
+            grid-template-columns: auto;
+        }
+    }
+	
+	@media (max-width: 900px) {
+        div#apps2 {
             max-width: 400px;
             grid-template-columns: auto;
         }
@@ -371,6 +398,7 @@ END INCLUDE "assets/includes/navbar.html"
 	<a class="tn_banner" target="_blank" href="https://random-proxy.com">More apps on alternative domains: Random-Proxy.com</a><br>
 	<a class="tn_banner" target="_blank" href="https://classroomcommunity.com/">Classroom.Community</a><br>
 	
+	<br><br>
 	<a class="tn_banner">Apps</a><br>
     <div id="apps"></div>
 	
