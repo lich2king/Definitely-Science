@@ -32,7 +32,11 @@ app.use((req, res) => {
 const server = createServer();
 
 server.on("request", (req, res) => {
-  app(req, res);
+  if (bareServer.shouldRoute(req)) {
+    bareServer.routeRequest(req, res);
+  } else {
+    app(req, res);
+  }
 })
 
 server.on("upgrade", (req, socket, head) => {
