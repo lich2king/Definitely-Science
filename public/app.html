@@ -260,7 +260,13 @@ END INCLUDE "assets/includes/navbar.html"
 				  });
 				}
 				
+				function delay(ms) {
+				  return new Promise(resolve => setTimeout(resolve, ms));
+				}
+				
 			  await waitForConfig();
+			  await delay(500);
+			  
 			  
 
 			  appFrame.src = __uv$config.prefix + __uv$config.encodeUrl(appData.url);
