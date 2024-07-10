@@ -248,6 +248,19 @@ END INCLUDE "assets/includes/navbar.html"
 			  } catch (err) {
 				console.error("Failed to register service worker. " + err.toString());
 			  }
+			  
+			  async function waitForConfig() {
+				  return new Promise((resolve) => {
+					const interval = setInterval(() => {
+					  if (__uv$config !== null && __uv$config !== undefined) {
+						clearInterval(interval);
+						resolve();
+					  }
+					}, 100); // Check every 100 milliseconds
+				  });
+				}
+				
+			  await waitForConfig();
 
 			  appFrame.src = __uv$config.prefix + __uv$config.encodeUrl(appData.url);
 		  
