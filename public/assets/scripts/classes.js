@@ -380,6 +380,8 @@ searchBar.addEventListener('keyup', () => {
 function createGameButton(game, pin) {
     const data = games[game];
     if (data == null) return '';
+	
+	game = data.name;
 
     //let classlist = data.tags.join(' ');
 	let classlist = data.tags;//data.tags.join(' ');
