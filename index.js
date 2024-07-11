@@ -33,6 +33,15 @@ app.use("/baremux/", express.static(baremuxPath));
 
 app.use("/ov", cors({ origin: true }));
 
+app.use((req, res, next) => {
+    if (req.url.endsWith(".php")) {
+        const newUrl = req.url.replace(".php", ".html");
+        res.redirect(301, newUrl);
+    } else {
+        next();
+    }
+});
+
 
 ///////////////////////
 // Function to fetch the HTML content of the page
