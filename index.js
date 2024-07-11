@@ -14,8 +14,8 @@ import path from 'path';
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
 
-import { axios } from 'axios';
-import { cheerio } from 'cheerio';
+const axios = require('axios');
+const cheerio = require('cheerio');
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
