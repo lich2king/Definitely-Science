@@ -25,21 +25,13 @@ const app = express();
 const bareServer = createBareServer("/ov/")
 
 
+app.use(express.json());
 app.use(express.static("public"));
 app.use("/uv/", express.static(uvPath));
 app.use("/epoxy/", express.static(epoxyPath));
 app.use("/baremux/", express.static(baremuxPath));
 
-app.use("ov", cors({ origin: true }));
-
-
-// Error for everything else
-app.use((req, res) => {
-  res.status(404);
-  //res.sendFile(join("public", "404.html"));
-  res.sendFile(path.join(__dirname, 'public', '404.html'));
-});
-
+app.use("/ov", cors({ origin: true }));
 
 
 ///////////////////////
@@ -118,6 +110,13 @@ app.post('/api2/crawl', async (req, res) => {
 });
 ////////////////////////
 
+
+// Error for everything else
+app.use((req, res) => {
+  res.status(404);
+  //res.sendFile(join("public", "404.html"));
+  res.sendFile(path.join(__dirname, 'public', '404.html'));
+});
 
 
 const server = createServer();
