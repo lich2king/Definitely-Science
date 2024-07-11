@@ -137,7 +137,11 @@ async function loadTopic() {
 
         Array.from(gameButtons).forEach((game) => {
             if (game.classList.contains(selectedTopic)) {
-                game.setAttribute('style', `background-image: url(${games[game.getAttribute('name')].image})`);
+				let g = games[game.getAttribute('name')];
+				if (g && g.image && g.image != 'undefined')
+				{
+					game.setAttribute('style', `background-image: url(${games[game.getAttribute('name')].image})`);
+				}
             } else {
                 game.setAttribute('style', 'display:none');
             }
