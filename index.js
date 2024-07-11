@@ -77,7 +77,7 @@ function extractRobloxLinks(html) {
 }
 
 // Endpoint to handle crawling requests
-app.post('/api2/crawl', async (req, res) => {
+/*app.post('/api2/crawl', async (req, res) => {
     const { url } = req.body;
     if (!url) {
         console.log("No URL provided");
@@ -106,7 +106,7 @@ app.post('/api2/crawl', async (req, res) => {
         console.error("Failed to fetch URL:", url);
         res.status(500).json({ error: 'Failed to fetch the requested URL.' });
     }
-});
+});*/
 ////////////////////////
 
 
