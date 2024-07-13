@@ -9,7 +9,7 @@ if (gameName) {
 
 if (gameName == '')
 {
-    gameName = "{{className}}";
+    gameName = window.gameName;
 }
 
 console.log("Play: " + gameName);

@@ -132,7 +132,7 @@ app.get('/class/:className', (req, res) => {
       }
 
       // Replace the placeholder with the actual class name
-      const modifiedData = data.replace(/{{className}}/g, className);
+      const modifiedData = data.replace("{{className}}", className);
 
       // Send the modified content to the client
       res.send(modifiedData);
