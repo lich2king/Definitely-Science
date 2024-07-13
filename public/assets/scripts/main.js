@@ -101,22 +101,22 @@ if (localStorage.getItem('disguise') == null) {
 
     if (disguise == 'gc') {
         title.innerHTML = 'Google Classroom';
-        favicon.href = './assets/images/disguises/gcicon.png';
+        favicon.href = '/assets/images/disguises/gcicon.png';
     } else if (disguise == 'gd') {
         title.innerHTML = 'Google Docs';
-        favicon.href = './assets/images/disguises/gdicon.png';
+        favicon.href = '/assets/images/disguises/gdicon.png';
     } else if (disguise == 'canvas') {
         title.innerHTML = 'Dashboard';
-        favicon.href = './assets/images/disguises/canvasicon.jpg';
+        favicon.href = '/assets/images/disguises/canvasicon.jpg';
     } else if (disguise == 'g') {
         title.innerHTML = 'Google';
-        favicon.href = './assets/images/disguises/googleicon.png';
+        favicon.href = '/assets/images/disguises/googleicon.png';
     } else if (disguise == 'calc') {
         title.innerHTML = 'Calculator';
-        favicon.href = './assets/images/disguises/calculator.png';
+        favicon.href = '/assets/images/disguises/calculator.png';
     } else if (disguise == 'wiki') {
         title.innerHTML = 'Wikipedia';
-        favicon.href = './assets/images/disguises/wikipedia.png';
+        favicon.href = '/assets/images/disguises/wikipedia.png';
     }
 }
 
