@@ -12,6 +12,8 @@ if (gameName == '')
     gameName = "{{className}}";
 }
 
+console.log("Play: " + gameName);
+
 let likeCount = 0;
 
 async function displayUserData() {
