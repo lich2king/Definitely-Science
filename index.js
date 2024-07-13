@@ -120,23 +120,41 @@ app.post('/api2/crawl', async (req, res) => {
 });
 ////////////////////////
 
-app.get('/class/:className', (req, res) => {
-  const className = req.params.className;
-  console.log(`Serving class.html for class=${className}`);
-  const filePath = path.join(__dirname, 'public', 'class.html');
-  
-  fs.readFile(filePath, 'utf8', (err, data) => {
-      if (err) {
-          console.error(`Error reading file: ${filePath}`, err);
-          return res.status(500).send('Server error');
+// Middleware to handle template replacements
+app.use(async (req, res, next) => {
+  if (req.path.endsWith('.html')) {
+      try {
+          const className = req.params.className || '';
+          const filePath = path.join(__dirname, 'public', req.path);
+          const headPath = path.join(__dirname, 'private', 'head.html');
+          const footerPath = path.join(__dirname, 'private', 'footer.html');
+
+          const [htmlContent, headContent, footerContent] = await Promise.all([
+              readFileContent(filePath),
+              readFileContent(headPath),
+              readFileContent(footerPath)
+          ]);
+
+          // Replace placeholders with actual content
+          let modifiedData = htmlContent
+            .replace(/{{className}}/g, className)
+            .replace(/{{head}}/g, headContent)
+            .replace(/{{footer}}/g, footerContent);
+
+          res.send(modifiedData);
+      } catch (error) {
+          console.error(`Error reading file: ${error}`);
+          res.status(500).send('Server error');
       }
+  } else {
+      next();
+  }
+});
 
-      // Replace the placeholder with the actual class name
-      const modifiedData = data.replace("{{className}}", className);
-
-      // Send the modified content to the client
-      res.send(modifiedData);
-  });
+// Endpoint to handle class-specific URL
+app.get('/class/:className', (req, res, next) => {
+  req.url = '/class.html';  // Redirect to the class.html file for processing by the middleware
+  next();
 });
 
 
