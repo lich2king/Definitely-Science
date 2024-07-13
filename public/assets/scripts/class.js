@@ -7,6 +7,11 @@ if (gameName) {
     gameName = '';
 }
 
+if (gameName == '')
+{
+    gameName = "{{className}}";
+}
+
 let likeCount = 0;
 
 async function displayUserData() {
