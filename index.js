@@ -151,11 +151,32 @@ app.use(async (req, res, next) => {
   }
 });
 
-// Endpoint to handle class-specific URL
-app.get('/class/:className', (req, res, next) => {
-  req.url = '/class.html';  // Redirect to the class.html file for processing by the middleware
-  next();
+app.get('/class/:className', async (req, res) => {
+  const className = req.params.className;
+  try {
+      const filePath = path.join(__dirname, 'public', 'class.html');
+      const headPath = path.join(__dirname, 'files', 'head.html');
+      const footerPath = path.join(__dirname, 'files', 'footer.html');
+
+      const [htmlContent, headContent, footerContent] = await Promise.all([
+          readFileContent(filePath),
+          readFileContent(headPath),
+          readFileContent(footerPath)
+      ]);
+
+      // Replace placeholders with actual content
+      let modifiedData = htmlContent
+          .replace(/{{className}}/g, className)
+          .replace(/{{head}}/g, headContent)
+          .replace(/{{footer}}/g, footerContent);
+
+      res.send(modifiedData);
+  } catch (error) {
+      console.error(`Error reading file: ${error}`);
+      res.status(500).send('Server error');
+  }
 });
+
 
 
 
