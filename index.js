@@ -11,6 +11,7 @@ import { createBareServer } from "@tomphttp/bare-server-node";
 import cors from "cors";
 
 import path from 'path';
+import fs from 'fs';
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
 
@@ -120,10 +121,21 @@ app.post('/api2/crawl', async (req, res) => {
 ////////////////////////
 
 app.get('/class/:className', (req, res) => {
-  const className = req.params.className;
-  console.log(`Serving class.html for class=${className}`);
-  res.sendFile(path.join(__dirname, 'public', 'class.html'));
-  //res.redirect(`/class.html?class=${encodeURIComponent(className)}`);
+    const className = req.params.className;
+    console.log(`Serving class.html for class=${className}`);
+    const filePath = path.join(__dirname, 'public', 'class.html');
+    
+    fs.readFile(filePath, 'utf8', (err, data) => {
+        if (err) {
+            console.error(`Error reading file: ${filePath}`, err);
+            return res.status(500).send('Server error');
+        }
+
+        // Replace the placeholder with the actual class name
+        const modifiedData = data.replace(/{{className}}/g, className);
+        
+        res.send(modifiedData);
+    });
 });
 
 
