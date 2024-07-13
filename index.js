@@ -154,36 +154,7 @@ app.use(async (req, res, next) => {
 app.get('/class/:className', async (req, res) => {
   const className = req.params.className;
   console.log(`Received request for class: ${className}`);
-  try {
-      const filePath = path.join(__dirname, 'public', 'class.html');
-      const headPath = path.join(__dirname, 'files', 'head.html');
-      const footerPath = path.join(__dirname, 'files', 'footer.html');
-
-      console.log(`Reading file: ${filePath}`);
-      console.log(`Reading file: ${headPath}`);
-      console.log(`Reading file: ${footerPath}`);
-
-      const [htmlContent, headContent, footerContent] = await Promise.all([
-          readFileContent(filePath),
-          readFileContent(headPath),
-          readFileContent(footerPath)
-      ]);
-
-      console.log('Successfully read all files');
-
-      // Replace placeholders with actual content
-      let modifiedData = htmlContent
-          .replace(/{{className}}/g, className)
-          .replace(/{{head}}/g, headContent)
-          .replace(/{{footer}}/g, footerContent);
-
-      console.log('Successfully replaced placeholders');
-
-      res.send(modifiedData);
-  } catch (error) {
-      console.error(`Error reading file: ${error}`);
-      res.status(500).send('Server error');
-  }
+  
 });
 
 
