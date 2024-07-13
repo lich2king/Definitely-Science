@@ -9,7 +9,7 @@ if (gameName) {
 
 if (gameName == '')
 {
-    gameName = window.gameName;
+    gameName = window.gameName.replaceAll('-', ' ');
 }
 
 console.log("Play: " + gameName);
