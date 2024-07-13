@@ -27,6 +27,80 @@ const bareServer = createBareServer("/ov/")
 
 
 app.use(express.json());
+
+
+// Function to read file content
+function readFileContent(filePath) {
+  return new Promise((resolve, reject) => {
+      fs.readFile(filePath, "utf8", (err, data) => {
+          if (err) {
+              reject(err);
+          } else {
+              resolve(data);
+          }
+      });
+  });
+}
+
+
+// Middleware to handle template replacements
+app.use(async (req, res, next) => {
+  if (req.path.endsWith('.html')) {
+      try {
+          const className = req.params.className || '';
+          const filePath = path.join(__dirname, 'public', req.path);
+          const headPath = path.join(__dirname, 'private', 'head.html');
+          const footerPath = path.join(__dirname, 'files', 'footer.html');
+
+          const [htmlContent, headContent, footerContent] = await Promise.all([
+              readFileContent(filePath),
+              readFileContent(headPath),
+              readFileContent(footerPath)
+          ]);
+
+          // Replace placeholders with actual content
+          let modifiedData = htmlContent
+              .replace("{{className}}", className)
+              .replace("{{head}}", headContent)
+              .replace("{{footer}}", footerContent);
+
+          res.send(modifiedData);
+      } catch (error) {
+          console.error(`Error reading file: ${error}`);
+          res.status(500).send('Server error');
+      }
+  } else {
+      next();
+  }
+});
+
+app.get('/class/:className', async (req, res) => {
+  const className = req.params.className;
+  try {
+      const filePath = path.join(__dirname, 'public', 'class.html');
+      const headPath = path.join(__dirname, 'private', 'head.html');
+      const footerPath = path.join(__dirname, 'private', 'footer.html');
+
+      const [htmlContent, headContent, footerContent] = await Promise.all([
+          readFileContent(filePath),
+          readFileContent(headPath),
+          readFileContent(footerPath)
+      ]);
+
+      // Replace placeholders with actual content
+      let modifiedData = htmlContent
+          .replace(/{{className}}/g, className)
+          .replace(/{{head}}/g, headContent)
+          .replace(/{{footer}}/g, footerContent);
+
+      res.send(modifiedData);
+  } catch (error) {
+    console.error(`Error reading file: ${error}`);
+    res.status(500).send('Server error');
+  }
+});
+
+
 app.use(express.static("public"));
 app.use("/uv/", express.static(uvPath));
 app.use("/epoxy/", express.static(epoxyPath));
@@ -119,78 +193,6 @@ app.post('/api2/crawl', async (req, res) => {
     }
 });
 ////////////////////////
-
-// Function to read file content
-function readFileContent(filePath) {
-  return new Promise((resolve, reject) => {
-      fs.readFile(filePath, "utf8", (err, data) => {
-          if (err) {
-              reject(err);
-          } else {
-              resolve(data);
-          }
-      });
-  });
-}
-
-
-// Middleware to handle template replacements
-app.use(async (req, res, next) => {
-  if (req.path.endsWith('.html')) {
-      try {
-          const className = req.params.className || '';
-          const filePath = path.join(__dirname, 'public', req.path);
-          const headPath = path.join(__dirname, 'private', 'head.html');
-          const footerPath = path.join(__dirname, 'files', 'footer.html');
-
-          const [htmlContent, headContent, footerContent] = await Promise.all([
-              readFileContent(filePath),
-              readFileContent(headPath),
-              readFileContent(footerPath)
-          ]);
-
-          // Replace placeholders with actual content
-          let modifiedData = htmlContent
-              .replace("{{className}}", className)
-              .replace("{{head}}", headContent)
-              .replace("{{footer}}", footerContent);
-
-          res.send(modifiedData);
-      } catch (error) {
-          console.error(`Error reading file: ${error}`);
-          res.status(500).send('Server error');
-      }
-  } else {
-      next();
-  }
-});
-
-app.get('/class/:className', async (req, res) => {
-  const className = req.params.className;
-  try {
-      const filePath = path.join(__dirname, 'public', 'class.html');
-      const headPath = path.join(__dirname, 'private', 'head.html');
-      const footerPath = path.join(__dirname, 'private', 'footer.html');
-
-      const [htmlContent, headContent, footerContent] = await Promise.all([
-          readFileContent(filePath),
-          readFileContent(headPath),
-          readFileContent(footerPath)
-      ]);
-
-      // Replace placeholders with actual content
-      let modifiedData = htmlContent
-          .replace(/{{className}}/g, className)
-          .replace(/{{head}}/g, headContent)
-          .replace(/{{footer}}/g, footerContent);
-
-      res.send(modifiedData);
-  } catch (error) {
-    console.error(`Error reading file: ${error}`);
-    res.status(500).send('Server error');
-  }
-});
-
 
 
 
