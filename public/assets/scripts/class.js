@@ -20,10 +20,10 @@ async function displayUserData() {
     let json = await res.json();
 
     // set like icon if user has liked it
-    if (json.liked) likeImg.setAttribute('src', 'assets/images/icons/like.avif');
+    if (json.liked) likeImg.setAttribute('src', '/assets/images/icons/like.avif');
 
     // set pin icon if user has pinned it
-    if (json.pinned) pinImg.setAttribute('src', 'assets/images/icons/pin.avif');
+    if (json.pinned) pinImg.setAttribute('src', '/assets/images/icons/pin.avif');
 
     // add to recently played games list
     fetcher(`/profile/recent/set`, { body: { gameName: gameName } });
@@ -44,8 +44,8 @@ function setupActionButtons() {
 
         let res = await fetcher(`/profile/liked/change`, { body: { gameName: gameName } });
 
-        const likedIcon = 'assets/images/icons/like.avif';
-        const notLikedIcon = 'assets/images/icons/likeoutline.avif';
+        const likedIcon = '/assets/images/icons/like.avif';
+        const notLikedIcon = '/assets/images/icons/likeoutline.avif';
 
         // check if it is liked by checking current icon
         let isLiked = e.target.firstChild.getAttribute('src') == likedIcon;
@@ -90,8 +90,8 @@ function setupActionButtons() {
 
         let res = await fetcher(`/profile/pinned/change`, { body: { gameName: gameName } });
 
-        const pinnedIcon = 'assets/images/icons/pin.avif';
-        const notPinnedIcon = 'assets/images/icons/pinoutline.avif';
+        const pinnedIcon = '/assets/images/icons/pin.avif';
+        const notPinnedIcon = '/assets/images/icons/pinoutline.avif';
 
         // check if it is pinned by checking current icon
         let isPinned = e.target.firstChild.getAttribute('src') == pinnedIcon;
@@ -194,7 +194,7 @@ window.addEventListener('load', async () => {
     //let retrievedGamesRes = await fetcher(`/game/${gameName}`);
     //let retrievedGames = await retrievedGamesRes.json();
 	
-	let retrievedGamesRes = await fetch('assets/ts_games.json');
+	let retrievedGamesRes = await fetch('/assets/ts_games.json');
     retrievedGames = await retrievedGamesRes.json();
 	let gameData = retrievedGames.find(game => game.name === gameName);
 	
@@ -239,11 +239,11 @@ window.addEventListener('load', async () => {
         let pinnedGames = JSON.parse(localStorage.getItem('pinnedGames'));
 
         if (likedGames && likedGames[gameName]) {
-            likeImg.setAttribute('src', 'assets/images/icons/like.avif');
+            likeImg.setAttribute('src', '/assets/images/icons/like.avif');
         }
 
         if (pinnedGames && pinnedGames[gameName]) {
-            pinImg.setAttribute('src', 'assets/images/icons/pin.avif');
+            pinImg.setAttribute('src', '/assets/images/icons/pin.avif');
         }
     }
 
@@ -482,12 +482,12 @@ function shareGame() {
     <div class="innerCon">
         <h1>Share the fun!</h1>
         <div class="platforms">
-            <img onclick="shareTo('Mail')" src="assets/images/icons/shareicons/email.png">
-            <img onclick="shareTo('Facebook')" src="assets/images/icons/shareicons/facebook.webp">
-            <img onclick="shareTo('Whats App')" src="assets/images/icons/shareicons/whatsapp.png">
-            <img onclick="shareTo('Twitter')" src="assets/images/icons/shareicons/twitter.png">
-            <img onclick="shareTo('Reddit')" src="assets/images/icons/shareicons/reddit.png">
-            <img onclick="shareTo('LinkedIn')" src="assets/images/icons/shareicons/linkedin.png">
+            <img onclick="shareTo('Mail')" src="/assets/images/icons/shareicons/email.png">
+            <img onclick="shareTo('Facebook')" src="/assets/images/icons/shareicons/facebook.webp">
+            <img onclick="shareTo('Whats App')" src="/assets/images/icons/shareicons/whatsapp.png">
+            <img onclick="shareTo('Twitter')" src="/assets/images/icons/shareicons/twitter.png">
+            <img onclick="shareTo('Reddit')" src="/assets/images/icons/shareicons/reddit.png">
+            <img onclick="shareTo('LinkedIn')" src="/assets/images/icons/shareicons/linkedin.png">
         </div>
         <input type="text" onclick="copyLink()" readonly value="${document.location}">
         <div class="buttonsCon">
