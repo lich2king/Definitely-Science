@@ -120,6 +120,20 @@ app.post('/api2/crawl', async (req, res) => {
 });
 ////////////////////////
 
+// Function to read file content
+function readFileContent(filePath) {
+  return new Promise((resolve, reject) => {
+      fs.readFile(filePath, "utf8", (err, data) => {
+          if (err) {
+              reject(err);
+          } else {
+              resolve(data);
+          }
+      });
+  });
+}
+
+
 // Middleware to handle template replacements
 app.use(async (req, res, next) => {
   if (req.path.endsWith('.html')) {
@@ -151,25 +165,16 @@ app.use(async (req, res, next) => {
   }
 });
 
-// Function to read file content
-function readFileContent(filePath) {
-  return new Promise((resolve, reject) => {
-      fs.readFile(filePath, "utf8", (err, data) => {
-          if (err) {
-              reject(err);
-          } else {
-              resolve(data);
-          }
-      });
-  });
-}
-
 app.get("/class/:className", async (req, res) => {
   const className = req.params.className;
   try {
       const filePath = path.join(__dirname, "public", "class.html");
+      const headPath = path.join(__dirname, "files", "head.html");
+      const footerPath = path.join(__dirname, "files", "footer.html");
 
       const htmlContent = await readFileContent(filePath);
+      const headContent = await readFileContent(headPath);
+      const footerContent = await readFileContent(footerPath);
 
       let modifiedData = htmlContent
           .replace(/{{className}}/g, className);
