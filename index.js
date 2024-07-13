@@ -141,7 +141,7 @@ app.use(async (req, res, next) => {
           const className = req.params.className || '';
           const filePath = path.join(__dirname, 'public', req.path);
           const headPath = path.join(__dirname, 'private', 'head.html');
-          const footerPath = path.join(__dirname, 'private', 'footer.html');
+          const footerPath = path.join(__dirname, 'files', 'footer.html');
 
           const [htmlContent, headContent, footerContent] = await Promise.all([
               readFileContent(filePath),
