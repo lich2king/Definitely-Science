@@ -169,8 +169,8 @@ app.get("/class/:className", async (req, res) => {
   const className = req.params.className;
   try {
       const filePath = path.join(__dirname, "public", "class.html");
-      const headPath = path.join(__dirname, "files", "head.html");
-      const footerPath = path.join(__dirname, "files", "footer.html");
+      const headPath = path.join(__dirname, "private", "head.html");
+      const footerPath = path.join(__dirname, "private", "footer.html");
 
       const htmlContent = await readFileContent(filePath);
       const headContent = await readFileContent(headPath);
