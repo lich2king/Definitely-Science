@@ -165,27 +165,31 @@ app.use(async (req, res, next) => {
   }
 });
 
-app.get("/class/:className", async (req, res) => {
+app.get('/class/:className', async (req, res) => {
   const className = req.params.className;
   try {
-      const filePath = path.join(__dirname, "public", "class.html");
-      const headPath = path.join(__dirname, "private", "head.html");
-      const footerPath = path.join(__dirname, "private", "footer.html");
+      const filePath = path.join(__dirname, 'public', 'class.html');
+      const headPath = path.join(__dirname, 'private', 'head.html');
+      const footerPath = path.join(__dirname, 'private', 'footer.html');
 
-      const htmlContent = await readFileContent(filePath);
-      const headContent = await readFileContent(headPath);
-      const footerContent = await readFileContent(footerPath);
+      const [htmlContent, headContent, footerContent] = await Promise.all([
+          readFileContent(filePath),
+          readFileContent(headPath),
+          readFileContent(footerPath)
+      ]);
 
+      // Replace placeholders with actual content
       let modifiedData = htmlContent
-          .replace(/{{className}}/g, className);
+          .replace(/{{className}}/g, className)
+          .replace(/{{head}}/g, headContent)
+          .replace(/{{footer}}/g, footerContent);
 
       res.send(modifiedData);
   } catch (error) {
-      console.error(`Error processing request: ${error.message}`);
-      res.status(500).send("Server error");
+    console.error(`Error reading file: ${error}`);
+    res.status(500).send('Server error');
   }
 });
-
 
 
 
