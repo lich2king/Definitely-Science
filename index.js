@@ -51,18 +51,21 @@ app.use(async (req, res, next) => {
           const filePath = path.join(__dirname, 'public', req.path);
           const headPath = path.join(__dirname, 'private', 'head.html');
           const footerPath = path.join(__dirname, 'private', 'footer.html');
+          const navbarPath = path.join(__dirname, 'private', 'navbar.html');
 
-          const [htmlContent, headContent, footerContent] = await Promise.all([
+          const [htmlContent, headContent, footerContent, navbarContent] = await Promise.all([
               readFileContent(filePath),
               readFileContent(headPath),
-              readFileContent(footerPath)
+              readFileContent(footerPath),
+              readFileContent(navbarPath)
           ]);
 
           // Replace placeholders with actual content
           let modifiedData = htmlContent
             .replace(/{{className}}/g, className)
             .replace(/{{head}}/g, headContent)
-            .replace(/{{footer}}/g, footerContent);
+            .replace(/{{footer}}/g, footerContent)
+            .replace(/{{navbar}}/g, navbarContent);
 
           res.send(modifiedData);
       } catch (error) {
@@ -80,18 +83,21 @@ app.get('/class/:className', async (req, res) => {
       const filePath = path.join(__dirname, 'public', 'class.html');
       const headPath = path.join(__dirname, 'private', 'head.html');
       const footerPath = path.join(__dirname, 'private', 'footer.html');
+      const navbarPath = path.join(__dirname, 'private', 'navbar.html');
 
-      const [htmlContent, headContent, footerContent] = await Promise.all([
-          readFileContent(filePath),
-          readFileContent(headPath),
-          readFileContent(footerPath)
-      ]);
+      const [htmlContent, headContent, footerContent, navbarContent] = await Promise.all([
+        readFileContent(filePath),
+        readFileContent(headPath),
+        readFileContent(footerPath),
+        readFileContent(navbarPath)
+    ]);
 
       // Replace placeholders with actual content
       let modifiedData = htmlContent
           .replace(/{{className}}/g, className)
           .replace(/{{head}}/g, headContent)
-          .replace(/{{footer}}/g, footerContent);
+          .replace(/{{footer}}/g, footerContent)
+          .replace(/{{navbar}}/g, navbarContent);
 
       res.send(modifiedData);
   } catch (error) {
