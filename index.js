@@ -119,6 +119,11 @@ app.post('/api2/crawl', async (req, res) => {
 });
 ////////////////////////
 
+app.get('/class/:className', (req, res) => {
+  const className = req.params.className;
+  res.redirect(`/class.html?class=${encodeURIComponent(className)}`);
+});
+
 
 // Error for everything else
 app.use((req, res) => {
