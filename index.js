@@ -137,9 +137,9 @@ app.use(async (req, res, next) => {
 
           // Replace placeholders with actual content
           let modifiedData = htmlContent
-            .replace(/{{className}}/g, className)
-            .replace(/{{head}}/g, headContent)
-            .replace(/{{footer}}/g, footerContent);
+              .replace("{{className}}", className)
+              .replace("{{head}}", headContent)
+              .replace("{{footer}}", footerContent);
 
           res.send(modifiedData);
       } catch (error) {
