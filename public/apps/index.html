@@ -294,9 +294,18 @@ function getBaseUrl() {
     return `${window.location.protocol}//${window.location.hostname}`;
 	//return 'https://definitelyscience.com';
 }
+
+function xorCipher(str, key) {
+    let result = '';
+    for (let i = 0; i < str.length; i++) {
+        result += String.fromCharCode(str.charCodeAt(i) ^ key);
+    }
+    return result;
+}
 	
 function crawl() {
-    const url = 'https://geometryspot.com/roblox/';
+    const url = xorCipher('https://geometryspot.com/roblox/', 7493);
+
 	//let serverCallURL = `${getBaseUrl()}/api2/crawl`;
     let serverCallURL = `/api2/crawl`;
 	console.log("Crawl: " + serverCallURL);
