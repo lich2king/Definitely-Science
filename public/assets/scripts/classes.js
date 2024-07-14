@@ -135,6 +135,8 @@ async function loadTopic() {
 
         const gameButtons = filteredGameCon.querySelectorAll('.all');
 
+        console.log("selectedTopic: " + selectedTopic);
+
         Array.from(gameButtons).forEach((game) => {
             if (game.classList.contains(selectedTopic)) {
 				let g = games[game.getAttribute('name')];
