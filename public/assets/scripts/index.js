@@ -99,7 +99,7 @@ window.addEventListener('load', async() => {
 			//https://definitelyscience.com/class.php?class=Awesome-Tanks-2
 			let gameName = game.name;
 			//featureEle.children[1].onclick = () => { window.open(`/class.html?class=${gameName.replaceAll(' ', '-')}`, '_self') };
-			featureEle.children[1].onclick = () => { window.open(`/class/${gameName.replaceAll(' ', '-')}`, '_self') };
+			featureEle.children[1].onclick = () => { window.open(`/class/${gameName.replaceAll(' ', '-')}/`, '_self') };
 
 			featureEle.style.backgroundImage = `url(${game.image})`;
 		}
@@ -477,7 +477,7 @@ function createGameButton(game, pin, lazy) {
     //const onclick = `location.href = 'class.html?class=${game.replaceAll(' ', '-')}'`;
 	let gameName = data.name;
 	//const onclick = `location.href = 'class.html?class=${gameName.replaceAll(' ', '-')}'`;
-    const onclick = `location.href = '/class/${gameName.replaceAll(' ', '-')}'`;
+    const onclick = `location.href = '/class/${gameName.replaceAll(' ', '-')}/'`;
 
     let gameDiv = document.createElement('div');
     gameDiv.setAttribute('tagName', gameName);
