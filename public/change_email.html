@@ -2,13 +2,13 @@
 <html lang="en">
 
 <head>
-    <?php include "assets/includes/head.php" ?>
+    {{head}}
 
     <link rel='stylesheet' href='./assets/styles/account.css?v4'>
 </head>
 
 <body>
-    <?php include "assets/includes/navbar.php" ?>
+    {{navbar}}
 
     <form id="survey" action="javascript:changeEmail()">
         <div>
@@ -29,7 +29,7 @@
     <p style="text-align: center; color: red;" id="errorText"></p>
 </body>
 
-<?php include "assets/includes/footer.php" ?>
+{{footer}}
 
 <script>
     window.addEventListener('load', async () => {
