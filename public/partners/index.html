@@ -209,7 +209,7 @@
         window.addEventListener('load', async () => {
 				
             //let partnersRes = await fetcher(`/partners`);
-			let partnersRes = await fetch('assets/ts_partners.json');
+			let partnersRes = await fetch('/assets/ts_partners.json');
             let partners = await partnersRes.json();
 
             for (let x = 0; x < partners.length; x++) {
