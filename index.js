@@ -49,9 +49,9 @@ app.use(async (req, res, next) => {
       try {
           const className = req.params.className || '';
           const filePath = path.join(__dirname, 'public', req.path);
-          const headPath = path.join(__dirname, 'private', 'head.html');
-          const footerPath = path.join(__dirname, 'private', 'footer.html');
-          const navbarPath = path.join(__dirname, 'private', 'navbar.html');
+          const headPath = path.join(__dirname, 'src', 'head.html');
+          const footerPath = path.join(__dirname, 'src', 'footer.html');
+          const navbarPath = path.join(__dirname, 'src', 'navbar.html');
 
           const [htmlContent, headContent, footerContent, navbarContent] = await Promise.all([
               readFileContent(filePath),
@@ -81,9 +81,9 @@ app.get('/class/:className', async (req, res) => {
   const className = req.params.className;
   try {
       const filePath = path.join(__dirname, 'public', 'class.html');
-      const headPath = path.join(__dirname, 'private', 'head.html');
-      const footerPath = path.join(__dirname, 'private', 'footer.html');
-      const navbarPath = path.join(__dirname, 'private', 'navbar.html');
+      const headPath = path.join(__dirname, 'src', 'head.html');
+      const footerPath = path.join(__dirname, 'src', 'footer.html');
+      const navbarPath = path.join(__dirname, 'src', 'navbar.html');
 
       const [htmlContent, headContent, footerContent, navbarContent] = await Promise.all([
         readFileContent(filePath),
