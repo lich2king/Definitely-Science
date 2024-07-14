@@ -71,6 +71,35 @@ app.get('/class/:className', async (req, res) => {
   }
 });
 
+app.get('/app/:appName', async (req, res) => {
+    const appName = req.params.appName;
+    try {
+        const filePath = path.join(__dirname, 'public', 'app.html');
+        const headPath = path.join(__dirname, 'src', 'head.html');
+        const footerPath = path.join(__dirname, 'src', 'footer.html');
+        const navbarPath = path.join(__dirname, 'src', 'navbar.html');
+  
+        const [htmlContent, headContent, footerContent, navbarContent] = await Promise.all([
+          readFileContent(filePath),
+          readFileContent(headPath),
+          readFileContent(footerPath),
+          readFileContent(navbarPath)
+      ]);
+  
+        // Replace placeholders with actual content
+        let modifiedData = htmlContent
+            .replace(/{{appName}}/g, appName)
+            .replace(/{{head}}/g, headContent)
+            .replace(/{{footer}}/g, footerContent)
+            .replace(/{{navbar}}/g, navbarContent);
+  
+        res.send(modifiedData);
+    } catch (error) {
+      console.error(`Error reading file: ${error}`);
+      res.status(500).send('Server error');
+    }
+  });
+
 
 // Middleware to handle template replacements
 app.use(async (req, res, next) => {

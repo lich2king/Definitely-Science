@@ -32,11 +32,17 @@
 
     <script src="assets/scripts/main.js"></script>
     <script>
+         window.appNameT = "{{appName}}";
+
         document.getElementById("appsnav").classList.add("selected");
 
         const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
         const appName = urlParams.get('app');
+        if (!appName)
+        {
+          appName = window.appNameT;
+        }
 
         //document.getElementsByTagName('title')[0].innerHTML = `Definitely Science - ${appName} Unblocked`;
 
