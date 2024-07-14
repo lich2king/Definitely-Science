@@ -400,7 +400,8 @@ function createGameButton(game, pin) {
 
     let buttons = '';
 
-    let onclick = `location.href = 'class.html?class=${game.replaceAll(' ', '-')}'`;
+    //let onclick = `location.href = 'class.html?class=${game.replaceAll(' ', '-')}'`;
+    let onclick = `location.href = '/class/${game.replaceAll(' ', '-')}'`;
 
     if (pin == 'pin') {
         buttons += "<button id='pin'><img src='/assets/images/icons/coloredpin.avif'></button>";
