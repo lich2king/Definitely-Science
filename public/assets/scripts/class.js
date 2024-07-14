@@ -211,7 +211,11 @@ window.addEventListener('load', async () => {
 
     // if the game requested does not exist in the json file redirect
     //if (!gameData) window.location.href = '../classes.php';
-	if (!gameData) console.log("Game not found! "+ gameName);
+	if (!gameData) 
+    {
+        console.log("Game not found! "+ gameName);
+        window.location.href = '/404.html';
+    }
 
     // check if user is signed in
     /*let response = await fetcher(`/auth/check`);
