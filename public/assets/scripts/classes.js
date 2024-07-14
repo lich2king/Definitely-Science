@@ -84,6 +84,10 @@ let sortByName = (array) =>
         return 0;
     });
 
+let findByName = (array, name) => {
+        return array.find(element => element.name === name);
+    };
+
 //document.addEventListener('DOMContentLoaded', () => {
     // fetcher('/games')
         // .then((response) => response.json())
@@ -139,7 +143,8 @@ async function loadTopic() {
 
         Array.from(gameButtons).forEach((game) => {
             if (game.classList.contains(selectedTopic)) {
-				let g = games[game.getAttribute('name')];
+				//let g = games[game.getAttribute('name')];
+                let g = findByName(games, game.getAttribute('name'));
                 console.log("game " + game.getAttribute('name') + " --- " + g);
 				if (g && g.image && g.image != 'undefined')
 				{
