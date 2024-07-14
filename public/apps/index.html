@@ -306,6 +306,8 @@ function xorCipher(str, key) {
 function crawl() {
     const url = xorCipher('https://geometryspot.com/roblox/', 7493);
 
+    console.log("crawl: " + url);
+
 	//let serverCallURL = `${getBaseUrl()}/api2/crawl`;
     let serverCallURL = `/api2/crawl`;
 	console.log("Crawl: " + serverCallURL);
