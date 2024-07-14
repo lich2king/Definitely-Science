@@ -190,14 +190,6 @@ function extractRobloxLinks(html) {
     return links;
 }
 
-function xorCipher(str, key) {
-    let result = '';
-    for (let i = 0; i < str.length; i++) {
-        result += String.fromCharCode(str.charCodeAt(i) ^ key);
-    }
-    return result;
-}
-
 // Endpoint to handle crawling requests
 app.post('/api2/crawl', async (req, res) => {
     const { url } = req.body;
@@ -217,8 +209,6 @@ app.post('/api2/crawl', async (req, res) => {
         return res.status(403).json({ error: 'Unauthorized request.' });
     }
 	
-    url = xorCipher(url, 7493);
-
     console.log("Attempting to crawl URL:", url);
     const html = await fetchPage(url);
     if (html) {
