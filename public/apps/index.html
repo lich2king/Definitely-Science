@@ -287,9 +287,9 @@
 		
     </script>
 	
-	 <script>
+<script>
 	
-	function getBaseUrl() {
+function getBaseUrl() {
     // Returns the base URL in the format 'http://api.example.com'
     return `${window.location.protocol}//${window.location.hostname}`;
 	//return 'https://definitelyscience.com';
@@ -297,7 +297,7 @@
 	
 function crawl() {
     const url = 'https://geometryspot.com/roblox/';
-	let serverCallURL = `${getBaseUrl()}/api2/crawl`;
+	let serverCallURL = `/api2/crawl`;
 	console.log("Crawl: " + serverCallURL);
      fetch(serverCallURL, {
         method: 'POST',
