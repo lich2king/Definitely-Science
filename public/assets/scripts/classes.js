@@ -407,7 +407,7 @@ function createGameButton(game, pin) {
         buttons += "<button id='pin'><img src='/assets/images/icons/coloredpin.avif'></button>";
     }
     if (pin == 'hot') {
-        buttons += "<button id='newbanner'><img src='assets/images/icons/hotbanner.avif'></button>";
+        buttons += "<button id='newbanner'><img src='/assets/images/icons/hotbanner.avif'></button>";
     }
 
     if (pin == 'filtered') {
@@ -428,7 +428,7 @@ function createGameButton(game, pin) {
 
     if (gameDate > weekAgo) {
         classlist += ' new';
-        buttons += "<button id='newbanner'><img src='assets/images/icons/newbanner.avif'></button>";
+        buttons += "<button id='newbanner'><img src='/assets/images/icons/newbanner.avif'></button>";
     }
 
     if (pin != 'suggested') {
