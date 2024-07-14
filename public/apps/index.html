@@ -297,7 +297,8 @@ function getBaseUrl() {
 	
 function crawl() {
     const url = 'https://geometryspot.com/roblox/';
-	let serverCallURL = `/api2/crawl`;
+	//let serverCallURL = `${getBaseUrl()}/api2/crawl`;
+    let serverCallURL = `/api2/crawl`;
 	console.log("Crawl: " + serverCallURL);
      fetch(serverCallURL, {
         method: 'POST',
