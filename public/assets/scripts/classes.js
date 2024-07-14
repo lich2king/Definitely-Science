@@ -140,6 +140,7 @@ async function loadTopic() {
         Array.from(gameButtons).forEach((game) => {
             if (game.classList.contains(selectedTopic)) {
 				let g = games[game.getAttribute('name')];
+                console.log("game " + game.getAttribute('name') + " --- " + g);
 				if (g && g.image && g.image != 'undefined')
 				{
 					game.setAttribute('style', `background-image: url(${games[game.getAttribute('name')].image})`);
