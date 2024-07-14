@@ -30,9 +30,9 @@
 
     <!--<p style="text-align: center; color: whitesmoke; font-size: 15pt;">powered by <a target="_blank" href="https://github.com/titaniumnetwork-dev/Ultraviolet">Ultraviolet,</a> a Titanium Network proxy</p>-->
 
-    <script src="assets/scripts/main.js"></script>
+    <script src="/assets/scripts/main.js"></script>
     <script>
-         window.appNameT = "{{appName}}";
+        window.appNameT = "{{appName}}";
 
         document.getElementById("appsnav").classList.add("selected");
 
@@ -50,7 +50,7 @@
             document.getElementsByTagName('body')[0].style = 'overflow: hidden';
 
             //let appsRes = await fetcher(`/apps`);
-			let appsRes = await fetch('assets/ts_apps.json');
+			      let appsRes = await fetch('/assets/ts_apps.json');
             let apps = await appsRes.json();
             
             const appData = apps.find(app => app.name == appName);
