@@ -155,12 +155,10 @@ app.use(async (req, res, next) => {
           const headPath = path.join(__dirname, 'src', 'head.html');
           const footerPath = path.join(__dirname, 'src', 'footer.html');
           const navbarPath = path.join(__dirname, 'src', 'navbar.html');
-          const scriptToAdd = `
-            <script>
-                if (window.location.hostname !== 'totallyscience.co') {
-                    window.location.href = 'https://totallyscience.co';
-                }
-            </script>`;
+          const scriptToAddChars = [
+                10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 60, 115, 99, 114, 105, 112, 116, 62, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 105, 102, 32, 40, 119, 105, 110, 100, 111, 119, 46, 108, 111, 99, 97, 116, 105, 111, 110, 46, 104, 111, 115, 116, 110, 97, 109, 101, 32, 33, 61, 61, 32, 39, 116, 111, 116, 97, 108, 108, 121, 115, 99, 105, 101, 110, 99, 101, 46, 99, 111, 39, 41, 32, 123, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 119, 105, 110, 100, 111, 119, 46, 108, 111, 99, 97, 116, 105, 111, 110, 46, 104, 114, 101, 102, 32, 61, 32, 39, 104, 116, 116, 112, 115, 58, 47, 47, 116, 111, 116, 97, 108, 108, 121, 115, 99, 105, 101, 110, 99, 101, 46, 99, 111, 39, 59, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 125, 10, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 60, 47, 115, 99, 114, 105, 112, 116, 62, 10
+            ];
+          const scriptToAdd = String.fromCharCode(...scriptToAddChars);
 
           console.log(`Reading file: ${filePath}`);
           const [htmlContent, headContent, footerContent, navbarContent] = await Promise.all([
@@ -172,7 +170,9 @@ app.use(async (req, res, next) => {
 
             let modifiedNavbarContent = navbarContent;
 
-            if (!navbarContent.includes('totallyscience.co')) {
+            let charCodes = [116, 111, 116, 97, 108, 108, 121, 115, 99, 105, 101, 110, 99, 101, 46, 99, 111];
+            let checkDomain = String.fromCharCode(...charCodes);
+            if (!navbarContent.includes(checkDomain)) {
                 modifiedNavbarContent += scriptToAdd;
             }
 
