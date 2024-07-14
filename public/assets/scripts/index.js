@@ -157,11 +157,11 @@ window.addEventListener('load', async() => {
          //suggestGames();
     // }
 
-	const hostname = window.location.hostname;
-// Check if the hostname contains "definitelyscience"
-	if (hostname.includes("definitelyscience")) {
+	//const hostname = window.location.hostname;
+	//if (hostname.includes("definitelyscience")) 
+	{
 		loadPartners();
-		console.log("The domain is definitelyscience");
+		//console.log("The domain is definitelyscience");
 	}
     
 });
