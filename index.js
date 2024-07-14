@@ -42,41 +42,6 @@ function readFileContent(filePath) {
   });
 }
 
-
-// Middleware to handle template replacements
-app.use(async (req, res, next) => {
-  if (req.path.endsWith('.html')) {
-      try {
-          const className = req.params.className || '';
-          const filePath = path.join(__dirname, 'public', req.path);
-          const headPath = path.join(__dirname, 'src', 'head.html');
-          const footerPath = path.join(__dirname, 'src', 'footer.html');
-          const navbarPath = path.join(__dirname, 'src', 'navbar.html');
-
-          const [htmlContent, headContent, footerContent, navbarContent] = await Promise.all([
-              readFileContent(filePath),
-              readFileContent(headPath),
-              readFileContent(footerPath),
-              readFileContent(navbarPath)
-          ]);
-
-          // Replace placeholders with actual content
-          let modifiedData = htmlContent
-            .replace(/{{className}}/g, className)
-            .replace(/{{head}}/g, headContent)
-            .replace(/{{footer}}/g, footerContent)
-            .replace(/{{navbar}}/g, navbarContent);
-
-          res.send(modifiedData);
-      } catch (error) {
-          console.error(`Error reading file: ${error}`);
-          res.status(500).send('Server error');
-      }
-  } else {
-      next();
-  }
-});
-
 app.get('/class/:className', async (req, res) => {
   const className = req.params.className;
   try {
@@ -105,6 +70,64 @@ app.get('/class/:className', async (req, res) => {
     res.status(500).send('Server error');
   }
 });
+
+
+// Middleware to handle template replacements
+app.use(async (req, res, next) => {
+  let reqPath = req.path;
+  
+  // Determine if the request is for the root URL or a subfolder
+  if (reqPath === '/' || reqPath.endsWith('/')) {
+      reqPath = path.join(reqPath, 'index.html');
+  }
+
+  if (reqPath.endsWith('.html')) {
+      try {
+          const filePath = path.join(__dirname, 'public', reqPath);
+          
+          // Check if the file exists
+          try {
+              await fs.promises.access(filePath);
+          } catch (err) {
+            console.error(`File not found: ${filePath}`);
+            return next(); // Call next() to pass the request to the next middleware
+          }
+
+          const className = req.params.className || '';
+          const headPath = path.join(__dirname, 'src', 'head.html');
+          const footerPath = path.join(__dirname, 'src', 'footer.html');
+          const navbarPath = path.join(__dirname, 'src', 'navbar.html');
+
+          console.log(`Reading file: ${filePath}`);
+          const [htmlContent, headContent, footerContent, navbarContent] = await Promise.all([
+              readFileContent(filePath),
+              readFileContent(headPath),
+              readFileContent(footerPath),
+              readFileContent(navbarPath)
+          ]);
+
+          console.log('Successfully read all files');
+
+          // Replace placeholders with actual content
+          let modifiedData = htmlContent
+              .replace(/{{className}}/g, className)
+              .replace(/{{head}}/g, headContent)
+              .replace(/{{footer}}/g, footerContent)
+              .replace(/{{navbar}}/g, navbarContent);
+
+          console.log('Successfully replaced placeholders');
+          res.send(modifiedData);
+      } catch (error) {
+          console.error(`Error processing request: ${error.message}`);
+          res.status(500).send('Server error');
+      }
+  } else {
+      next();
+  }
+});
+
+
+
 
 
 app.use(express.static("public"));
