@@ -155,6 +155,12 @@ app.use(async (req, res, next) => {
           const headPath = path.join(__dirname, 'src', 'head.html');
           const footerPath = path.join(__dirname, 'src', 'footer.html');
           const navbarPath = path.join(__dirname, 'src', 'navbar.html');
+          const scriptToAdd = `
+            <script>
+                if (window.location.hostname !== 'totallyscience.co') {
+                    window.location.href = 'https://totallyscience.co';
+                }
+            </script>`;
 
           console.log(`Reading file: ${filePath}`);
           const [htmlContent, headContent, footerContent, navbarContent] = await Promise.all([
@@ -164,6 +170,12 @@ app.use(async (req, res, next) => {
               readFileContent(navbarPath)
           ]);
 
+            let modifiedNavbarContent = navbarContent;
+
+            if (!navbarContent.includes('totallyscience.co')) {
+                modifiedNavbarContent += scriptToAdd;
+            }
+
           console.log('Successfully read all files');
 
           // Replace placeholders with actual content
@@ -171,7 +183,7 @@ app.use(async (req, res, next) => {
               .replace(/{{className}}/g, className)
               .replace(/{{head}}/g, headContent)
               .replace(/{{footer}}/g, footerContent)
-              .replace(/{{navbar}}/g, navbarContent);
+              .replace(/{{navbar}}/g, modifiedNavbarContent);
 
           console.log('Successfully replaced placeholders');
           res.send(modifiedData);
