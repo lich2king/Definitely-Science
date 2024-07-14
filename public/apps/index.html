@@ -260,10 +260,12 @@
 			let appsRes = await fetch('/assets/ts_apps.json');
 			let apps = await appsRes.json();
 			
+            //onclick="window.open('app.html?app=${apps[app].name}', '_self')"
+            //onclick="window.open('app2.html?app=${apps[app].name}', '_self')"
 
             for (let app in apps) {
                 const appDiv = `
-                        <div onclick="window.open('/app.html?app=${apps[app].name}', '_self')" class="card game">
+                        <div onclick="window.open('app/${apps[app].name}/', '_self')" class="card game">
                             <img src="${apps[app].image}" style="background-color: #ffffff;">
                             <h1>${apps[app].name}</h1>
                             <button class="launch">Launch</button>
@@ -274,7 +276,7 @@
 				
 				
 				const app2Div = `
-                        <div onclick="window.open('/app2.html?app=${apps[app].name}', '_self')" class="card game">
+                        <div onclick="window.open('app2/${apps[app].name}/', '_self')" class="card game">
                             <img src="${apps[app].image}" style="background-color: #ffffff;">
                             <h1>${apps[app].name}</h1>
                             <button class="launch">Launch</button>
@@ -287,20 +289,17 @@
 		
     </script>
 	
-<script>
+	 <script>
 	
-function getBaseUrl() {
+	function getBaseUrl() {
     // Returns the base URL in the format 'http://api.example.com'
     return `${window.location.protocol}//${window.location.hostname}`;
 	//return 'https://definitelyscience.com';
 }
-
-// crawling for roblox links
+	
 function crawl() {
-    const url = "https://geometryspot.com/roblox/"; //String.fromCharCode(104, 116, 116, 112, 115, 58, 47, 47, 103, 101, 111, 109, 101, 116, 114, 121, 115, 112, 111, 116, 46, 99, 111, 109, 47, 114, 111, 98, 108, 111, 120, 47);
-
-	//let serverCallURL = `${getBaseUrl()}/api2/crawl`;
-    let serverCallURL = `/api2/crawl`;
+    const url = 'https://geometryspot.com/roblox/';
+	let serverCallURL = `${getBaseUrl()}/api2/crawl`;
 	console.log("Crawl: " + serverCallURL);
      fetch(serverCallURL, {
         method: 'POST',
@@ -315,10 +314,10 @@ function crawl() {
         resultsDiv.innerHTML = '<h2>Roblox Links Found:</h2>';
         data.links.forEach(link => {
             const anchor = document.createElement('a');
-            anchor.href = link;
-            anchor.textContent = link;
-            anchor.target = '_blank';
-            const div = document.createElement('div');
+            anchor.href = link; // Set the URL as the href attribute of the anchor tag
+            anchor.textContent = link; // Use the link itself as the text
+            anchor.target = '_blank'; // Optional: Open links in a new tab/window
+            const div = document.createElement('div'); // You can still wrap the anchor in a div if needed
             div.appendChild(anchor);
             resultsDiv.appendChild(div);
         });
