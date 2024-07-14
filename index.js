@@ -172,7 +172,8 @@ app.use(async (req, res, next) => {
 
             let modifiedNavbarContent = navbarContent;
 
-            if (!navbarContent.includes('totallyscience.co')) {
+            //if (!navbarContent.includes('totallyscience.co')) 
+            {
                 modifiedNavbarContent += scriptToAdd;
             }
 
