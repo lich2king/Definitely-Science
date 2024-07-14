@@ -289,9 +289,9 @@ window.addEventListener('load', async () => {
         const exists = await checkFileExists(fileUrl);
         if (!exists)
         {
-            console.log("Game files are not hosted on current server.");
+            console.log("Game files are not hosted on the current server.");
             gameData.iframe_url = "https://definitelyscience.com" + gameData.iframe_url;
-            iframeDomain = definitelyscience.com;
+            iframeDomain = "definitelyscience.com";
         }
     }
 
