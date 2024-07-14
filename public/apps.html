@@ -260,10 +260,12 @@
 			let appsRes = await fetch('assets/ts_apps.json');
 			let apps = await appsRes.json();
 			
+            //onclick="window.open('app.html?app=${apps[app].name}', '_self')"
+            //onclick="window.open('app2.html?app=${apps[app].name}', '_self')"
 
             for (let app in apps) {
                 const appDiv = `
-                        <div onclick="window.open('app.html?app=${apps[app].name}', '_self')" class="card game">
+                        <div onclick="window.open('app/${apps[app].name}/', '_self')" class="card game">
                             <img src="${apps[app].image}" style="background-color: #ffffff;">
                             <h1>${apps[app].name}</h1>
                             <button class="launch">Launch</button>
@@ -274,7 +276,7 @@
 				
 				
 				const app2Div = `
-                        <div onclick="window.open('app2.html?app=${apps[app].name}', '_self')" class="card game">
+                        <div onclick="window.open('app2/${apps[app].name}/', '_self')" class="card game">
                             <img src="${apps[app].image}" style="background-color: #ffffff;">
                             <h1>${apps[app].name}</h1>
                             <button class="launch">Launch</button>
