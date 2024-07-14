@@ -186,6 +186,15 @@ function setRandomAdBanner() {
   
 }
 
+async function checkFileExists(url) {
+    try {
+        const response = await fetch(url, { method: 'HEAD' });
+        return response.ok;
+    } catch (error) {
+        return false;
+    }
+}
+
 let retrievedGames;
 
 window.addEventListener('load', async () => {
@@ -263,20 +272,32 @@ window.addEventListener('load', async () => {
 
     //suggestGames(gameData);
 	
-	var iframeUrl = "";
+	var iframeDomain = "";
 	try {
 		if (gameData && gameData.iframe_url && gameData.iframe_url.startsWith('https://')) {
-			iframeUrl = new URL(gameData.iframe_url).hostname;
+			iframeDomain = new URL(gameData.iframe_url).hostname;
 		}
 	} catch (error) {
 		console.log("Error parsing iframe URL: ", gameData.iframe_url);
 	}
 	
-	const currentDomain = document.domain;
+	const currentDomain = window.location.hostname;
 
-	console.log("Load game " + gameData.iframe_url + " (" + iframeUrl + ")");
-	//if (document && document.domain == "definitelyscience.com")
-	if (document && (currentDomain == iframeUrl || iframeUrl == "" || gameData.iframe_url.startsWith('https://scratch.mit.edu')))
+    if (iframeDomain == "" && gameData.iframe_url && gameData.iframe_url.length > 0 && gameData.iframe_url[0] == '/')
+    {
+        const fileUrl = '/assets/games/info.txt';
+        const exists = await checkFileExists(fileUrl);
+        if (!exists)
+        {
+            console.log("Game files are not hosted on current server.");
+            gameData.iframe_url = "https://definitelyscience.com" + gameData.iframe_url;
+            iframeDomain = definitelyscience.com;
+        }
+    }
+
+	console.log("Load game " + gameData.iframe_url + " (" + iframeDomain + ")");
+
+	if (document && (currentDomain == iframeDomain || iframeDomain == "" || gameData.iframe_url.startsWith('https://scratch.mit.edu')))
 	{
 		console.log("Same domain or scratch game");
 		iframe.src = gameData.iframe_url;
