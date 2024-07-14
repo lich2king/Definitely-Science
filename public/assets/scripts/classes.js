@@ -148,7 +148,7 @@ async function loadTopic() {
                 console.log("game " + game.getAttribute('name') + " --- " + g);
 				if (g && g.image && g.image != 'undefined')
 				{
-					game.setAttribute('style', `background-image: url(${games[game.getAttribute('name')].image})`);
+					game.setAttribute('style', `background-image: url(${g.image})`);
 				}
             } else {
                 game.setAttribute('style', 'display:none');
