@@ -432,7 +432,7 @@ async function suggestGames(gameData) {
         if (gameDate > weekAgo) classlist += ' new';
 
         gamesDiv.innerHTML += `
-            <div name="${game}" id="gameDiv" onclick="location.href = '/class/${game.replaceAll(' ', '-')}'/" class="${classlist}">
+            <div name="${game}" id="gameDiv" onclick="location.href = '/class/${game.replaceAll(' ', '-')}/'" class="${classlist}">
                 <div class="imageCon">
                     <img src="${data.image}" alt="Totally Science ${game}" title="Totally Science ${game}"/>
                 </div>
