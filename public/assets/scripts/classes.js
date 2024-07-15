@@ -30,6 +30,11 @@ const urlParams = new URLSearchParams(queryString);
 const category = urlParams.get('category');
 const search = urlParams.get('search');
 
+if (category == null && window.category && window.category != "{{classesName}}")
+{
+    category = window.category;
+}
+
 let categories = [
     'multiplayer',
     'car',
