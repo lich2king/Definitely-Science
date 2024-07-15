@@ -183,14 +183,26 @@ async function loadGames() {
 
         // if game is less than a week old, add it to the new games list
         if (gameDate > weekAgo) {
-            categorizedGames.new?.appendChild(createGameButton(name, '', true))
+            if (categorizedGames.new && Array.isArray(categorizedGames.new))
+            {
+                if (categorizedGames.new.length < 20)
+                {
+                    categorizedGames.new?.appendChild(createGameButton(name, '', true));
+                }
+            }
         }
 
         // for each game, if it has a tag that matches on of the categories, add it to that container... MAY have multiple!
 		let tagsArray = sorted[name].tags.split(',');
         //for (let tag of sorted[name].tags) {
 		for (let tag of tagsArray) {
-            categorizedGames[tag]?.appendChild(createGameButton(name, '', true))
+            if (categorizedGames[tag] && Array.isArray(categorizedGames[tag]))
+            {
+                if (categorizedGames[tag].length < 20)
+                {
+                    categorizedGames[tag]?.appendChild(createGameButton(name, '', true));
+                }
+            }
         }
     }
 
@@ -244,18 +256,24 @@ async function loadLikedGames() {
             document.getElementById('likedGamesHorizontalCon').style.display = '';
 
             for (like in likedgames) {
-                likedGamesContainer.appendChild(createGameButton(likedgames[like]));
+                if (likedGamesContainer.childElementCount < 20)
+                {
+                    likedGamesContainer.appendChild(createGameButton(likedgames[like]));
+                }
             }
         }
     } else {
         let likedgames = JSON.parse(localStorage.getItem('likedGames'));
 
-        if (Object.keys(likedgames).length > 5) {
+        if (Object.keys(likedgames).length > 5) 
+        {
             document.getElementById('likedGamesLabel').style.display = '';
             document.getElementById('likedGamesHorizontalCon').style.display = '';
 
-            for (like in likedgames) {
-                if (likedgames[like]){
+            for (like in likedgames) 
+            {
+                if (likedgames[like] && likedGamesContainer.childElementCount < 20)
+                {
                     likedGamesContainer.appendChild(createGameButton(like));
                 }
             }
