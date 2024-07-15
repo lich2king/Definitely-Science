@@ -185,7 +185,7 @@ async function loadGames() {
         if (gameDate > weekAgo) {
             if (categorizedGames.new)
             {
-                if (categorizedGames.new.childElementCount < 20)
+                if (categorizedGames.new.childElementCount < 25)
                 {
                     categorizedGames.new?.appendChild(createGameButton(name, '', true));
                 }
@@ -198,7 +198,7 @@ async function loadGames() {
 		for (let tag of tagsArray) {
             if (categorizedGames[tag])
             {
-                if (categorizedGames[tag].childElementCount < 20)
+                if (categorizedGames[tag].childElementCount < 25)
                 {
                     categorizedGames[tag]?.appendChild(createGameButton(name, '', true));
                 }
@@ -256,7 +256,7 @@ async function loadLikedGames() {
             document.getElementById('likedGamesHorizontalCon').style.display = '';
 
             for (like in likedgames) {
-                if (likedGamesContainer.childElementCount < 20)
+                if (likedGamesContainer.childElementCount < 25)
                 {
                     likedGamesContainer.appendChild(createGameButton(likedgames[like]));
                 }
@@ -272,7 +272,7 @@ async function loadLikedGames() {
 
             for (like in likedgames) 
             {
-                if (likedgames[like] && likedGamesContainer.childElementCount < 20)
+                if (likedgames[like] && likedGamesContainer.childElementCount < 25)
                 {
                     likedGamesContainer.appendChild(createGameButton(like));
                 }
