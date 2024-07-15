@@ -297,6 +297,7 @@
                 resultsDiv.innerHTML = '<h2>Roblox Links Found:</h2>';
 
                 for (let roblox in robloxJson) {
+                    console.log ("link: " + roblox.link);
                     const anchor = document.createElement('a');
                     anchor.href = roblox.link;
                     anchor.textContent = roblox.link;
