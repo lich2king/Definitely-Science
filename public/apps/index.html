@@ -297,10 +297,10 @@
                 resultsDiv.innerHTML = '<h2>Roblox Links Found:</h2>';
 
                 for (let roblox in robloxJson) {
-                    console.log ("link: " + roblox.link);
+                    console.log ("link: " + roblox.website);
                     const anchor = document.createElement('a');
-                    anchor.href = roblox.link;
-                    anchor.textContent = roblox.link;
+                    anchor.href = roblox.website;
+                    anchor.textContent = roblox.website;
                     anchor.target = '_blank';
                     const div = document.createElement('div');
                     div.appendChild(anchor);
