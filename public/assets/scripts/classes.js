@@ -162,6 +162,21 @@ async function loadTopic() {
     } else {
         gamesDiv.innerHTML = '';
         displayGames();
+
+        const filteredGameCon = document.getElementById('filteredGames');
+        const gameButtons = filteredGameCon.querySelectorAll('.all');
+        //console.log("selectedTopic: " + selectedTopic);
+
+        Array.from(gameButtons).forEach((game) => 
+        {
+			//let g = games[game.getAttribute('name')];
+            let g = findByName(games, game.getAttribute('name'));
+            //console.log("game " + game.getAttribute('name') + " --- " + g);
+			if (g && g.image && g.image != 'undefined')
+			{
+				game.setAttribute('style', `background-image: url(${g.image})`);
+			}
+        });
     }
 }
 
