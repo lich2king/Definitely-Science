@@ -285,49 +285,73 @@
 
                 app2Container.innerHTML += app2Div;
             }
+
+
+
+            let robloxRes = await fetch('/assets/ts_roblox.json');
+			let robloxJson = await appsRes.json();
+
+            if (robloxJson && robloxJson.length > 0)
+            {
+                const resultsDiv = document.getElementById('results');
+                resultsDiv.innerHTML = '<h2>Roblox Links Found:</h2>';
+
+                for (let roblox in robloxJson) {
+                    const anchor = document.createElement('a');
+                    anchor.href = roblox.link;
+                    anchor.textContent = roblox.link;
+                    anchor.target = '_blank';
+                    const div = document.createElement('div');
+                    div.appendChild(anchor);
+                    resultsDiv.appendChild(div);
+                }
+            }
+
         });
 		
     </script>
 	
 	 <script>
 	
-	function getBaseUrl() {
-    // Returns the base URL in the format 'http://api.example.com'
-    return `${window.location.protocol}//${window.location.hostname}`;
-	//return 'https://definitelyscience.com';
-}
+// 	function getBaseUrl() {
+//     // Returns the base URL in the format 'http://api.example.com'
+//     return `${window.location.protocol}//${window.location.hostname}`;
+// 	//return 'https://definitelyscience.com';
+// }
 	
-function crawl() {
-    const url = 'https://geometryspot.com/roblox/';
-	let serverCallURL = `${getBaseUrl()}/api2/crawl`;
-	console.log("Crawl: " + serverCallURL);
-     fetch(serverCallURL, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ url })
-    })
-    .then(response => response.json())
-    .then(data => {
-        const resultsDiv = document.getElementById('results');
-        resultsDiv.innerHTML = '<h2>Roblox Links Found:</h2>';
-        data.links.forEach(link => {
-            const anchor = document.createElement('a');
-            anchor.href = link; // Set the URL as the href attribute of the anchor tag
-            anchor.textContent = link; // Use the link itself as the text
-            anchor.target = '_blank'; // Optional: Open links in a new tab/window
-            const div = document.createElement('div'); // You can still wrap the anchor in a div if needed
-            div.appendChild(anchor);
-            resultsDiv.appendChild(div);
-        });
-    })
-    .catch(error => console.error('Error:', error));
-}
+// function crawl() {
+//     const url = 'https://domain.com/roblox/';
+// 	let serverCallURL = `${getBaseUrl()}/api2/crawl`;
+// 	console.log("Crawl: " + serverCallURL);
+//      fetch(serverCallURL, {
+//         method: 'POST',
+//         headers: {
+//             'Content-Type': 'application/json',
+//         },
+//         body: JSON.stringify({ url })
+//     })
+//     .then(response => response.json())
+//     .then(data => {
+//         const resultsDiv = document.getElementById('results');
+//         resultsDiv.innerHTML = '<h2>Roblox Links Found:</h2>';
+//         data.links.forEach(link => {
+//             const anchor = document.createElement('a');
+//             anchor.href = link; // Set the URL as the href attribute of the anchor tag
+//             anchor.textContent = link; // Use the link itself as the text
+//             anchor.target = '_blank'; // Optional: Open links in a new tab/window
+//             const div = document.createElement('div'); // You can still wrap the anchor in a div if needed
+//             div.appendChild(anchor);
+//             resultsDiv.appendChild(div);
+//         });
+//     })
+//     .catch(error => console.error('Error:', error));
+// }
 
-window.addEventListener('load', function() {
-    crawl(); // This will call crawl() when the page is fully loaded.
-});
+// window.addEventListener('load', function() {
+//     crawl(); // This will call crawl() when the page is fully loaded.
+
+
+// });
 
 </script>
 
