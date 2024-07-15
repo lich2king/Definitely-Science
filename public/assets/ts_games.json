@@ -1153,7 +1153,7 @@
       "tags":"2,action",
       "date_added":"2023-11-17 12:08:02",
       "developer":"New Eich Games",
-      "iframe_url":"assets/assets/games/house-of-hazards/index.html",
+      "iframe_url":"/assets/games/house-of-hazards/index.html",
       "enabled":"1"
    },
    {
@@ -2037,7 +2037,7 @@
       "tags":"2,sport",
       "date_added":"2023-11-17 12:23:42",
       "developer":"Two Player Games",
-      "iframe_url":"assets/assets/games/tennis-physics/index.html",
+      "iframe_url":"/assets/games/tennis-physics/index.html",
       "enabled":"1"
    },
    {
