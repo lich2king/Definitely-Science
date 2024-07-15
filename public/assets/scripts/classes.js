@@ -27,7 +27,7 @@ let customcategory = false;
 
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
-const category = urlParams.get('category');
+let category = urlParams.get('category');
 const search = urlParams.get('search');
 
 if (category == null && window.category && window.category != "{{classesName}}")
