@@ -2314,19 +2314,6 @@
       "enabled":"1"
    },
    {
-      "name":"Zombotron",
-      "description":"You play a zombie robot, which was given the task to destroy the zombies. Therefore, you are running around, buying new weapons and shooting at everything that moves.",
-      "article":null,
-      "image":"/assets/images/icons/zombotron.avif",
-      "mobileimage":null,
-      "controls":"[WASD] - move \n[Click] - shoot \n[q] - change weapons \n[h] - heal \n[e] - interact",
-      "tags":"shooting",
-      "date_added":"2022-09-04 22:35:18",
-      "developer":"Ant Karlov",
-      "iframe_url":"/assets/games/zombotron-2/index.html",
-      "enabled":"1"
-   },
-   {
       "name":"Zombs Royale",
       "description":"100 player 2D real-time massive multiplayer Battle Royale game in your browser, inspired by PUBG/Fortnite.",
       "article":null,
