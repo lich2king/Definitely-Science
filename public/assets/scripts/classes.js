@@ -174,7 +174,7 @@ async function displayGames() {
     //Then for each category (except mobile and a few others), make the category container then add games
 
     for (let i = 0; i < categories.length; i++) {
-        gamesDiv.innerHTML += `<h1>${capitalizeFirstLetter(categories[i])} Games <a href="/classes.html?category=${categories[i]}">View More</a></h1>`;
+        gamesDiv.innerHTML += `<h1>${capitalizeFirstLetter(categories[i])} Games <a href="/classes/${categories[i]}/">View More</a></h1>`;
 
         let row = document.createElement('div');
         row.classList.add('horizontalCon');
@@ -228,7 +228,7 @@ async function displayGames() {
         }
     }
     if (miscGames.length > 0) {
-        gamesDiv.innerHTML += `<h1>Random Games <a href="/classes.html?category=random">View More</a></h1>`;
+        gamesDiv.innerHTML += `<h1>Random Games <a href="/classes/random/">View More</a></h1>`;
 
         let row = document.createElement('div');
         row.classList.add('horizontalCon');
@@ -340,7 +340,7 @@ async function displayGames() {
         }
         row.appendChild(gamesContainer);
         gamesDiv.prepend(row);
-        gamesDiv.innerHTML = `<h1>New Games <a href="/classes.html?category=new">View More</a></h1>` + gamesDiv.innerHTML;
+        gamesDiv.innerHTML = `<h1>New Games <a href="/classes/new/">View More</a></h1>` + gamesDiv.innerHTML;
     }
 
     //Make new games last 3 weeks
