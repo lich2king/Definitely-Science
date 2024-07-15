@@ -194,39 +194,48 @@ async function displayGames() {
     const filteredGameCon = document.getElementById('filteredGames');
 
     for (let x = 0; x < Object.keys(sorted).length; x++) {
-        let keys = Object.keys(sorted);
-        const name = keys[x];
+        if (filteredGameCon.childElementCount < 500)
+        {
+            let keys = Object.keys(sorted);
+            const name = keys[x];
 
-        const data = sorted[keys[x]];
+            const data = sorted[keys[x]];
 
-        const weekAgo = new Date();
-        weekAgo.setDate(weekAgo.getDate() - 7 * 3);
+            const weekAgo = new Date();
+            weekAgo.setDate(weekAgo.getDate() - 7 * 3);
 
-        const gameDate = new Date(data.date_added);
+            const gameDate = new Date(data.date_added);
 
-        if (gameDate > weekAgo) {
-            newGames.push(name);
-        }
+            if (gameDate > weekAgo) {
+                newGames.push(name);
+            }
 
-        filteredGameCon.innerHTML += createGameButton(name, 'filtered');
+            filteredGameCon.innerHTML += createGameButton(name, 'filtered');
 
-        //for each game, if it has a tag that matches on of the categories, add it to that container... MAY have multiple!
-        let hasCategory = false;
-        for (let i = 0; i < categories.length; i++) {
-			let tagsList = data.tags;//data.tags.join(' ');
-			tagsList = tagsList.replace(/,/g, ' ');
-			
-            //if (data.tags.join(' ').includes(categories[i])) {
-			if (tagsList.includes(categories[i])) {
-                hasCategory = true;
-                document.getElementById(`${categories[i]}GamesCon`).innerHTML += createGameButton(name);
+            //for each game, if it has a tag that matches on of the categories, add it to that container... MAY have multiple!
+            let hasCategory = false;
+            for (let i = 0; i < categories.length; i++) {
+                let tagsList = data.tags;//data.tags.join(' ');
+                tagsList = tagsList.replace(/,/g, ' ');
+                
+                //if (data.tags.join(' ').includes(categories[i])) {
+                if (tagsList.includes(categories[i])) {
+                    hasCategory = true;
+
+                    let catElements = document.getElementById(`${categories[i]}GamesCon`);
+                    if (catElements && catElements.childElementCount < 20)
+                    {
+                        catElements.innerHTML += createGameButton(name);
+                    }
+                }
+            }
+            if (!hasCategory) {
+                //give them misc
+                miscGames.push(name);
             }
         }
-        if (!hasCategory) {
-            //give them misc
-            miscGames.push(name);
-        }
     }
+
     if (miscGames.length > 0) {
         gamesDiv.innerHTML += `<h1>Random Games <a href="/classes/random/">View More</a></h1>`;
 
