@@ -18,3 +18,12 @@ DS is part of Titanium Network (https://discord.gg/unblock).
 If you want to add step 4 into pm2: 
 - pm2 start npm --name "DS" -- start
 
+
+## Alternative links:
+
+- [classroom.community](https://classroom.community/)
+
+- [mathstudyplace.com](https://mathstudyplace.com/)
+
+- [castlelearning.info](https://castlelearning.info/)
+
