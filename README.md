@@ -27,6 +27,9 @@ If you want to add step 4 into pm2:
 
 - [castlelearning.info](https://castlelearning.info/)
 
+- [mathematics-resources.com](https://mathematics-resources.com/)
+
+- [classroom.onl](https://classroom.onl/)
 
 ## Other online games websites:
 
