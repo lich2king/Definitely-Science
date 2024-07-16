@@ -1,5 +1,3 @@
-https://definitelyscience.com/
-
 Definitely Science (DS) is the best unblocked games website that supports proxies. 
 
 DS is part of Titanium Network (https://discord.gg/unblock).
@@ -19,6 +17,10 @@ If you want to add step 4 into pm2:
 - pm2 start npm --name "DS" -- start
 
 
+## Main website:
+
+- [definitelyscience.com](https://definitelyscience.com/)
+
 ## Alternative links:
 
 - [classroom.community](https://classroom.community/)
@@ -30,6 +32,6 @@ If you want to add step 4 into pm2:
 
 ## Other online games websites:
 
-- [TotallyScience.co](https://totallyscience.co/)
+- [totallyscience.co](https://totallyscience.co/)
 
 
