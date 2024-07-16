@@ -1,7 +1,5 @@
 Definitely Science (DS) is the best unblocked games website that supports proxies. 
 
-DS is part of Titanium Network (https://discord.gg/unblock).
-
 ## Deplay DS via terminal:
 
 - Step 1: git clone https://github.com/lich2king/Definitely-Science.git DS
@@ -34,4 +32,10 @@ If you want to add step 4 into pm2:
 
 - [totallyscience.co](https://totallyscience.co/)
 
+
+## DS is part of Titanium Network:
+
+- [discord.gg/unblock](https://discord.gg/unblock)
+
+- [titaniumnetwork.org](https://titaniumnetwork.org/)
 
