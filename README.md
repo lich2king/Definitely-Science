@@ -1,4 +1,4 @@
-Definitely Science (DS) is the best unblocked games website that supports proxies. 
+[Definitely Science](https://definitelyscience.com/) (DS) is the best unblocked games website that supports proxies. 
 
 ## Deplay DS via terminal:
 
