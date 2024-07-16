@@ -1,6 +1,6 @@
 https://definitelyscience.com/
 
-## Deplay via terminal:
+## Deplay DS via terminal:
 
 - Step 1: git clone https://github.com/lich2king/Definitely-Science.git DS
 
