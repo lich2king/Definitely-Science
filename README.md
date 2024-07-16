@@ -21,7 +21,7 @@ If you want to add step 4 into pm2:
 
 ## Alternative links:
 
-- [Classroom.Community](https://classroom.community/)
+- [classroom.community](https://classroom.community/)
 
 - [mathstudyplace.com](https://mathstudyplace.com/)
 
