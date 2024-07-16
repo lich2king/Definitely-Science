@@ -21,9 +21,15 @@ If you want to add step 4 into pm2:
 
 ## Alternative links:
 
-- [classroom.community](https://classroom.community/)
+- [Classroom.Community](https://classroom.community/)
 
 - [mathstudyplace.com](https://mathstudyplace.com/)
 
 - [castlelearning.info](https://castlelearning.info/)
+
+
+## Other online games websites:
+
+- [TotallyScience.co](https://totallyscience.co/)
+
 
