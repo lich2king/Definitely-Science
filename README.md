@@ -1,5 +1,9 @@
 https://definitelyscience.com/
 
+Definitely Science (DS) is the best unblocked games website that supports proxies. 
+
+DS is part of Titanium Network (https://discord.gg/unblock).
+
 ## Deplay DS via terminal:
 
 - Step 1: git clone https://github.com/lich2king/Definitely-Science.git DS
