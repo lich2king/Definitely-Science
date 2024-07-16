@@ -33,7 +33,7 @@ If you want to add step 4 into pm2:
 
 ## Subscribe for new links:
 
-- [scienceunblocked.wordpress.com](https://scienceunblocked.wordpress.com/)
+- [scienceunblocked.com](https://scienceunblocked.com/)
 
 ## Other online games websites:
 
