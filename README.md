@@ -1,6 +1,6 @@
 [Definitely Science](https://definitelyscience.com/) (DS) is the best unblocked games website that supports proxies. 
 
-Technologies used: [Ultraviolet](https://github.com/titaniumnetwork-dev/Ultraviolet), [EpoxyTransport](https://github.com/MercuryWorkshop/EpoxyTransport), [Bare](https://github.com/MercuryWorkshop/Bare-as-module3).
+Technologies used: [Ultraviolet](https://github.com/titaniumnetwork-dev/Ultraviolet), [EpoxyTransport](https://github.com/MercuryWorkshop/EpoxyTransport), [Bare](https://github.com/MercuryWorkshop/Bare-as-module3), [bare-mux](https://github.com/MercuryWorkshop/bare-mux).
 
 ## Deplay DS via terminal:
 
