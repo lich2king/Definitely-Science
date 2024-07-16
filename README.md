@@ -31,7 +31,7 @@ If you want to add step 4 into pm2:
 
 - [classroom.onl](https://classroom.onl/)
 
-## Subscribe for more links:
+## Subscribe for new links:
 
 - [scienceunblocked.wordpress.com](https://scienceunblocked.wordpress.com/)
 
