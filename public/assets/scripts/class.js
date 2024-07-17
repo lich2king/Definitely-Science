@@ -291,7 +291,7 @@ window.addEventListener('load', async () => {
         {
             fileUrl = gameData.iframe_url;
         }
-        console.log(fileUrl);
+        //console.log(fileUrl);
         
         const exists = await checkFileExists(fileUrl);
         if (!exists)
