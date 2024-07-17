@@ -809,13 +809,13 @@
       "name":"Fall Boys",
       "description":"A multiplayer battle royale obstacle course. Be the last one standing!",
       "article":null,
-      "image":"/assets/images/icons/fallboys.avif",
+      "image":"/assets/games/2023/unity3/fall-boys/512.jpg",
       "mobileimage":null,
       "controls":"[WASD] - move\n[Space] - jump",
       "tags":"multiplayer",
       "date_added":"2022-09-20 01:11:08",
       "developer":"UNKNOWN",
-      "iframe_url":"https://lablockedgames.com/funblocked/fall-boys/index.html",
+      "iframe_url":"/assets/games/2023/unity3/fall-boys/index.html",
       "enabled":"1"
    },
    {
