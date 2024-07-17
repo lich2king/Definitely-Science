@@ -159,10 +159,9 @@ window.addEventListener('load', async() => {
 
 	//const hostname = window.location.hostname;
 	//if (hostname.includes("definitelyscience")) 
-	{
-		loadPartners();
-		//console.log("The domain is definitelyscience");
-	}
+	//{
+		//loadPartners();
+	//}
     
 });
 
@@ -286,7 +285,7 @@ async function loadPartners() {
     //let partnersRes = await fetcher(`/partners`);
     //let partners = await partnersRes.json();
 	
-	let partnersRes = await fetch('assets/ts_partners.json');
+	let partnersRes = await fetch('/assets/ts_partners.json');
 	partners = await partnersRes.json();
 
     for (let x = 0; x < partners.length; x++) {
