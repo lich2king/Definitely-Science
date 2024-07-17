@@ -15,6 +15,7 @@ import fs from 'fs';
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
 
+import validator from 'validator';
 
 
 const __filename = fileURLToPath(import.meta.url);
@@ -42,7 +43,7 @@ function readFileContent(filePath) {
 }
 
 app.get('/class/:className', async (req, res) => {
-  const className = req.params.className;
+  const className = validator.escape(req.params.className);
   try {
       const filePath = path.join(__dirname, 'public', 'class.html');
       const headPath = path.join(__dirname, 'src', 'head.html');
