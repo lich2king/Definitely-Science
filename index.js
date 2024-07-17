@@ -43,7 +43,7 @@ function readFileContent(filePath) {
 }
 
 app.get('/class/:className', async (req, res) => {
-  const className = req.params.className;
+  const className = validator.escape(req.params.className);
   try {
       const filePath = path.join(__dirname, 'public', 'class.html');
       const headPath = path.join(__dirname, 'src', 'head.html');
@@ -72,7 +72,7 @@ app.get('/class/:className', async (req, res) => {
 });
 
 app.get('/classes/:className', async (req, res) => {
-  const className = req.params.className;
+  const className = validator.escape(req.params.className);
   try {
       const filePath = path.join(__dirname, 'public', 'classes.html');
       const headPath = path.join(__dirname, 'src', 'head.html');
@@ -101,7 +101,7 @@ app.get('/classes/:className', async (req, res) => {
 });
 
 app.get('/app/:appName', async (req, res) => {
-    const appName = req.params.appName;
+    const appName = validator.escape(req.params.appName);
     try {
         const filePath = path.join(__dirname, 'public', 'app.html');
         const headPath = path.join(__dirname, 'src', 'head.html');
@@ -130,7 +130,7 @@ app.get('/app/:appName', async (req, res) => {
   });
 
 app.get('/app2/:appName', async (req, res) => {
-    const appName = req.params.appName;
+    const appName = validator.escape(req.params.appName);
     try {
         const filePath = path.join(__dirname, 'public', 'app2.html');
         const headPath = path.join(__dirname, 'src', 'head.html');
