@@ -128,7 +128,7 @@ function setupActionButtons() {
     });
 }
 
-var imageUrlsMediumBanner = [
+let imageUrlsMediumBanner = [
   '/assets/images/ad/medium-banner/1.jpg',
   '/assets/images/ad/medium-banner/2.jpg',
   '/assets/images/ad/medium-banner/3.jpg',
@@ -136,7 +136,7 @@ var imageUrlsMediumBanner = [
   '/assets/images/ad/medium-banner/5.jpg'
 ];
 
-var imageUrlsWideBanner = [
+let imageUrlsWideBanner = [
   '/assets/images/ad/wide-banner/1.jpg',
   '/assets/images/ad/wide-banner/2.jpg',
   '/assets/images/ad/wide-banner/3.jpg',
@@ -148,7 +148,7 @@ var imageUrlsWideBanner = [
 
 // Function to select a random image URL
 function getRandomImageUrl(urls) {
-  var randomIndex = Math.floor(Math.random() * urls.length);
+  let randomIndex = Math.floor(Math.random() * urls.length);
   return urls[randomIndex];
 }
 
@@ -156,7 +156,7 @@ function setRandomWideBanner()
 {
 	try
 	{
-		var imgElement = document.getElementById('wideRandBanner');
+		let imgElement = document.getElementById('wideRandBanner');
 	   if (imgElement)
 	   {
 		  imgElement.src = getRandomImageUrl(imageUrlsWideBanner);
@@ -173,7 +173,7 @@ function setRandomWideBanner()
 function setRandomAdBanner() {
 	try
 	{
-		var imgElement = document.getElementById('mediumRandBanner');
+		let imgElement = document.getElementById('mediumRandBanner');
 	   if (imgElement)
 	   {
 		  imgElement.src = getRandomImageUrl(imageUrlsMediumBanner);
@@ -272,7 +272,7 @@ window.addEventListener('load', async () => {
 
     //suggestGames(gameData);
 	
-	var iframeDomain = "";
+	let iframeDomain = "";
 	try {
 		if (gameData && gameData.iframe_url && gameData.iframe_url.startsWith('https://')) {
 			iframeDomain = new URL(gameData.iframe_url).hostname;
@@ -403,7 +403,7 @@ window.addEventListener('load', async () => {
 // }
 
 document.getElementById('fullscreen').addEventListener('click', () => {
-    var elem = document.getElementById('iframe');
+    let elem = document.getElementById('iframe');
 
     if (elem.requestFullscreen) {
         elem.requestFullscreen();
@@ -546,7 +546,7 @@ function copyLink() {
 }
 
 function closeShare() {
-    var element = document.getElementById('shareCon');
+    let element = document.getElementById('shareCon');
 
     element.classList.add('hide');
     setTimeout(() => {

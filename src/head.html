@@ -19,8 +19,8 @@ gtag('config', 'G-BW3SZSE47T');
 
 <script>
 	  if (window.location.hostname.startsWith('www.')) {
-		var nonWwwDomain = window.location.hostname.slice(4);
-		var newUrl = window.location.protocol + '//' + nonWwwDomain + window.location.pathname + window.location.search + window.location.hash;
+		let nonWwwDomain = window.location.hostname.slice(4);
+		let newUrl = window.location.protocol + '//' + nonWwwDomain + window.location.pathname + window.location.search + window.location.hash;
 		window.location.replace(newUrl);
 	  }
 	</script>
