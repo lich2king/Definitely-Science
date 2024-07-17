@@ -179,7 +179,7 @@ app.use(async (req, res, next) => {
             return next(); // Call next() to pass the request to the next middleware
           }
 
-          const className = req.params.className || '';
+          const className = '';
           const headPath = path.join(__dirname, 'src', 'head.html');
           const footerPath = path.join(__dirname, 'src', 'footer.html');
           const navbarPath = path.join(__dirname, 'src', 'navbar.html');
