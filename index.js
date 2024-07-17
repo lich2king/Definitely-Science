@@ -15,7 +15,7 @@ import fs from 'fs';
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
 
-import validator from 'validator';
+
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -42,7 +42,7 @@ function readFileContent(filePath) {
 }
 
 app.get('/class/:className', async (req, res) => {
-  const className = validator.escape(req.params.className);
+  const className = req.params.className;
   try {
       const filePath = path.join(__dirname, 'public', 'class.html');
       const headPath = path.join(__dirname, 'src', 'head.html');
@@ -71,7 +71,7 @@ app.get('/class/:className', async (req, res) => {
 });
 
 app.get('/classes/:className', async (req, res) => {
-  const className = validator.escape(req.params.className);
+  const className = req.params.className;
   try {
       const filePath = path.join(__dirname, 'public', 'classes.html');
       const headPath = path.join(__dirname, 'src', 'head.html');
@@ -100,7 +100,7 @@ app.get('/classes/:className', async (req, res) => {
 });
 
 app.get('/app/:appName', async (req, res) => {
-    const appName = validator.escape(req.params.appName);
+    const appName = req.params.appName;
     try {
         const filePath = path.join(__dirname, 'public', 'app.html');
         const headPath = path.join(__dirname, 'src', 'head.html');
@@ -129,7 +129,7 @@ app.get('/app/:appName', async (req, res) => {
   });
 
 app.get('/app2/:appName', async (req, res) => {
-    const appName = validator.escape(req.params.appName);
+    const appName = req.params.appName;
     try {
         const filePath = path.join(__dirname, 'public', 'app2.html');
         const headPath = path.join(__dirname, 'src', 'head.html');
@@ -179,7 +179,7 @@ app.use(async (req, res, next) => {
             return next(); // Call next() to pass the request to the next middleware
           }
 
-          const className = '';
+          const className = req.params.className || '';
           const headPath = path.join(__dirname, 'src', 'head.html');
           const footerPath = path.join(__dirname, 'src', 'footer.html');
           const navbarPath = path.join(__dirname, 'src', 'navbar.html');
@@ -235,6 +235,14 @@ app.use("/baremux/", express.static(baremuxPath));
 
 app.use("/ov", cors({ origin: true }));
 
+app.use((req, res, next) => {
+    if (req.url.includes(".php")) {
+        const newUrl = req.url.replace(".php", ".html");
+        res.redirect(301, newUrl);
+    } else {
+        next();
+    }
+});
 
 
 // Error for everything else
