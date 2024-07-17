@@ -43,7 +43,7 @@ function readFileContent(filePath) {
 }
 
 app.get('/class/:className', async (req, res) => {
-  const className = validator.escape(req.params.className);
+  const className = req.params.className;
   try {
       const filePath = path.join(__dirname, 'public', 'class.html');
       const headPath = path.join(__dirname, 'src', 'head.html');
