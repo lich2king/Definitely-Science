@@ -3,13 +3,13 @@
       "name":"Car Football",
       "description":"Car Football is a game where players control the sports cars while trying to score goals on the opponent's side.",
       "article":null,
-      "image":"/assets/games/2023/construct/198/car-football/index.html",
+      "image":"/assets/games/2023/construct/198/car-football/512.jpg",
       "mobileimage":null,
       "controls":"WAD or arrow keys to control car",
       "tags":"featured,car,sport",
       "date_added":"2022-01-13 03:19:02",
       "developer":"FreezeNova",
-      "iframe_url":"/assets/games/2023/construct/198/car-football/512.jpg",
+      "iframe_url":"/assets/games/2023/construct/198/car-football/index.html",
       "enabled":"1"
     },
 	{
