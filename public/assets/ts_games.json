@@ -1,4 +1,17 @@
 [
+	{
+      "name":"Highway Traffic",
+      "description":"The key to this game is patience — it’s not about racing; it’s about slowly and carefully meandering through the traffic.",
+      "article":null,
+      "image":"/assets/games/2022/unity/highway-traffic/512.jpg",
+      "mobileimage":null,
+      "controls":"W or up arrow to accelerate\nA D, or left right arrow to steer the car\nSpace bar to use handbrake\nLeft shift or F to use car boost",
+      "tags":"featured,racing,car",
+      "date_added":"2022-01-13 03:19:02",
+      "developer":"FreezeNova",
+      "iframe_url":"/assets/games/2022/unity/highway-traffic/index.html",
+      "enabled":"1"
+   },
    {
       "name":"1v1 LOL",
       "description":"Eliminate all other opponents and become the last survivor!",
@@ -604,7 +617,7 @@
       "image":"/assets/images/icons/drifthunters.avif",
       "mobileimage":null,
       "controls":"[WASD] - drive\n[Space] - handbrake\n[c] - change camera\n[LShift] - shift up gear\n[LCtrl] - shift down gear",
-      "tags":"featured,car",
+      "tags":"car",
       "date_added":"2022-01-05 23:45:35",
       "developer":"Ilya.kaminetsky",
       "iframe_url":"https://totallyscience.co/games/2024/w1/drift-hunters/index.html",
