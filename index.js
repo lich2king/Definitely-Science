@@ -235,14 +235,6 @@ app.use("/baremux/", express.static(baremuxPath));
 
 app.use("/ov", cors({ origin: true }));
 
-app.use((req, res, next) => {
-    if (req.url.includes(".php")) {
-        const newUrl = req.url.replace(".php", ".html");
-        res.redirect(301, newUrl);
-    } else {
-        next();
-    }
-});
 
 
 // Error for everything else
