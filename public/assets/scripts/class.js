@@ -285,7 +285,14 @@ window.addEventListener('load', async () => {
 
     if (iframeDomain == "" && gameData.iframe_url && gameData.iframe_url.length > 0 && gameData.iframe_url[0] == '/')
     {
-        const fileUrl = '/assets/games/info.txt';
+        let fileUrl = '/assets/games/info.txt';
+
+        if (gameData.iframe_url.endsWith("index.html")) 
+        {
+            fileUrl = gameData.iframe_url;
+        }
+        console.log(fileUrl);
+        
         const exists = await checkFileExists(fileUrl);
         if (!exists)
         {
