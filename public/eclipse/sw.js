@@ -1,6 +1,6 @@
 importScripts("/eclipse/uv/uv.bundle.js")
 importScripts("/eclipse/uv/uv.config.js")
-//importScripts(__uv$config.sw || "/eclipse/-/sw.js?v=2")
+//importScripts(__uv$config.sw || "/eclipse/uv/uv.sw.js")
 importScripts("/eclipse/uv/uv.sw.js")
 
 const uv = new UVServiceWorker()
