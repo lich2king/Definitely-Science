@@ -5,7 +5,7 @@ importScripts("/eclipse/uv/uv.sw.js")
 
 const uv = new UVServiceWorker()
 
-let userKey = new URL(location).searchParams.get("userkey")
+
 
 self.addEventListener("fetch", (event) => {
   event.respondWith(
