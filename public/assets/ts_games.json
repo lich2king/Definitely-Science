@@ -18,7 +18,7 @@
       "article":null,
       "image":"/assets/images/games/2022/unity2/crazy-battle-royale/512.jpg",
       "mobileimage":null,
-      "controls":"WASD or arrow keys to move\nLeft mouse click to shoot\nRight mouse click to aim\nE to show weapons menu\n1,2,3 to change weapon\nG to throw a grenade\nSpace to jump\nEscape or tab to pause",
+      "controls":"WASD or arrow keys to move<br>Left mouse click to shoot<br>Right mouse click to aim<br>E to show weapons menu<br>1,2,3 to change weapon<br>G to throw a grenade<br>Space to jump<br>Escape or tab to pause",
       "tags":"action,shooting",
       "date_added":"2022-01-13 03:19:02",
       "developer":"FreezeNova",
