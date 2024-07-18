@@ -1,17 +1,45 @@
 [
-	{
+   {
+      "name":"Arena of Heroes",
+      "description":"The epic Arena of Heroes is finally here! Build your village, train the mightiest warriors and invade online villages in search of Gold and Elixir.",
+      "article":null,
+      "image":"/assets/images/games/2022/unity/arena-of-heroes/512.jpg",
+      "mobileimage":null,
+      "controls":"Tap or click on the working items",
+      "tags":"2d,action,strategy",
+      "date_added":"2022-01-13 03:19:02",
+      "developer":"FreezeNova",
+      "iframe_url":"/assets/games/2022/unity/arena-of-heroes/index.html",
+      "enabled":"1"
+   },
+   {
+      "name":"Crazy Battle Royale",
+      "description":"Crazy Battle Royale is the perfect game for any shooting fan looking for a challenge. With challenging gameplay and fierce competition, only the strongest will be crowned the ultimate battle royale champion!",
+      "article":null,
+      "image":"/assets/images/games/2022/unity2/crazy-battle-royale/512.jpg",
+      "mobileimage":null,
+      "controls":"WASD or arrow keys to move\nLeft mouse click to shoot\nRight mouse click to aim\nE to show weapons menu\n1,2,3 to change weapon\nG to throw a grenade\nSpace to jump\nEscape or tab to pause",
+      "tags":"action,shooting",
+      "date_added":"2022-01-13 03:19:02",
+      "developer":"FreezeNova",
+      "iframe_url":"/assets/games/2022/unity2/crazy-battle-royale/index.html",
+      "enabled":"1"
+   },
+
+
+   {
       "name":"Car Football",
       "description":"Car Football is a game where players control the sports cars while trying to score goals on the opponent's side.",
       "article":null,
       "image":"/assets/images/games/2023/construct/198/car-football/512.jpg",
       "mobileimage":null,
-      "controls":"WAD or arrow keys to control car",
+      "controls":"WASD or arrow keys to control car",
       "tags":"featured,car,sport",
       "date_added":"2022-01-13 03:19:02",
       "developer":"FreezeNova",
       "iframe_url":"/assets/games/2023/construct/198/car-football/index.html",
       "enabled":"1"
-    },
+   },
 	{
       "name":"Police Chase Drifter",
       "description":"Police Chase Drifter is a fun car game where you get to run from the police!",
