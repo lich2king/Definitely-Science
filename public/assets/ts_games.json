@@ -104,19 +104,6 @@
       "enabled":"1"
    },
    {
-      "name":"Stunt Simulator Multiplayer",
-      "description":"Now get behind the wheel of the most amazing stunt cars found in the game Stunt Simulator Multiplayer. Fasten your seat belt tight, because you will be flying on the highest platforms, you’ll be drifting and driving at high speeds on the stone mountains and through impossible obstacles. You have 3 environments and 10 different cars, day and night option and multiplayer rooms  for up to 20 players.",
-      "article":null,
-      "image":"/assets/images/games/2021/unity/stunt-simulator-multiplayer/512.jpg",
-      "mobileimage":null,
-      "controls":"Press WASD or arrow keys to drive<br>Press Space to use handbrake<br>Use Left Shift to boost the car<br>Press R to reset car<br>Press T to Chat<br>Press Tab to pause or main menu",
-      "tags":"3d,car,crazy,drift,driving,io games,multiplayer,racing,simulator",
-      "date_added":"2022-01-13 03:19:02",
-      "developer":"FreezeNova",
-      "iframe_url":"/assets/games/2021/unity/stunt-simulator-multiplayer/index.html",
-      "enabled":"1"
-   },
-   {
       "name":"Urban Sniper",
       "description":"Tired of the classical shooter mechanics but still want to go on a shooting spree? Check out Urban Sniper, the straightforward sniper shooter game with a trick up its sleeve. Stay engaged with each mission we bring since each mission comes with its own small story quest.",
       "article":null,
@@ -387,19 +374,6 @@
       "date_added":"2022-01-13 03:19:02",
       "developer":"FreezeNova",
       "iframe_url":"/assets/games/2022/construct/65/galactic-driver/index.html",
-      "enabled":"1"
-   },
-   {
-      "name":"Drako io",
-      "description":"Have you ever blended action and adventure? You can, now! Press play and get acquainted with Drako. Heroes are waiting for you to upgrade them and bring them with you to the fight. You control the characters in real-time and you are here to make every move count. Draco.io has impressive graphics and pulse-pounding action; you wouldn't want to miss it for anything in the world. Enjoy your time here!",
-      "article":null,
-      "image":"/assets/images/games/2022/unity/drako-io/512.jpg",
-      "mobileimage":null,
-      "controls":"Mouse click to move, attack enemy or cast spell.<br>Press <escape> to quit to main menu",
-      "tags":"3d,action,adventure,io games",
-      "date_added":"2022-01-13 03:19:02",
-      "developer":"FreezeNova",
-      "iframe_url":"/assets/games/2022/unity/drako-io/index.html",
       "enabled":"1"
    },
    {
