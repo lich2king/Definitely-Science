@@ -260,6 +260,19 @@
       "enabled":"1"
    },
    {
+      "name":"1v1 LOL",
+      "description":"Eliminate all other opponents and become the last survivor!",
+      "article":null,
+      "image":"/assets/images/icons/1v1lol.avif",
+      "mobileimage":null,
+      "controls":"[WASD] - run<br>[LShift] - crouch<br>[Click] - shoot<br>[Right-click] - aim",
+      "tags":"multiplayer,shooting",
+      "date_added":"2022-01-13 03:19:02",
+      "developer":"JustPlay",
+      "iframe_url":"/assets/games/1v1lol/index.html",
+      "enabled":"1"
+   },
+   {
       "name":"Highway Racer 2",
       "description":"Play Highway Racer 2 and get familiar with some upgrades compared to the first version. You can now play the following modes: one-way, two-way, time attack, speed bomb or multiplayer. Join the online servers as a host or create your own room. Wait for other players to enter and you can begin the racing. It is possible to choose the weather conditions: sunny, rainy or night. No matter what you prefer, it is always challenging to see how the car will manifest.",
       "article":null,
@@ -636,19 +649,6 @@
       "date_added":"2022-01-13 03:19:02",
       "developer":"FreezeNova",
       "iframe_url":"/assets/games/2022/unity/highway-traffic/index.html",
-      "enabled":"1"
-   },
-   {
-      "name":"1v1 LOL",
-      "description":"Eliminate all other opponents and become the last survivor!",
-      "article":null,
-      "image":"/assets/images/icons/1v1lol.avif",
-      "mobileimage":null,
-      "controls":"[WASD] - run<br>[LShift] - crouch<br>[Click] - shoot<br>[Right-click] - aim",
-      "tags":"multiplayer,shooting",
-      "date_added":"2022-01-13 03:19:02",
-      "developer":"JustPlay",
-      "iframe_url":"/assets/games/1v1lol/index.html",
       "enabled":"1"
    },
    {
