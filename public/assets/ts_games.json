@@ -91,6 +91,19 @@
       "enabled":"1"
    },
    {
+      "name":"Cobraz io Classic",
+      "description":"CobraZ.io Classic's abundance of playable game options ensures that it will appeal to a broad audience.",
+      "article":null,
+      "image":"/assets/images/games/2022/unity/cobraz-io-classic/512.jpg",
+      "mobileimage":null,
+      "controls":"WASD or arrow keys to move<br>Left mouse click to fire<br>Right mouse click to aim<br>Space to slide while moving<br>Left shift to run<br>1, 2, 3 to change weapon<br>E or F to interact / pick up weapon<br>G to throw available dynamite<br>H to use available medkit<br>T to chat<br>L to toggle cursor lock<br>C to crouch<br>Hold N to show scoreboard<br>Esc to pause",
+      "tags":"3d,action,fps,multiplayer,premium,shooting,unity,gun,io games",
+      "date_added":"2022-01-13 03:19:02",
+      "developer":"FreezeNova",
+      "iframe_url":"/assets/games/2022/unity/cobraz-io-classic/index.html",
+      "enabled":"1"
+   },
+   {
       "name":"Drift King",
       "description":"Do you want to satisfy your need for speed? Drift King is an unblocked drift game where you have the chance to perform stunning drifts! There are six racetracks with vivid graphics to enjoy. Prepare for going at full speed on these roads.",
       "article":null,
@@ -155,6 +168,19 @@
       "iframe_url":"/assets/games/2022/unity3/stunt-crasher/index.html",
       "enabled":"1"
    },
+	{
+      "name":"Masked Special Forces",
+      "description":"Masked Special Forces is here to satisfy your need for high quality shooter action.",
+      "article":null,
+      "image":"/assets/images/games/2022/unity2/masked-special-forces/512.jpg",
+      "mobileimage":null,
+      "controls":"WASD or arrow keys to move<br>Left mouse click to fire<br>Right mouse click to aim<br>Space to jump<br>Q to slide while running<br>Left shift to run<br>1, 2, 3 to change weapon<br>E or F to interact or pick up weapon<br>G to throw available dynamite<br>H to use available medkit<br>T to chat<br>L to toggle cursor lock<br>C to crouch<br>Hold Tab to show scoreboard<br>Escape to pause",
+      "tags":"featured,shooting,multiplayer",
+      "date_added":"2022-01-13 03:19:02",
+      "developer":"FreezeNova",
+      "iframe_url":"/assets/games/2022/unity2/masked-special-forces/index.html",
+      "enabled":"1"
+    },
    {
       "name":"Drift Hunters Pro",
       "description":"Drift Hunters Pro is a game where you can perform drifts with the most impressive cars on the tracks. Now you can enjoy the next-level graphics, gameplay, 10 upgraded cars and 6 tracks. First, you need to check the garage and make some improvements on the car. Changes can be made in the following sections: tuning, paint, wheels and upgrades. ",
@@ -283,19 +309,6 @@
       "date_added":"2022-01-13 03:19:02",
       "developer":"FreezeNova",
       "iframe_url":"/assets/games/2024/q2/darkness-survivors/index.html",
-      "enabled":"1"
-   },
-   {
-      "name":"Cobraz io Classic",
-      "description":"CobraZ.io Classic's abundance of playable game options ensures that it will appeal to a broad audience.",
-      "article":null,
-      "image":"/assets/images/games/2022/unity/cobraz-io-classic/512.jpg",
-      "mobileimage":null,
-      "controls":"WASD or arrow keys to move<br>Left mouse click to fire<br>Right mouse click to aim<br>Space to slide while moving<br>Left shift to run<br>1, 2, 3 to change weapon<br>E or F to interact / pick up weapon<br>G to throw available dynamite<br>H to use available medkit<br>T to chat<br>L to toggle cursor lock<br>C to crouch<br>Hold N to show scoreboard<br>Esc to pause",
-      "tags":"3d,action,fps,multiplayer,premium,shooting,unity,gun,io games",
-      "date_added":"2022-01-13 03:19:02",
-      "developer":"FreezeNova",
-      "iframe_url":"/assets/games/2022/unity/cobraz-io-classic/index.html",
       "enabled":"1"
    },
    {
@@ -611,20 +624,7 @@
       "developer":"FreezeNova",
       "iframe_url":"/assets/games/2021/3/police-chase-drifter/index.html",
       "enabled":"1"
-    },
-	{
-      "name":"Masked Special Forces",
-      "description":"Masked Special Forces is here to satisfy your need for high quality shooter action.",
-      "article":null,
-      "image":"/assets/images/games/2022/unity2/masked-special-forces/512.jpg",
-      "mobileimage":null,
-      "controls":"WASD or arrow keys to move<br>Left mouse click to fire<br>Right mouse click to aim<br>Space to jump<br>Q to slide while running<br>Left shift to run<br>1, 2, 3 to change weapon<br>E or F to interact or pick up weapon<br>G to throw available dynamite<br>H to use available medkit<br>T to chat<br>L to toggle cursor lock<br>C to crouch<br>Hold Tab to show scoreboard<br>Escape to pause",
-      "tags":"featured,shooting,multiplayer",
-      "date_added":"2022-01-13 03:19:02",
-      "developer":"FreezeNova",
-      "iframe_url":"/assets/games/2022/unity2/masked-special-forces/index.html",
-      "enabled":"1"
-    },
+   },
 	{
       "name":"Highway Traffic",
       "description":"The key to this game is patience — it’s not about racing; it’s about slowly and carefully meandering through the traffic.",
