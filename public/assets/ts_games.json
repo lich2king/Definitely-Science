@@ -6,7 +6,7 @@
       "image":"/assets/images/games/2024/construct/226/football-king/512.jpg",
       "mobileimage":null,
       "controls":"Player 1<br>Move: WASD, Shoot: V, Super shoot: B<br>Player 2<br>Move: Arrow Keys, Shoot: K, Super shoot: L",
-      "tags":"2d,html5,sports,2 player",
+      "tags":"2d,html5,sport,2 player",
       "date_added":"2022-01-13 03:19:02",
       "developer":"FreezeNova",
       "iframe_url":"/assets/games/2024/construct/226/football-king/index.html",
@@ -188,7 +188,7 @@
       "image":"/assets/images/games/2022/unity3/basketball-io/512.jpg",
       "mobileimage":null,
       "controls":"WASD or arrow keys to move across the field",
-      "tags":"3d,arcade,basketball,io games,simulator,sports,unity",
+      "tags":"3d,arcade,basketball,io games,simulator,sport,unity",
       "date_added":"2022-01-13 03:19:02",
       "developer":"FreezeNova",
       "iframe_url":"/assets/games/2022/unity3/basketball-io/index.html",
@@ -357,7 +357,7 @@
       "image":"/assets/images/games/2022/unity3/crazy-moto-racing/512.jpg",
       "mobileimage":null,
       "controls":"WASD or arrow keys to control motorbike<br>Space to use handbrake<br>Left Shift to boost",
-      "tags":"3d,driving,racing,sports,simulator,crazy,unity",
+      "tags":"3d,driving,racing,sport,simulator,crazy,unity",
       "date_added":"2022-01-13 03:19:02",
       "developer":"FreezeNova",
       "iframe_url":"/assets/games/2022/unity3/crazy-moto-racing/index.html",
@@ -2964,5 +2964,45 @@
       "developer":"CraftedVRTX",
       "iframe_url":"https://zombsroyale.io/",
       "enabled":"1"
+   },
+   {
+      "name":"Google",
+      "description":"",
+      "article":null,
+      "image":"/assets/images/icons/apps/google512.jpg",
+      "mobileimage":null,
+      "controls":"",
+      "tags":"app",
+      "date_added":"2022-01-13 03:19:02",
+      "developer":"Google",
+      "iframe_url":"https://www.google.com",
+      "enabled":"1"
+   },
+   {
+      "name":"Youtube",
+      "description":"",
+      "article":null,
+      "image":"/assets/images/icons/apps/youtube512.jpg",
+      "mobileimage":null,
+      "controls":"",
+      "tags":"app",
+      "date_added":"2022-01-13 03:19:02",
+      "developer":"Google",
+      "iframe_url":"https://www.youtube.com/",
+      "enabled":"1"
+   },
+   {
+      "name":"Tiktok",
+      "description":"",
+      "article":null,
+      "image":"/assets/images/icons/apps/tiktok512.jpg",
+      "mobileimage":null,
+      "controls":"",
+      "tags":"app",
+      "date_added":"2022-01-13 03:19:02",
+      "developer":"Google",
+      "iframe_url":"https://www.tiktok.com/",
+      "enabled":"1"
    }
+   
 ]
