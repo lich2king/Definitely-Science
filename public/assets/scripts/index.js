@@ -225,19 +225,19 @@ async function loadGames() {
 
 async function loadPopularGames() {
     // display popular games
-    let popGamesRes = await fetcher(`/stats/games/popular`);
+    // let popGamesRes = await fetcher(`/stats/games/popular`);
 
-    if (popGamesRes.status == 200) {
-        const populargamesContainer = document.getElementById('popularGamesCon');
+    // if (popGamesRes.status == 200) {
+        // const populargamesContainer = document.getElementById('popularGamesCon');
 
-        let popularGames = await popGamesRes.json();
+        // let popularGames = await popGamesRes.json();
 
-        for (let i = 0; i < 15; i++) {
-            if (popularGames[i].game) {
-                populargamesContainer.appendChild(createGameButton(popularGames[i].game, 'hot'));
-            }
-        }
-    }
+        // for (let i = 0; i < 15; i++) {
+            // if (popularGames[i].game) {
+                // populargamesContainer.appendChild(createGameButton(popularGames[i].game, 'hot'));
+            // }
+        // }
+    // }
 }
 
 async function loadLikedGames() {
