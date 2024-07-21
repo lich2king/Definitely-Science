@@ -245,7 +245,7 @@ async function loadPinGames() {
     const pinGamesContainer = document.getElementById('pinGamesCon');
 
 
-        let pingames = JSON.parse(localStorage.getItem('pinGames'));
+        let pingames = JSON.parse(localStorage.getItem('pinnedGames'));
 
         if (pingames && Object.keys(pingames).length > 0) 
         {
