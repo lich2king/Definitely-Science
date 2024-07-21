@@ -6,7 +6,7 @@ Technologies used: [Ultraviolet](https://github.com/titaniumnetwork-dev/Ultravio
 
 ## Deplay DS via terminal:
 
-- Step 1: git clone https://github.com/lich2king/Definitely-Science.git DS
+- Step 1: git clone https://github.com/titaniumnetwork-dev/Definitely-Science.git DS
 
 - Step 2: cd DS
 
