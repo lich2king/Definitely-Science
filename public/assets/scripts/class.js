@@ -49,7 +49,7 @@ function setupActionButtons() {
     likeBtn.addEventListener('click', async (e) => {
         e.target.classList.add('button-click');
 
-        let res = await fetcher(`/profile/liked/change`, { body: { gameName: gameName } });
+        //let res = await fetcher(`/profile/liked/change`, { body: { gameName: gameName } });
 
         const likedIcon = '/assets/images/icons/like.avif';
         const notLikedIcon = '/assets/images/icons/likeoutline.avif';
@@ -57,18 +57,18 @@ function setupActionButtons() {
         // check if it is liked by checking current icon
         let isLiked = e.target.firstChild.getAttribute('src') == likedIcon;
 
-        if (res.status == 200) {
-            // update icon to match changed state
-            e.target.firstChild.setAttribute('src', isLiked ? notLikedIcon : likedIcon);
+        // if (res.status == 200) {
+            // // update icon to match changed state
+            // e.target.firstChild.setAttribute('src', isLiked ? notLikedIcon : likedIcon);
 
-            // set updated like count
-            let likeCountEle = document.getElementById('likeCount');
+            // // set updated like count
+            // let likeCountEle = document.getElementById('likeCount');
 
-            let prevLikeCount = parseInt(likeCount);
-            likeCount = isLiked ? prevLikeCount - 1 : prevLikeCount + 1;
+            // let prevLikeCount = parseInt(likeCount);
+            // likeCount = isLiked ? prevLikeCount - 1 : prevLikeCount + 1;
 
-            likeCountEle.innerText = numFormatter(likeCount);
-        } else {
+            // likeCountEle.innerText = numFormatter(likeCount);
+        // } else {
             let likedGames = JSON.parse(localStorage.getItem('likedGames') || '{}');
 
             // like or unlike game and display the correct icon
@@ -77,7 +77,7 @@ function setupActionButtons() {
 
             // save updated liked games
             localStorage.setItem('likedGames', JSON.stringify(likedGames));
-            fetcher(`/stats/games/like`, { body: { gameName: gameName, liked: isLiked } });
+            //fetcher(`/stats/games/like`, { body: { gameName: gameName, liked: isLiked } });
 
             // set updated like count
             let likeCountEle = document.getElementById('likeCount');
@@ -86,7 +86,7 @@ function setupActionButtons() {
             likeCount = isLiked ? prevLikeCount - 1 : prevLikeCount + 1;
 
             likeCountEle.innerText = numFormatter(likeCount);
-        }
+        //}
     });
     likeBtn.addEventListener('webkitAnimationEnd', () => {
         likeBtn.classList.remove('button-click');
