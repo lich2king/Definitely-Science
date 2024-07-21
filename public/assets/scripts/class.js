@@ -73,11 +73,16 @@ function setupActionButtons() {
 
             // like or unlike game and display the correct icon
             e.target.firstChild.setAttribute('src', isLiked ? notLikedIcon : likedIcon);
-            likedGames[gameName] = !isLiked;
-			
-			if (!likedGames[gameName]) {
-				// If the game is unliked, remove it from likedGames
-				delete likedGames[gameName];
+			if (!isLiked)
+			{
+				likedGames[gameName] = !isLiked;
+			}
+            else
+			{
+				if (likedGames.hasOwnProperty(gameName))
+				{
+					delete likedGames[gameName];
+				}
 			}
 
             // save updated liked games
