@@ -263,12 +263,10 @@ async function loadLikedGames() {
         // }
     // } else {
         let likedgames = JSON.parse(localStorage.getItem('likedGames'));
+		let likedLineVisible = false;
 
         if (Object.keys(likedgames).length > 0) 
         {
-            document.getElementById('likedGamesLabel').style.display = '';
-            document.getElementById('likedGamesHorizontalCon').style.display = '';
-
             for (like in likedgames) 
             {
 				//const data = games[like];
@@ -279,8 +277,15 @@ async function loadLikedGames() {
                 if (likedgames[like] && likedGamesContainer.childElementCount < 25)
                 {
                     likedGamesContainer.appendChild(createGameButton(indexGame, '', true));
+					likedLineVisible = true;
                 }
             }
+			
+			if (likedLineVisible)
+			{
+				document.getElementById('likedGamesLabel').style.display = '';
+				document.getElementById('likedGamesHorizontalCon').style.display = '';
+			}
         }
     //}
 }
