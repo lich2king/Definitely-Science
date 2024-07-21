@@ -264,7 +264,7 @@ async function loadLikedGames() {
     // } else {
         let likedgames = JSON.parse(localStorage.getItem('likedGames'));
 
-        if (Object.keys(likedgames).length > 0) 
+        if (likedgames && Object.keys(likedgames).length > 0) 
         {
             document.getElementById('likedGamesLabel').style.display = '';
             document.getElementById('likedGamesHorizontalCon').style.display = '';
