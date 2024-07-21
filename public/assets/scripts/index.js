@@ -271,7 +271,11 @@ async function loadLikedGames() {
 
             for (like in likedgames) 
             {
-				console.log("like " + like);
+				const data = games[like];
+				console.log("like " + like + " data " + data);
+				
+				
+				
                 if (likedgames[like] && likedGamesContainer.childElementCount < 25)
                 {
                     likedGamesContainer.appendChild(createGameButton(like, '', true));
