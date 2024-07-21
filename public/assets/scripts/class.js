@@ -118,12 +118,25 @@ function setupActionButtons() {
         //} else if (res.status == 401 || res.status == 403) {
             let pinnedGames = JSON.parse(localStorage.getItem('pinnedGames') || '{}');
 
-            if (Object.keys(pinnedGames).length >= 3) {
-                swal('You have pinned the max amount of games (3).');
-            } else {
+            //if (Object.keys(pinnedGames).length >= 25) {
+            //    swal('You have pinned the max amount of games (3).');
+            //} 
+			//else 
+			{
                 // like or unlike game and display the correct icon
                 e.target.firstChild.setAttribute('src', isPinned ? notPinnedIcon : pinnedIcon);
-                pinnedGames[gameName] = !isPinned;
+
+				if (!isPinned)
+				{
+					pinnedGames[gameName] = !isPinned;
+				}
+				else
+				{
+					if (pinnedGames.hasOwnProperty(gameName))
+					{
+						delete pinnedGames[gameName];
+					}
+				}
     
                 // save updated liked games
                 localStorage.setItem('pinnedGames', JSON.stringify(pinnedGames));
