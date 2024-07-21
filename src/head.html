@@ -110,7 +110,7 @@ else
 </script>
 
 <script type="text/javascript">
-    if (window.location.protocol === 'http:') {
+    if (window.location.protocol === 'http:' && !/^(localhost|127.0.0.1)$/.test(window.location.hostname)) {
         window.location.href = window.location.href.replace('http:', 'https:');
     }
 </script>
