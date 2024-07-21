@@ -186,7 +186,7 @@ app.use(async (req, res, next) => {
           const navbarPath = path.join(__dirname, 'src', 'navbar.html');
 
 
-          console.log(`Reading file: ${filePath}`);
+          //console.log(`Reading file: ${filePath}`);
           const [htmlContent, headContent, footerContent, navbarContent] = await Promise.all([
               readFileContent(filePath),
               readFileContent(headPath),
@@ -194,19 +194,19 @@ app.use(async (req, res, next) => {
               readFileContent(navbarPath)
           ]);
 
-            let modifiedNavbarContent = navbarContent;
+            //let modifiedNavbarContent = navbarContent;
 
 
-          console.log('Successfully read all files');
+          //console.log('Successfully read all files');
 
           // Replace placeholders with actual content
           let modifiedData = htmlContent
               .replace(/{{className}}/g, className)
               .replace(/{{head}}/g, headContent)
               .replace(/{{footer}}/g, footerContent)
-              .replace(/{{navbar}}/g, modifiedNavbarContent);
+              .replace(/{{navbar}}/g, navbarContent);
 
-          console.log('Successfully replaced placeholders');
+          //console.log('Successfully replaced placeholders');
           res.send(modifiedData);
       } catch (error) {
           console.error(`Error processing request: ${error.message}`);
