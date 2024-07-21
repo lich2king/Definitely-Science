@@ -95,7 +95,7 @@ function setupActionButtons() {
     pinBtn.addEventListener('click', async (e) => {
         e.target.classList.add('button-click');
 
-        let res = await fetcher(`/profile/pinned/change`, { body: { gameName: gameName } });
+        //let res = await fetcher(`/profile/pinned/change`, { body: { gameName: gameName } });
 
         const pinnedIcon = '/assets/images/icons/pin.avif';
         const notPinnedIcon = '/assets/images/icons/pinoutline.avif';
@@ -103,9 +103,9 @@ function setupActionButtons() {
         // check if it is pinned by checking current icon
         let isPinned = e.target.firstChild.getAttribute('src') == pinnedIcon;
 
-        if (res.status == 400) {
-            swal('You have pinned the max amount of games (3).');
-        } else if (res.status == 401 || res.status == 403) {
+        //if (res.status == 400) {
+        //    swal('You have pinned the max amount of games (3).');
+        //} else if (res.status == 401 || res.status == 403) {
             let pinnedGames = JSON.parse(localStorage.getItem('pinnedGames') || '{}');
 
             if (Object.keys(pinnedGames).length >= 3) {
@@ -118,10 +118,10 @@ function setupActionButtons() {
                 // save updated liked games
                 localStorage.setItem('pinnedGames', JSON.stringify(pinnedGames));
             }
-        } else {
+        //} else {
             // update icon to match changed state
-            e.target.firstChild.setAttribute('src', isPinned ? notPinnedIcon : pinnedIcon);
-        }
+        //    e.target.firstChild.setAttribute('src', isPinned ? notPinnedIcon : pinnedIcon);
+        //}
     });
     pinBtn.addEventListener('webkitAnimationEnd', () => {
         pinBtn.classList.remove('button-click');
