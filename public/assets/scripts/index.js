@@ -218,6 +218,7 @@ async function loadGames() {
     }
 
     loadPopularGames();
+	loadPinGames();
     loadLikedGames();
     addArrowListeners();
     findLazyImages();
@@ -238,6 +239,33 @@ async function loadPopularGames() {
             // }
         // }
     // }
+}
+
+async function loadPinGames() {
+    const pinGamesContainer = document.getElementById('pinGamesCon');
+
+
+        let pingames = JSON.parse(localStorage.getItem('pinGames'));
+
+        if (pingames && Object.keys(pingames).length > 0) 
+        {
+            document.getElementById('pinGamesLabel').style.display = '';
+            document.getElementById('pinGamesHorizontalCon').style.display = '';
+
+            for (pin in pingames) 
+            {
+				//const data = games[like];
+				//console.log("like " + like + " data " + data);
+				
+				let indexGame = games.findIndex(game => game.name === pin);
+				
+                if (pingames[pin] && pinGamesContainer.childElementCount < 25)
+                {
+                    pinGamesContainer.appendChild(createGameButton(indexGame, '', true));
+                }
+            }
+        }
+    //}
 }
 
 async function loadLikedGames() {
