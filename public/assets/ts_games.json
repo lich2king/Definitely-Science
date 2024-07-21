@@ -2967,7 +2967,7 @@
    },
    {
       "name":"Google",
-      "description":"",
+      "description":"The Google Search website is accessible at www.google.com. This is the main page for Google's search engine, where users can enter queries to search the web for information, images, news, videos, and more.",
       "article":null,
       "image":"/assets/images/icons/apps/google512.jpg",
       "mobileimage":null,
@@ -2980,7 +2980,7 @@
    },
    {
       "name":"Youtube",
-      "description":"",
+      "description":"YouTube is a global online video-sharing and social media platform where users can upload, view, share, and comment on videos. It hosts a wide variety of content, including music videos, educational videos, vlogs, live streams, short films, documentaries, and much more. Users can also subscribe to channels, create playlists, and interact with other users through comments and likes.",
       "article":null,
       "image":"/assets/images/icons/apps/youtube512.jpg",
       "mobileimage":null,
@@ -2993,7 +2993,7 @@
    },
    {
       "name":"Tiktok",
-      "description":"",
+      "description":"TikTok is a social media platform that allows users to create, share, and discover short-form videos, typically ranging from 15 seconds to three minutes. It is known for its wide array of user-generated content, which includes music videos, dance routines, comedic sketches, educational content, and more.",
       "article":null,
       "image":"/assets/images/icons/apps/tiktok512.jpg",
       "mobileimage":null,
