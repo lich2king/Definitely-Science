@@ -271,14 +271,14 @@ async function loadLikedGames() {
 
             for (like in likedgames) 
             {
-				const data = games[like];
-				console.log("like " + like + " data " + data);
+				//const data = games[like];
+				//console.log("like " + like + " data " + data);
 				
-				
+				let indexGame = games.findIndex(game => game.name === like);
 				
                 if (likedgames[like] && likedGamesContainer.childElementCount < 25)
                 {
-                    likedGamesContainer.appendChild(createGameButton(like, '', true));
+                    likedGamesContainer.appendChild(createGameButton(indexGame, '', true));
                 }
             }
         }
