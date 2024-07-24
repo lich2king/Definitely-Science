@@ -13,7 +13,7 @@
    },
    {
       "name":"Classroom.Games",
-      "image":"/assets/images/icons/apps/a3.jpg",
+      "image":"/assets/images/icons/apps/a3.png",
       "type":"proxy",
       "url":"https://classroom.games/"
    },
