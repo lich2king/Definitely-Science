@@ -3042,6 +3042,18 @@
       "developer":"Lich",
       "iframe_url":"https://scienceunblocked.com/",
       "enabled":"1"
+   },
+   {
+      "name":"Classroom.Games",
+      "description":"Explore our diverse library on Classroom Games, featuring a wide range of fun and nonviolent games. Our selection includes puzzles, strategy games, skill challenges, sports, and more. Every player can find a game that matches their tastes and preferences.",
+      "article":null,
+      "image":"/assets/images/icons/apps/classroomgames512.jpg",
+      "mobileimage":null,
+      "controls":"Mouse and keyboard",
+      "tags":"app",
+      "date_added":"2022-01-13 03:19:02",
+      "developer":"Lich",
+      "iframe_url":"https://classroom.games/",
+      "enabled":"1"
    }
-   
 ]
