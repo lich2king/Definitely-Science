@@ -13,7 +13,6 @@ let categorizedGames = {
     'horror': document.createElement('div'),
     'hard': document.createElement('div'),
     'music': document.createElement('div'),
-    'new': document.createElement('div'),
     'flash': document.createElement('div')
 }
 
