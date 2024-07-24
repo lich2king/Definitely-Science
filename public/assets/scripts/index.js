@@ -1,4 +1,5 @@
 let categorizedGames = {
+	'app': document.createElement('div'),
     'multiplayer': document.createElement('div'),
     'car': document.createElement('div'),
     'casual': document.createElement('div'),
