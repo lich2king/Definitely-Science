@@ -3016,6 +3016,19 @@
       "developer":"Chegg",
       "iframe_url":"https://www.mathway.com/",
       "enabled":"1"
+   },
+   {
+      "name":"Online Games",
+      "description":"OnlineGames.io is a website that offers a collection of free online games. Users can play a variety of games directly in their web browsers without needing to download any software. The site features a range of game genres, including action, puzzle, strategy, sports, and more.",
+      "article":null,
+      "image":"/assets/images/icons/apps/onlinegames512.jpg",
+      "mobileimage":null,
+      "controls":"Mouse and keyboard",
+      "tags":"app",
+      "date_added":"2022-01-13 03:19:02",
+      "developer":"Chegg",
+      "iframe_url":"https://www.onlinegames.io/",
+      "enabled":"1"
    }
    
 ]
