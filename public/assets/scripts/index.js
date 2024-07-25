@@ -1,4 +1,5 @@
 let categorizedGames = {
+	'app': document.createElement('div'),
     'multiplayer': document.createElement('div'),
     'car': document.createElement('div'),
     'casual': document.createElement('div'),
@@ -13,7 +14,6 @@ let categorizedGames = {
     'horror': document.createElement('div'),
     'hard': document.createElement('div'),
     'music': document.createElement('div'),
-    'new': document.createElement('div'),
     'flash': document.createElement('div')
 }
 
@@ -181,15 +181,15 @@ async function loadGames() {
         const gameDate = new Date(sorted[name].date_added);
 
         // if game is less than a week old, add it to the new games list
-        if (gameDate > weekAgo) {
-            if (categorizedGames.new)
-            {
-                if (categorizedGames.new.childElementCount < 25)
-                {
-                    categorizedGames.new?.appendChild(createGameButton(name, '', true));
-                }
-            }
-        }
+        // if (gameDate > weekAgo) {
+            // if (categorizedGames.new)
+            // {
+                // if (categorizedGames.new.childElementCount < 25)
+                // {
+                    // categorizedGames.new?.appendChild(createGameButton(name, '', true));
+                // }
+            // }
+        // }
 
         // for each game, if it has a tag that matches on of the categories, add it to that container... MAY have multiple!
 		let tagsArray = sorted[name].tags.split(',');
@@ -206,10 +206,10 @@ async function loadGames() {
     }
 
     // if there are any new games, display them
-    if (categorizedGames.new.children.length > 0) {
-        document.getElementById('newGamesLabel').style.display = '';
-        document.getElementById('newGamesHorizontalCon').style.display = '';
-    }
+    // if (categorizedGames.new.children.length > 0) {
+        // document.getElementById('newGamesLabel').style.display = '';
+        // document.getElementById('newGamesHorizontalCon').style.display = '';
+    // }
 
     // display all categories
     for (let categorizedGame in categorizedGames) {
