@@ -49,10 +49,10 @@
 		
 		if (appName == null || appName == "") appName = "google.com";
 
-        document.getElementsByTagName('title')[0].innerHTML = `Totally Science - ${appName}`;
+        
 
         window.addEventListener('load', async () => {
-            document.getElementsByTagName('body')[0].style = 'overflow: hidden';
+            
 
             
             const appDataURL = "https://" + appName;
@@ -91,9 +91,20 @@
 
 			  appFrame.src = __uv$config.prefix + __uv$config.encodeUrl(appDataURL);
 		  
-		  
+			if (document.getElementsByTagName('body'))
+			{
+				document.getElementsByTagName('body')[0].style = 'overflow: hidden';
+			}
+			
 
         });
+		
+		if (document.getElementsByTagName('title'))
+		{
+			document.getElementsByTagName('title')[0].innerHTML = `Totally Science - ${appName}`;
+		}
+		
+		
     </script>
 </body>
 
