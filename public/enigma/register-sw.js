@@ -3,6 +3,8 @@
  * enigma sw
  */
 
+importScripts("/enigma/bareTransport.js")
+
 const allowedHostnames = ["localhost", "127.0.0.1"];
 
 
