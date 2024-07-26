@@ -335,7 +335,7 @@ window.addEventListener('load', async () => {
 	else
 	{
 		try {
-			await registerSW(false);
+			await registerEclipseSW();
 		  } catch (err) {
 			console.error("Failed to register service worker. " + err.toString());
 		  }
