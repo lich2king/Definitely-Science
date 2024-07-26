@@ -3,6 +3,8 @@
  * enigma sw
  */
 
+importScripts("/enigma/bareTransport.js")
+
 const allowedHostnames = ["localhost", "127.0.0.1"];
 
 
@@ -17,8 +19,7 @@ async function registerSW(epoxy) {
     throw new Error("Your browser doesn't support service workers.");
   }
 
-  //await navigator.serviceWorker.register("/uv/sw.js");
-  await navigator.serviceWorker.register("/enigma/sw.js");
+  await navigator.serviceWorker.register("/uv/sw.js");
 
 	if (epoxy)
 	{
