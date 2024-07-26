@@ -6,7 +6,7 @@
 const allowedHostnames = ["localhost", "127.0.0.1"];
 
 
-async function registerSW() {
+async function registerSW(epoxy) {
   if (!navigator.serviceWorker) {
     if (
       location.protocol !== "https:" &&
@@ -19,6 +19,15 @@ async function registerSW() {
 
   await navigator.serviceWorker.register("/uv/sw.js");
 
-  let wispUrl = (location.protocol === "https:" ? "wss" : "ws") + "://" + location.host + "/wisp/";
-  await BareMux.SetTransport("EpxMod.EpoxyClient", { wisp: wispUrl });
+	if (epoxy)
+	{
+		let wispUrl = (location.protocol === "https:" ? "wss" : "ws") + "://" + location.host + "/wisp/";
+		await BareMux.SetTransport("EpxMod.EpoxyClient", { wisp: wispUrl });
+	}
+	else
+	{
+		let bareUrl = location.protocol + "//" + location.host + "/bare/";
+		await BareMux.SetTransport("BareMod.BareClient", bareUrl);
+	}
+  
 }
