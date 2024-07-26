@@ -1,8 +1,9 @@
 importScripts("/epoxy/index.js");
 importScripts("/enigma/bareTransport.js");
-importScripts("uv.bundle.js");
-importScripts("uv.config.js");
-importScripts(__uv$config.sw || "uv.sw.js");
+importScripts("/enigma/uv.bundle.js");
+importScripts("/enigma/uv.config.js");
+//importScripts(__uv$config.sw || "uv.sw.js");
+importScripts("/enigma/uv.sw.js");
 
 const uv = new UVServiceWorker();
 
