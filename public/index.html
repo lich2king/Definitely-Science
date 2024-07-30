@@ -10,13 +10,8 @@
     <link rel='stylesheet' href='/assets/styles/index.css'>
 	
 
-    <!--
     <script src="/enigma/register-sw.js" defer></script>
-    -->
 
-    <script src="/eclipse/uv/uv.bundle.js" defer></script>
-    <script src="/eclipse/uv/uv.config.js" defer></script>
-    <script src="/eclipse/register-eclipse-sw.js" defer></script>
 	
 </head>
 
@@ -26,7 +21,7 @@
 	
 		window.onload = async () => {
 		  try {
-			await registerEclipseSW();
+			await registerSW();
 			console.log("Service Worker registered successfully");
 		  } catch (error) {
 			console.error("Service Worker registration failed:", error);
