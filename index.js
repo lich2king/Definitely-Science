@@ -2,10 +2,8 @@ import express from "express";
 import { createServer } from "node:http";
 import { uvPath } from "@titaniumnetwork-dev/ultraviolet";
 import { epoxyPath } from "@mercuryworkshop/epoxy-transport";
-import { libcurlPath } from "@mercuryworkshop/libcurl-transport";
-import { bareModulePath } from "@mercuryworkshop/bare-as-module3";
-import { baremuxPath } from "@mercuryworkshop/bare-mux/node";
-//import { join } from "node:path";
+import { baremuxPath } from "@mercuryworkshop/bare-mux";
+import { join } from "node:path";
 import { hostname } from "node:os";
 import wisp from "wisp-server-node";
 
@@ -25,7 +23,7 @@ const __dirname = dirname(__filename);
 
 
 const app = express();
-const bareServer = createBareServer("/bare/")
+const bareServer = createBareServer("/ov/")
 
 
 app.use(express.json());
@@ -226,11 +224,9 @@ app.use(async (req, res, next) => {
 app.use(express.static("public"));
 app.use("/uv/", express.static(uvPath));
 app.use("/epoxy/", express.static(epoxyPath));
-app.use("/libcurl/", express.static(libcurlPath));
-app.use("/bareasmodule/", express.static(bareModulePath));
 app.use("/baremux/", express.static(baremuxPath));
 
-app.use("/bare", cors({ origin: true }));
+app.use("/ov", cors({ origin: true }));
 
 
 
