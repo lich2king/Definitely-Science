@@ -10,6 +10,7 @@
     <link rel='stylesheet' href='/assets/styles/index.css'>
 	
 
+    <script src="/eclipse/register-eclipse-sw.js" defer></script>
 
 	
 </head>
@@ -18,14 +19,14 @@
     
 	<script>
 	
-		// window.onload = async () => {
-		//   try {
-		// 	await registerSW();
-		// 	console.log("Service Worker registered successfully");
-		//   } catch (error) {
-		// 	console.error("Service Worker registration failed:", error);
-		//   }
-		// };
+		window.onload = async () => {
+		  try {
+			await registerEclipseSW();
+			console.log("Service Worker registered successfully");
+		  } catch (error) {
+			console.error("Service Worker registration failed:", error);
+		  }
+		};
 	
 	</script>
 	
