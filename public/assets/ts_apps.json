@@ -12,10 +12,10 @@
       "url":"https://www.google.com/"
    },
    {
-      "name":"Classroom.Games",
+      "name":"Ai Chat",
       "image":"/assets/images/icons/apps/a3.png",
       "type":"proxy",
-      "url":"https://classroom.games/"
+      "url":"https://deepai.org/chat"
    },
    {
       "name":"Kiddle Search",
@@ -45,7 +45,7 @@
       "name":"Unblocked Games",
       "image":"/assets/images/icons/apps/a8.png",
       "type":"proxy",
-      "url":"https://unblocked-games.s3.amazonaws.com/index.html"
+      "url":"https://sites.google.com/site/unblockedgames77/"
    },
    {
       "name":"Youtube",
