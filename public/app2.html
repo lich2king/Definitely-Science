@@ -44,7 +44,7 @@
             document.getElementsByTagName('body')[0].style = 'overflow: hidden';
 
             //let appsRes = await fetcher(`/apps`);
-			      let appsRes = await fetch('/assets/ts_apps.json');
+			      let appsRes = await fetch('/assets/ts_apps2.json');
             let apps = await appsRes.json();
             
             const appData = apps.find(app => app.name == appName);
