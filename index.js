@@ -73,6 +73,35 @@ app.get('/class/:className', async (req, res) => {
   }
 });
 
+app.get('/class2/:className', async (req, res) => {
+  const className = validator.escape(req.params.className);
+  try {
+      const filePath = path.join(__dirname, 'public', 'class2.html');
+      const headPath = path.join(__dirname, 'src', 'head.html');
+      const footerPath = path.join(__dirname, 'src', 'footer.html');
+      const navbarPath = path.join(__dirname, 'src', 'navbar.html');
+
+      const [htmlContent, headContent, footerContent, navbarContent] = await Promise.all([
+        readFileContent(filePath),
+        readFileContent(headPath),
+        readFileContent(footerPath),
+        readFileContent(navbarPath)
+    ]);
+
+      // Replace placeholders with actual content
+      let modifiedData = htmlContent
+          .replace(/{{className}}/g, className)
+          .replace(/{{head}}/g, headContent)
+          .replace(/{{footer}}/g, footerContent)
+          .replace(/{{navbar}}/g, navbarContent);
+
+      res.send(modifiedData);
+  } catch (error) {
+    console.error(`Error reading file: ${error}`);
+    res.status(500).send('Server error');
+  }
+});
+
 app.get('/classes/:className', async (req, res) => {
   const className = validator.escape(req.params.className);
   try {

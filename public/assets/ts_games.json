@@ -3055,6 +3055,45 @@
       "enabled": "1"
    },
    {
+      "name": "GeForce Now",
+      "description": "GeForce Now is a cloud gaming service developed by NVIDIA. It allows users to play video games on various devices without the need for high-end hardware. Instead of running games locally on a gaming PC or console, GeForce Now streams the games from powerful remote servers to your device over the internet.",
+      "article": null,
+      "image": "/assets/images/icons/apps/a1.png",
+      "mobileimage": null,
+      "controls": "Mouse and keyboard",
+      "tags": "enigma",
+      "date_added": "2022-01-13 03:19:02",
+      "developer": "Nvidia",
+      "iframe_url": "https://www.nvidia.com/en-us/geforce-now/",
+      "enabled": "1"
+   },
+   {
+      "name": "Google",
+      "description": "The Google Search website is accessible at www.google.com. This is the main page for Google's search engine, where users can enter queries to search the web for information, images, news, videos, and more.",
+      "article": null,
+      "image": "/assets/images/icons/apps/google512.jpg",
+      "mobileimage": null,
+      "controls": "Mouse and keyboard",
+      "tags": "enigma",
+      "date_added": "2022-01-13 03:19:02",
+      "developer": "Alphabet",
+      "iframe_url": "https://www.google.com",
+      "enabled": "1"
+   },
+   {
+      "name": "Youtube",
+      "description": "YouTube is a global online video-sharing and social media platform where users can upload, view, share, and comment on videos. It hosts a wide variety of content, including music videos, educational videos, vlogs, live streams, short films, documentaries, and much more. Users can also subscribe to channels, create playlists, and interact with other users through comments and likes.",
+      "article": null,
+      "image": "/assets/images/icons/apps/youtube512.jpg",
+      "mobileimage": null,
+      "controls": "Mouse and keyboard",
+      "tags": "enigma",
+      "date_added": "2022-01-13 03:19:02",
+      "developer": "Alphabet",
+      "iframe_url": "https://www.youtube.com/",
+      "enabled": "1"
+   },
+   {
       "name": "Tap Tap Shots",
       "description": "",
       "article": null,

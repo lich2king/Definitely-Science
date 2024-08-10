@@ -334,37 +334,34 @@ window.addEventListener('load', async () => {
 	}
 	else
 	{
-		try {
-			await registerEclipseSW();
-		  } catch (err) {
-			console.error("Failed to register service worker. " + err.toString());
-		  }
+        if (typeof registerEclipseSW === 'function') {
+            try {
+                await registerEclipseSW();
+            } catch (err) {
+                console.error("Failed to register service worker. " + err.toString());
+            }
+        }
+		else
+        {
+            // epoxy
+            try {
+                await registerSW();
+            } catch (err) {
+              console.error("Failed to register service worker. " + err.toString());
+            }
 
-		  const url = gameData.iframe_url; //search(address.value, searchEngine.value);
+            try {
+                await setTransport("epoxy");
+            } catch (err) {
+              console.error("Failed to setTransport. " + err.toString());
+            }
+        }
 
-		  iframe.src = __uv$config.prefix + __uv$config.encodeUrl(url);
+		const url = gameData.iframe_url; //search(address.value, searchEngine.value);
+
+		iframe.src = __uv$config.prefix + __uv$config.encodeUrl(url);
 		
 		
-		// if ('serviceWorker' in navigator) {
-			// navigator.serviceWorker.register('uv-sw.js', {
-				// scope: __uv$config.prefix
-			// }).then(() => {
-				// if (gameData.iframe_url.startsWith('https://')) iframe.src = (__uv$config.prefix + __uv$config.encodeUrl(gameData.iframe_url));
-				// else iframe.src = gameData.iframe_url;
-
-				// // scratch breaks with proxy
-				// if (gameData.iframe_url.startsWith('https://scratch.mit.edu')) iframe.src = gameData.iframe_url;
-				
-				// if (gameData.iframe_url.startsWith('https://definitelyscience.com')) iframe.src = gameData.iframe_url;
-		   // }, (err) => {
-				// console.log(err);
-		   // });
-		// } else {
-			
-			// iframe.src = gameData.iframe_url;
-			// //document.querySelector('.lds-dual-ring').remove();
-			// //document.querySelector('.info').textContent = 'Your browser appears to be in private browsing mode or is not compatabile. Try swapping or updating your browser.';
-		// };
 	}
 
     // focus on the iframe. This is necessary for certain games such as eaglercraft
