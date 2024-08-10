@@ -15,7 +15,7 @@
    {
       "name": "Eaglercraft Minecraft",
       "description": "Minecraft eaglercraft 1.8.8 in your browser",
-      "article": "assets/articles/minecraft.txt",
+      "article": "/assets/articles/minecraft.txt",
       "image": "/assets/images/icons/minecraft.avif",
       "mobileimage": null,
       "controls": "WASD to move, space to jump",
