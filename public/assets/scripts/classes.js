@@ -440,6 +440,11 @@ function createGameButton(game, pin) {
     //let onclick = `location.href = 'class.html?class=${game.replaceAll(' ', '-')}'`;
     let onclick = `location.href = '/class/${game.replaceAll(' ', '-')}/'`;
 
+    if (selectedTopic == 'enigma' && pin == 'filtered')
+    {
+        onclick = `location.href = '/class2/${game.replaceAll(' ', '-')}/'`;
+    }
+
     if (pin == 'pin') {
         buttons += "<button id='pin'><img src='/assets/images/icons/coloredpin.avif'></button>";
     }
