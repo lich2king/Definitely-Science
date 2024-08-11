@@ -222,13 +222,12 @@
 	<a class="tn_banner" target="_blank" href="https://sites.google.com/site/unblockedgames77/">Unblocked Games Premium</a><br>
 	
 	<br><br>
-	<a class="tn_banner2">Science Apps</a>
-    <div id="apps"></div>
+    <a class="tn_banner2">Enigma Apps</a>
+	<div id="apps2"></div>
 	
 	<br>
-	<a class="tn_banner2">Enigma Apps</a>
-	
-	<div id="apps2"></div>
+	<a class="tn_banner2">Science Apps</a>
+    <div id="apps"></div>
 	
 	<!--<div style="width: 100vw; display: flex; align-items: center; justify-content: center; color: white;">
     <h1>Looking for links</h1>
@@ -262,24 +261,6 @@
         window.addEventListener('load', async () => {
 
             {
-                const appContainer = document.getElementById('apps');
-                let appsRes = await fetch('/assets/ts_apps.json');
-			    let apps = await appsRes.json();
-
-                for (let app in apps) {
-                    const appDiv = `
-                            <div onclick="window.open('/app/${apps[app].name}/', '_self')" class="card game">
-                                <img src="${apps[app].image}" style="background-color: #ffffff;">
-                                <h1>${apps[app].name}</h1>
-                                <button class="launch">Launch</button>
-                            </div>
-                        `;
-
-                    appContainer.innerHTML += appDiv;
-                }
-            }
-			
-            {
                 const app2Container = document.getElementById('apps2');
                 let appsRes2 = await fetch('/assets/ts_apps2.json');
 			    let apps2 = await appsRes2.json();
@@ -297,6 +278,24 @@
                 }
             }
 
+            {
+                const appContainer = document.getElementById('apps');
+                let appsRes = await fetch('/assets/ts_apps.json');
+			    let apps = await appsRes.json();
+
+                for (let app in apps) {
+                    const appDiv = `
+                            <div onclick="window.open('/app/${apps[app].name}/', '_self')" class="card game">
+                                <img src="${apps[app].image}" style="background-color: #ffffff;">
+                                <h1>${apps[app].name}</h1>
+                                <button class="launch">Launch</button>
+                            </div>
+                        `;
+
+                    appContainer.innerHTML += appDiv;
+                }
+            }
+			
 
             let robloxRes = await fetch('/assets/ts_roblox.json');
 			let robloxJson = await robloxRes.json();
