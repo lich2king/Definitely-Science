@@ -3068,6 +3068,19 @@
       "enabled": "1"
    },
    {
+      "name": "Fortnite",
+      "description": "Fortnite is a popular online video game developed by Epic Games, first released in 2017. It is available in three distinct game modes that share the same general gameplay and game engine: (1) Save the World: This is a cooperative hybrid tower defense-shooter-survival game where up to four players fight off zombie-like creatures and defend objects using traps and fortifications they can build. It was the original mode released and is available for purchase. (2) Fortnite Battle Royale: This is a free-to-play battle royale game where up to 100 players fight to be the last person standing. Players can either play solo, in a duo, or in squads of up to four players. The game includes various weapons, items, and materials that players can collect and use to defeat opponents and build structures for defense or mobility. (3) Fortnite Creative: In this mode, players are given complete freedom to create worlds and battle arenas. It's a sandbox mode where creativity is key, and players can design their own games and share them with others.",
+      "article": null,
+      "image": "/assets/images/icons/apps/fortnite-512.jpg",
+      "mobileimage": null,
+      "controls": "Mouse and keyboard",
+      "tags": "enigma",
+      "date_added": "2022-01-13 03:19:02",
+      "developer": "Epic Games",
+      "iframe_url": "https://www.nvidia.com/en-us/geforce-now/",
+      "enabled": "1"
+   },
+   {
       "name": "Google",
       "description": "The Google Search website is accessible at www.google.com. This is the main page for Google's search engine, where users can enter queries to search the web for information, images, news, videos, and more.",
       "article": null,
