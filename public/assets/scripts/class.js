@@ -383,13 +383,13 @@ window.addEventListener('load', async () => {
     document.getElementById('controls').innerHTML = gameData.controls;
     document.getElementById('developer').innerText = `${gameName} was created by ${gameData.developer}.`;
 
-    // if (gameData.article != null) {
-    //     let artRes = await fetch(gameData.article);
-    //     let artText = await artRes.text();
+    if (gameData.article != null) {
+        let artRes = await fetch(gameData.article);
+        let artText = await artRes.text();
 
-    //     document.getElementById('articleDivCon').innerHTML = artText;
-    //     document.getElementById('articleDiv').style.display = '';
-    // }
+        document.getElementById('articleDivCon').innerHTML = artText;
+        document.getElementById('articleDiv').style.display = '';
+    }
 
     // update game total like count
     //likeCount = await fetcher(`/profile/liked/count`, { body: { gameName: gameName } });
