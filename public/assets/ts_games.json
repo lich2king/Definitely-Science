@@ -26,6 +26,19 @@
       "enabled": "1"
    },
    {
+      "name": "Minecraft Classic",
+      "description": "",
+      "article": null,
+      "image": "/assets/images/games/other/minecraft-classic.webp",
+      "mobileimage": null,
+      "controls": "",
+      "tags": "3d,minecraft,pixel,simulator,classic",
+      "date_added": "2022-01-13 03:19:02",
+      "developer": "",
+      "iframe_url": "https://classic.minecraft.net/",
+      "enabled": "1"
+   },
+   {
       "name": "Bit Life",
       "description": "How will you live your BitLife?<br><br>Will you try to make all the right choices in an attempt to become a model citizen sometime before you die? You could marry the love of your life, have kids, and pick up a good education along the way.<br><br>Or will you play choices that horrify your parents? You could descend into a life of crime, fall in love or go on adventures, start prison...",
       "article": null,
@@ -3624,19 +3637,6 @@
       "date_added": "2022-01-13 03:19:02",
       "developer": "",
       "iframe_url": "/assets/games/2024/w1/five-nights-at-freddys/index.html",
-      "enabled": "1"
-   },
-   {
-      "name": "Minecraft Classic",
-      "description": "",
-      "article": null,
-      "image": "/assets/images/games/2024/cube/classicube/512.jpg",
-      "mobileimage": null,
-      "controls": "",
-      "tags": "",
-      "date_added": "2022-01-13 03:19:02",
-      "developer": "",
-      "iframe_url": "/assets/games/2024/cube/classicube/index.html",
       "enabled": "1"
    },
    {
