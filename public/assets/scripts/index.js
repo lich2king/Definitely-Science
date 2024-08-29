@@ -1,4 +1,5 @@
 let categorizedGames = {
+    'enigma': document.createElement('div'),
 	'app': document.createElement('div'),
     'multiplayer': document.createElement('div'),
     'car': document.createElement('div'),
@@ -199,7 +200,14 @@ async function loadGames() {
             {
                 if (categorizedGames[tag].childElementCount < 25)
                 {
-                    categorizedGames[tag]?.appendChild(createGameButton(name, '', true));
+                    if (tag == 'enigma')
+                    {
+                        categorizedGames[tag]?.appendChild(createGameButton(name, '', true, true));
+                    }
+                    else
+                    {
+                        categorizedGames[tag]?.appendChild(createGameButton(name, '', true));
+                    }
                 }
             }
         }
@@ -514,7 +522,7 @@ function formatTags(tags) {
   return tags.replace(/,/g, ' ');
 }
 
-function createGameButton(game, pin, lazy) {
+function createGameButton(game, pin, lazy, class2) {
     const data = games[game];
 
     if (data == null) return document.createElement('div');
@@ -527,7 +535,13 @@ function createGameButton(game, pin, lazy) {
     //const onclick = `location.href = 'class.html?class=${game.replaceAll(' ', '-')}'`;
 	let gameName = data.name;
 	//const onclick = `location.href = 'class.html?class=${gameName.replaceAll(' ', '-')}'`;
-    const onclick = `location.href = '/class/${gameName.replaceAll(' ', '-')}/'`;
+    let onclick = `location.href = '/class/${gameName.replaceAll(' ', '-')}/'`;
+
+    if (class2 === true)
+    {
+        onclick = `location.href = '/class2/${gameName.replaceAll(' ', '-')}/'`;
+    }
+    
 
     let gameDiv = document.createElement('div');
     gameDiv.setAttribute('tagName', gameName);

@@ -2,8 +2,10 @@ import express from "express";
 import { createServer } from "node:http";
 import { uvPath } from "@titaniumnetwork-dev/ultraviolet";
 import { epoxyPath } from "@mercuryworkshop/epoxy-transport";
-import { baremuxPath } from "@mercuryworkshop/bare-mux";
-import { join } from "node:path";
+import { libcurlPath } from "@mercuryworkshop/libcurl-transport";
+import { bareModulePath } from "@mercuryworkshop/bare-as-module3";
+import { baremuxPath } from "@mercuryworkshop/bare-mux/node";
+//import { join } from "node:path";
 import { hostname } from "node:os";
 import wisp from "wisp-server-node";
 
@@ -23,7 +25,7 @@ const __dirname = dirname(__filename);
 
 
 const app = express();
-const bareServer = createBareServer("/ov/")
+const bareServer = createBareServer("/bare/")
 
 
 app.use(express.json());
@@ -46,6 +48,35 @@ app.get('/class/:className', async (req, res) => {
   const className = validator.escape(req.params.className);
   try {
       const filePath = path.join(__dirname, 'public', 'class.html');
+      const headPath = path.join(__dirname, 'src', 'head.html');
+      const footerPath = path.join(__dirname, 'src', 'footer.html');
+      const navbarPath = path.join(__dirname, 'src', 'navbar.html');
+
+      const [htmlContent, headContent, footerContent, navbarContent] = await Promise.all([
+        readFileContent(filePath),
+        readFileContent(headPath),
+        readFileContent(footerPath),
+        readFileContent(navbarPath)
+    ]);
+
+      // Replace placeholders with actual content
+      let modifiedData = htmlContent
+          .replace(/{{className}}/g, className)
+          .replace(/{{head}}/g, headContent)
+          .replace(/{{footer}}/g, footerContent)
+          .replace(/{{navbar}}/g, navbarContent);
+
+      res.send(modifiedData);
+  } catch (error) {
+    console.error(`Error reading file: ${error}`);
+    res.status(500).send('Server error');
+  }
+});
+
+app.get('/class2/:className', async (req, res) => {
+  const className = validator.escape(req.params.className);
+  try {
+      const filePath = path.join(__dirname, 'public', 'class2.html');
       const headPath = path.join(__dirname, 'src', 'head.html');
       const footerPath = path.join(__dirname, 'src', 'footer.html');
       const navbarPath = path.join(__dirname, 'src', 'navbar.html');
@@ -224,9 +255,11 @@ app.use(async (req, res, next) => {
 app.use(express.static("public"));
 app.use("/uv/", express.static(uvPath));
 app.use("/epoxy/", express.static(epoxyPath));
+app.use("/libcurl/", express.static(libcurlPath));
+app.use("/bareasmodule/", express.static(bareModulePath));
 app.use("/baremux/", express.static(baremuxPath));
 
-app.use("/ov", cors({ origin: true }));
+app.use("/bare", cors({ origin: true }));
 
 
 

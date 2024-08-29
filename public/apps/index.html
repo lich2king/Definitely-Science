@@ -216,19 +216,18 @@
 
      <!--<a class="tn_banner" target="_blank" href="https://tnvpn.com/">Click here to check out Titanium Network's VPN and
         browse the internet without censorship.</a>-->
-	<a class="tn_banner" target="_blank" href="https://scienceunblocked.com/">Find new links here.</a><br>
-	<a class="tn_banner" target="_blank" href="https://discord.com/invite/6kTskTSTFM">Join us on Totally Science Discord server.</a><br>
-	<a class="tn_banner" target="_blank" href="https://discord.gg/unblock">Join us on Titanium Network Discord server.</a><br>
-	<a class="tn_banner" target="_blank" href="https://sites.google.com/site/unblockedgames77/">Unblocked Games Premium</a><br>
+    <a class="tn_banner" target="_blank" href="https://discord.gg/unblock">Join us on Titanium Network Discord server.</a><br>
+    <a class="tn_banner" target="_blank" href="https://discord.com/invite/6kTskTSTFM">Join us on Totally Science Discord server.</a><br>
+	<a class="tn_banner" target="_blank" href="https://scienceunblocked.com/">Science Unblocked</a><br>
+    <a class="tn_banner" target="_blank" href="https://sites.google.com/site/unblockedgames77/">Unblocked Games Premium</a><br>
 	
 	<br><br>
-	<a class="tn_banner2">Apps</a>
-    <div id="apps"></div>
+    <a class="tn_banner2">Enigma Apps</a>
+	<div id="apps2"></div>
 	
 	<br>
-	<a class="tn_banner2">Epoxy Apps</a>
-	
-	<div id="apps2"></div>
+	<a class="tn_banner2">Science Apps</a>
+    <div id="apps"></div>
 	
 	<!--<div style="width: 100vw; display: flex; align-items: center; justify-content: center; color: white;">
     <h1>Looking for links</h1>
@@ -260,48 +259,43 @@
         document.getElementById('appsnav').classList.add('selected');
 
         window.addEventListener('load', async () => {
-            // let response = await fetcher(`/auth/check`);
-            // if (response.status == 200) {
-                // // display points count in navbar
-                // let json = await response.json();
-                // setPointsDisplay(json.points || 0, json.username || "");
-            // }
-	
-            const appContainer = document.getElementById('apps');
-			const app2Container = document.getElementById('apps2');
 
-            //let appsRes = await fetcher(`/apps`);
-            //let apps = await appsRes.json();
-			let appsRes = await fetch('/assets/ts_apps.json');
-			let apps = await appsRes.json();
-			
-            //onclick="window.open('app.html?app=${apps[app].name}', '_self')"
-            //onclick="window.open('app2.html?app=${apps[app].name}', '_self')"
+            {
+                const app2Container = document.getElementById('apps2');
+                let appsRes2 = await fetch('/assets/ts_apps2.json');
+			    let apps2 = await appsRes2.json();
 
-            for (let app in apps) {
-                const appDiv = `
-                        <div onclick="window.open('/app/${apps[app].name}/', '_self')" class="card game">
-                            <img src="${apps[app].image}" style="background-color: #ffffff;">
-                            <h1>${apps[app].name}</h1>
-                            <button class="launch">Launch</button>
-                        </div>
-                    `;
+                for (let app in apps2) {
+                    const app2Div = `
+                            <div onclick="window.open('/app2/${apps2[app].name}/', '_self')" class="card game">
+                                <img src="${apps2[app].image}" style="background-color: #ffffff;">
+                                <h1>${apps2[app].name}</h1>
+                                <button class="launch">Launch</button>
+                            </div>
+                        `;
 
-                appContainer.innerHTML += appDiv;
-				
-				
-				const app2Div = `
-                        <div onclick="window.open('/app2/${apps[app].name}/', '_self')" class="card game">
-                            <img src="${apps[app].image}" style="background-color: #ffffff;">
-                            <h1>${apps[app].name}</h1>
-                            <button class="launch">Launch</button>
-                        </div>
-                    `;
-
-                app2Container.innerHTML += app2Div;
+                    app2Container.innerHTML += app2Div;
+                }
             }
 
+            {
+                const appContainer = document.getElementById('apps');
+                let appsRes = await fetch('/assets/ts_apps.json');
+			    let apps = await appsRes.json();
 
+                for (let app in apps) {
+                    const appDiv = `
+                            <div onclick="window.open('/app/${apps[app].name}/', '_self')" class="card game">
+                                <img src="${apps[app].image}" style="background-color: #ffffff;">
+                                <h1>${apps[app].name}</h1>
+                                <button class="launch">Launch</button>
+                            </div>
+                        `;
+
+                    appContainer.innerHTML += appDiv;
+                }
+            }
+			
 
             let robloxRes = await fetch('/assets/ts_roblox.json');
 			let robloxJson = await robloxRes.json();

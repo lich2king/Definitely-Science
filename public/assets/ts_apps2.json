@@ -1,5 +1,11 @@
 [
    {
+      "name":"Geforce Now",
+      "image":"/assets/images/icons/apps/a1.png",
+	  "type":"proxy",
+      "url":"https://www.nvidia.com/en-us/geforce-now/"
+   },
+   {
       "name":"Google",
       "image":"/assets/images/icons/apps/a2.png",
 	  "type":"proxy",
