@@ -2323,7 +2323,7 @@
       "tags": "misc,action",
       "date_added": "2022-05-16 16:12:45",
       "developer": "Cheetah Games",
-      "iframe_url": "https://totallyscience.co/games/2024/onl/slope/index.html",
+      "iframe_url": "/assets/games/2024/onl/slope/index.html",
       "enabled": "1"
    },
    {
@@ -2401,7 +2401,7 @@
       "tags": "mobile,casual",
       "date_added": "2022-02-03 00:03:23",
       "developer": "Rob Kay",
-      "iframe_url": "/assets/games/slope/index.html",
+      "iframe_url": "/assets/games/2024/onl/slope/index.html",
       "enabled": "1"
    },
    {
