@@ -19,33 +19,6 @@ If you want to add step 4 into pm2:
 - pm2 start npm --name "DS" -- start
 
 
-## Main website:
-
-- [definitelyscience.com](https://definitelyscience.com/)
-
-## Alternative links:
-
-- [classroom.community](https://classroom.community/)
-
-- [mathstudyplace.com](https://mathstudyplace.com/)
-
-- [castlelearning.info](https://castlelearning.info/)
-
-- [mathematics-resources.com](https://mathematics-resources.com/)
-
-- [classroom.onl](https://classroom.onl/)
-
-## More links here:
-
-- [scienceunblocked.com](https://scienceunblocked.com/)
-
-## Other online games websites:
-
-- [totallyscience.co](https://totallyscience.co/)
-
-- [onlinegames.io](https://www.onlinegames.io/)
-
-- [unblockedgames77](https://sites.google.com/site/unblockedgames77/)
 
 
 ## DS is part of Titanium Network:
