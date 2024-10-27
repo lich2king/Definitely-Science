@@ -1,11 +1,5 @@
 [
    {
-      "name":"Google",
-      "image":"/assets/images/icons/apps/a2.png",
-	  "type":"proxy",
-      "url":"https://www.google.com/"
-   },
-   {
       "name":"Ai Chat",
       "image":"/assets/images/icons/apps/a3.png",
       "type":"proxy",
@@ -40,11 +34,5 @@
       "image":"/assets/images/icons/apps/a8.png",
       "type":"proxy",
       "url":"https://sites.google.com/site/unblockedgames77/"
-   },
-   {
-      "name":"Youtube",
-      "image":"/assets/images/icons/apps/a9.png",
-      "type":"proxy",
-      "url":"https://www.youtube.com/"
    }
 ]
