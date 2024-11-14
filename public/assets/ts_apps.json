@@ -1,11 +1,5 @@
 [
    {
-      "name":"Ai Chat",
-      "image":"/assets/images/icons/apps/a3.png",
-      "type":"proxy",
-      "url":"https://deepai.org/chat"
-   },
-   {
       "name":"Kiddle Search",
       "image":"/assets/images/icons/apps/a4.png",
       "type":"proxy",
@@ -22,12 +16,6 @@
       "image":"/assets/images/icons/apps/a6.png",
       "type":"proxy",
       "url":"https://www.onlinegames.io/"
-   },
-   {
-      "name":"Tik Tok",
-      "image":"/assets/images/icons/apps/a7.png",
-      "type":"proxy",
-      "url":"https://tiktok.com/"
    },
    {
       "name":"Unblocked Games",
