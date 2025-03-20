@@ -1755,6 +1755,19 @@
       "enabled": "1"
    },
    {
+      "name": "Poppy Playtime",
+      "description": "Poppy",
+      "article": null,
+      "image": "/assets/images/games/2025/more-gg/poppy-playtime/poppy.webp",
+      "mobileimage": "/assets/images/games/2025/more-gg/poppy-playtime/poppy.webp",
+      "controls": "Mouse",
+      "tags": "misc,scary",
+      "date_added": "2023-05-31 12:51:14",
+      "developer": "UNKNOWN",
+      "iframe_url": "/assets/games/2025/more-gg/poppy-playtime/index.html",
+      "enabled": "1"
+   },
+   {
       "name": "Happy Room",
       "description": "Here tests are taken upon highly durable robots using the newest weapon technologies.",
       "article": null,
