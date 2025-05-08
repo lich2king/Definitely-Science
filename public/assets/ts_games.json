@@ -104,6 +104,19 @@
       "enabled": "1"
    },
    {
+      "name": "Crazy Cattle 3D",
+      "description": "Cattle Arena Battle Royale",
+      "article": null,
+      "image": "/assets/images/games/2025/more-gg/crazy-cattle-3d/crazy-cattle-3d.webp",
+      "mobileimage": null,
+      "controls": "WASD to control cattle, space to restart, escape to pause",
+      "tags": "featured,3d,crazy",
+      "date_added": "2022-01-13 03:19:02",
+      "developer": "Anna",
+      "iframe_url": "/assets/games/2025/more-gg/crazy-cattle-3d/index.html",
+      "enabled": "1"
+   },
+   {
       "name": "Urban Sniper",
       "description": "Tired of the classical shooter mechanics but still want to go on a shooting spree? Check out Urban Sniper, the straightforward sniper shooter game with a trick up its sleeve. Stay engaged with each mission we bring since each mission comes with its own small story quest.",
       "article": null,
