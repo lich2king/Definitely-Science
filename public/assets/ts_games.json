@@ -117,19 +117,6 @@
       "enabled": "1"
    },
    {
-      "name": "Doblox",
-      "description": "Doblox",
-      "article": null,
-      "image": "/assets/images/games/2025/more-gg/doblox/512.webp",
-      "mobileimage": null,
-      "controls": "WASD to control",
-      "tags": "featured,3d",
-      "date_added": "2022-01-13 03:19:02",
-      "developer": "Anna",
-      "iframe_url": "/assets/games/2025/more-gg/doblox/index.html",
-      "enabled": "1"
-   },
-   {
       "name": "Urban Sniper",
       "description": "Tired of the classical shooter mechanics but still want to go on a shooting spree? Check out Urban Sniper, the straightforward sniper shooter game with a trick up its sleeve. Stay engaged with each mission we bring since each mission comes with its own small story quest.",
       "article": null,
