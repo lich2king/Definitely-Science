@@ -1,0 +1,34 @@
+[
+  {
+    "id": "survival-karts",
+    "type": "0",
+	"name": "Survival Karts",
+	"url": "/survival-karts.html",
+    "image": "/media/posts/625/responsive/survival-karts-lg.webp",
+    "timer": 10
+  },
+  {
+    "id": "block-blast",
+    "type": "0",
+	"name": "Block Blast",
+	"url": "/block-blast.html",
+    "image": "/media/posts/619/responsive/block-blast-lg.webp",
+    "timer": 10
+  },
+  {
+    "id": "cake-match-puzzle",
+    "type": "0",
+	"name": "Cake Match Puzzle",
+	"url": "/cake-match-puzzle.html",
+    "image": "/media/posts/624/responsive/cake-match-puzzle-lg.webp",
+    "timer": 10
+  },
+  {
+    "id": "basketball-king",
+    "type": "0",
+	"name": "Basketball King",
+	"url": "/basketball-king.html",
+    "image": "/media/posts/621/responsive/basketball-king-lg.webp",
+    "timer": 10
+  }
+]

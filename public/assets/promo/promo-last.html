@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promo Latest</title>
+	
+	<script src="promo.js" async></script>
+	
+	<script>
+	
+	function getUrlParameter(paramName) {
+        const urlParams = new URLSearchParams(window.location.search);
+        const paramValue = urlParams.get(paramName);
+        return paramValue !== null ? parseInt(paramValue, 10) : null;
+    }
+	
+	if (typeof window.syncPromoManager === "function")
+	{
+		window.syncPromoManager(true);
+	}
+	else
+	{
+		window.wgLoaded = 1;
+	}
+	
+	setTimeout(() => 
+	{
+		const index = getUrlParameter("index");
+	
+		if (Array.isArray(window.adManager.ads) && window.adManager.ads.length > 1) {
+			if (index !== null && index >= 0 && index < window.adManager.ads.length) {
+                // Use the index parameter to select the desired ad
+                window.adManager.ads = [window.adManager.ads[index]];
+            } else {
+				// Keep only the last element
+				window.adManager.ads = [window.adManager.ads[window.adManager.ads.length - 1]];
+			}
+		}
+	
+		 window.adManager.refetchAd(() => 
+		 {
+			 
+		 }
+		 );
+		
+	 }, 1000);
+	
+	</script>
+	
+</head>
+<body>
+    <h1>Welcome to Our Website!</h1>
+    <p>Enjoy our latest promotions.</p>
+
+</body>
+</html>
