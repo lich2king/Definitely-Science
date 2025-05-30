@@ -2015,19 +2015,6 @@
       "enabled": "1"
    },
    {
-      "name": "Monkey Mart",
-      "description": "Monkey Mart is an idle/management game where you control a cute monkey character who is in charge of a supermarket. Plant fruits, harvest produce, move around from station to station to fill the stands with various food items. Sell bananas, corn, eggs, peanuts, coffee beans, chocolate, wheat etc.",
-      "article": null,
-      "image": "/assets/images/icons/monkey-mart.avif",
-      "mobileimage": "/assets/images/mobile/assets/game_icons/monkeymart.avif",
-      "controls": "Move - [WASD] or [Arrow Keys]",
-      "tags": "misc,mobile",
-      "date_added": "2023-04-22 04:16:44",
-      "developer": "TinyDobbins",
-      "iframe_url": "/assets/games/monkey-mart/index.html",
-      "enabled": "1"
-   },
-   {
       "name": "Moto X3M",
       "description": "Hop on your dirt bike and ride over jumps, do tricks, and try not to fly off in Moto X3M. Memorize the course and execute your stunts perfectly.",
       "article": null,
