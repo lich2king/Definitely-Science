@@ -1,5 +1,17 @@
 [
    {
+      "name":"Google",
+      "image":"/assets/images/icons/apps/a2.png",
+	  "type":"proxy",
+      "url":"https://www.google.com/"
+   },
+   {
+      "name":"Ai Chat",
+      "image":"/assets/images/icons/apps/a3.png",
+      "type":"proxy",
+      "url":"https://deepai.org/chat"
+   },
+   {
       "name":"Geforce Now",
       "image":"/assets/images/icons/apps/a1.png",
 	  "type":"proxy",
@@ -10,6 +22,12 @@
       "image":"/assets/images/icons/apps/a4.png",
       "type":"proxy",
       "url":"https://www.kiddle.co/"
+   },
+   {
+      "name":"Tik Tok",
+      "image":"/assets/images/icons/apps/a7.png",
+      "type":"proxy",
+      "url":"https://tiktok.com/"
    },
    {
       "name":"Mathway",
