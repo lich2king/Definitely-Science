@@ -2,7 +2,7 @@
 
 If you like this project, please consider giving it a star!
 
-Technologies used: [Ultraviolet](https://github.com/titaniumnetwork-dev/Ultraviolet), [EpoxyTransport](https://github.com/MercuryWorkshop/EpoxyTransport), [Bare](https://github.com/MercuryWorkshop/Bare-as-module3), [Bare-mux](https://github.com/MercuryWorkshop/bare-mux), [bare-server-node](https://github.com/tomphttp/bare-server-node).
+Technologies used: [Ultraviolet](https://github.com/titaniumnetwork-dev/Ultraviolet), [EpoxyTransport](https://github.com/MercuryWorkshop/EpoxyTransport), [Bare](https://github.com/MercuryWorkshop/Bare-as-module3), [Bare-mux](https://github.com/MercuryWorkshop/bare-mux), [bare-server-node](https://github.com/tomphttp/bare-server-node), [wisp](https://github.com/MercuryWorkshop/wisp-server-node).
 
 ## Deplay DS via terminal:
 
