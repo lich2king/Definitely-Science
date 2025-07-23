@@ -14,7 +14,7 @@
    },
    {
       "name": "Pixelmon Town",
-      "description": "Eaglercraft Town in your browser",
+      "description": "Pixelmon Town in your browser",
       "article": "/assets/articles/minecraft.txt",
       "image": "/assets/images/icons/minecraft.avif",
       "mobileimage": null,
@@ -23,7 +23,6 @@
       "date_added": "2022-09-04 22:35:18",
       "developer": "lax1dude",
 	  "iframe_url": "/assets/games/2025/html/pixelmon-town/index.html",
-      "iframe_url2": "/assets/games/2024/more/eaglercraft/index.html",
       "enabled": "1"
    },
    {
