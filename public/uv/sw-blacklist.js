@@ -6,9 +6,15 @@ importScripts(__uv$config.sw || 'uv.sw.js');
 const uv = new UVServiceWorker();
 
 const blacklist = {};
-fetch('/assets/json/blacklist.json')
-  .then(response => response.json())
-  .then(domains => {
+let blacklistReady = loadBlacklist(); // Start loading immediately
+
+async function loadBlacklist() {
+  try {
+    const response = await fetch('/assets/blacklist.json');
+    if (!response.ok) throw new Error(`Failed to fetch: ${response.status}`);
+
+    const domains = await response.json();
+
     for (const domain of domains) {
       const tldMatch = domain.match(/\.\w+$/);
       if (!tldMatch) continue;
@@ -33,31 +39,43 @@ fetch('/assets/json/blacklist.json')
     }
 
     Object.freeze(blacklist);
-  });
-
+    console.log('[SW] Blacklist loaded successfully');
+  } catch (err) {
+    console.warn('[SW] Blacklist failed to load:', err);
+  }
+}
 
 self.addEventListener('fetch', (event) => {
   event.respondWith(
     (async () => {
-      if (uv.route(event)) {
+      try {
+        if (uv.route(event)) {
+          // ✅ Wait for blacklist to finish loading (or fail)
+          await blacklistReady;
+          //await loadBlacklist();
 
-        const domain = new URL(
-            uv.config.decodeUrl(
-              new URL(event.request.url).pathname.replace(uv.config.prefix, '')
-            )
-          ).hostname,
-          domainTld = domain.replace(/.+(?=\.\w)/, '');
+          const decodedUrl = uv.config.decodeUrl(
+            new URL(event.request.url).pathname.replace(uv.config.prefix, '')
+          );
+          const domain = new URL(decodedUrl).hostname;
+          const domainTld = domain.replace(/.+(?=\.\w)/, '');
 
+          if (
+            Object.keys(blacklist).length > 0 &&
+            blacklist[domainTld] instanceof RegExp &&
+            blacklist[domainTld].test(domain.slice(0, -domainTld.length))
+          ) {
+            return new Response(new Blob(), { status: 406 });
+          }
 
-        if (
-          blacklist.hasOwnProperty(domainTld) &&
-          blacklist[domainTld].test(domain.slice(0, -domainTld.length))
-        )
-          return new Response(new Blob(), { status: 406 });
+          return await uv.fetch(event);
+        }
 
-        return await uv.fetch(event);
+        return await fetch(event.request);
+      } catch (err) {
+        console.error('[SW] Fetch handler error:', err);
+        return new Response('Internal Service Worker Error', { status: 500 });
       }
-      return await fetch(event.request);
     })()
   );
 });
