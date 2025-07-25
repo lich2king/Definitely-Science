@@ -6,6 +6,12 @@
       "url":"https://www.google.com/"
    },
    {
+      "name":"DuckDuckGo",
+      "image":"/assets/images/icons/apps/a2.png",
+	  "type":"proxy",
+      "url":"https://duckduckgo.com/"
+   },
+   {
       "name":"Ai Chat",
       "image":"/assets/images/icons/apps/a3.png",
       "type":"proxy",
