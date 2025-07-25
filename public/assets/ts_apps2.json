@@ -7,7 +7,7 @@
    },
    {
       "name":"DuckDuckGo",
-      "image":"/assets/images/icons/apps/a2.png",
+      "image":"/assets/images/icons/apps/duckduckgo.jpg",
 	  "type":"proxy",
       "url":"https://duckduckgo.com/"
    },
