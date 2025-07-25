@@ -2,12 +2,11 @@ importScripts('../epoxy/index.js');
 importScripts('uv.bundle.js');
 importScripts('uv.config.js');
 importScripts(__uv$config.sw || 'uv.sw.js');
-//importScripts('uv.sw.js');
 
 const uv = new UVServiceWorker();
 
 const blacklist = {};
-fetch('/assets/blacklist.json')
+fetch('/assets/json/blacklist.json')
   .then(response => response.json())
   .then(domains => {
     for (const domain of domains) {
