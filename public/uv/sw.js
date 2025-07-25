@@ -8,6 +8,9 @@ const uv = new UVServiceWorker();
 const blacklist = {};
 let blacklistReady = loadBlacklist(); // Start loading immediately
 
+let keywordBlacklist = [];
+let keywordBlacklistReady = loadKeywordBlacklist();
+
 async function loadBlacklist() {
   try {
     const response = await fetch('/assets/blacklist.json');
@@ -45,6 +48,17 @@ async function loadBlacklist() {
   }
 }
 
+async function loadKeywordBlacklist() {
+  try {
+    const response = await fetch('/assets/blacklist-keywords.json');
+    keywordBlacklist = (await response.json()).map(k => k.toLowerCase());
+    Object.freeze(keywordBlacklist);
+    console.log('[SW] Keyword blacklist loaded');
+  } catch (err) {
+    console.warn('[SW] Keyword blacklist failed:', err);
+  }
+}
+
 self.addEventListener('fetch', (event) => {
   event.respondWith(
     (async () => {
@@ -53,6 +67,8 @@ self.addEventListener('fetch', (event) => {
           // ✅ Wait for blacklist to finish loading (or fail)
           await blacklistReady;
           //await loadBlacklist();
+
+          await keywordBlacklistReady;
 
           const decodedUrl = uv.config.decodeUrl(
             new URL(event.request.url).pathname.replace(uv.config.prefix, '')
@@ -65,6 +81,11 @@ self.addEventListener('fetch', (event) => {
             blacklist[domainTld] instanceof RegExp &&
             blacklist[domainTld].test(domain.slice(0, -domainTld.length))
           ) {
+            return new Response(new Blob(), { status: 406 });
+          }
+
+          const domainLower = domain.toLowerCase();
+          if (keywordBlacklist.some(keyword => domainLower.includes(keyword))) {
             return new Response(new Blob(), { status: 406 });
           }
 
