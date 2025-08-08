@@ -26,6 +26,19 @@
       "enabled": "1"
    },
    {
+      "name": "Pixelmon Town",
+      "description": "Pixelmon Town in your browser",
+      "article": "/assets/articles/minecraft.txt",
+      "image": "/assets/images/icons/minecraft.avif",
+      "mobileimage": null,
+      "controls": "WASD to move, space to jump",
+      "tags": "",
+      "date_added": "2022-09-04 22:35:18",
+      "developer": "lax1dude",
+	  "iframe_url": "/assets/games/2025/html/pixelmon-town/index.html",
+      "enabled": "1"
+   },
+   {
       "name": "Minecraft Classic",
       "description": "",
       "article": null,
