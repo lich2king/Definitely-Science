@@ -18,6 +18,12 @@
       "url":"https://deepai.org/chat"
    },
    {
+      "name":"Humanize AI Text",
+      "image":"/assets/images/icons/apps/unaimytext.webp",
+      "type":"proxy",
+      "url":"https://unaimytext.com/"
+   },
+   {
       "name":"Geforce Now",
       "image":"/assets/images/icons/apps/a1.png",
 	  "type":"proxy",
