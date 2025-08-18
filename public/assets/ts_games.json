@@ -39,6 +39,19 @@
       "enabled": "1"
    },
    {
+      "name": "Undertale Scratch Remake",
+      "description": "[Instructions];\n　[Z] - Confirm;\n　[X] - Cancel;\n　[C] - Menu (In-game);\n　[F11] - Fullscreen;\n　[Hold Q] - Quit;\n　When HP is 0, you lose.",
+      "article": null,
+      "image": "/assets/images/games/2025/scratch/undertale.webp",
+      "mobileimage": null,
+      "controls": "",
+      "tags": "2d,pixel",
+      "date_added": "2022-01-13 03:19:02",
+      "developer": "BluePheonix25",
+      "iframe_url": "/assets/games/2025/scratch/undertale-scratch/index.html",
+      "enabled": "1"
+   },
+   {
       "name": "Minecraft Classic",
       "description": "",
       "article": null,
