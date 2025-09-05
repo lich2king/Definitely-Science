@@ -7,7 +7,8 @@ import { bareModulePath } from "@mercuryworkshop/bare-as-module3";
 import { baremuxPath } from "@mercuryworkshop/bare-mux/node";
 //import { join } from "node:path";
 import { hostname } from "node:os";
-import wisp from "wisp-server-node";
+//import wisp from "wisp-server-node";
+import { server as wisp } from "@mercuryworkshop/wisp-js/server";
 
 import { createBareServer } from "@tomphttp/bare-server-node";
 import cors from "cors";
@@ -29,6 +30,10 @@ const bareServer = createBareServer("/bare/")
 
 
 app.use(express.json());
+
+wisp.options.dns_method = "resolve";
+wisp.options.dns_servers = ["1.1.1.3", "1.0.0.3"];
+wisp.options.dns_result_order = "ipv4first";
 
 
 // Function to read file content
