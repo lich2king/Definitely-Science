@@ -3029,6 +3029,19 @@
       "enabled": "1"
    },
    {
+      "name": "DuckDuckGo",
+      "description": "Ducks",
+      "article": null,
+      "image": "/assets/images/icons/apps/duckduckgo.jpg",
+      "mobileimage": null,
+      "controls": "Mouse and keyboard",
+      "tags": "app",
+      "date_added": "2022-01-13 03:19:02",
+      "developer": "duckduckgo",
+      "iframe_url": "https://duckduckgo.com/",
+      "enabled": "1"
+   },
+   {
       "name": "Mathway",
       "description": "Mathway is an online platform and mobile app that provides step-by-step solutions to a wide range of mathematical problems. The website and app cater to various levels of math, from basic arithmetic to advanced calculus.",
       "article": null,
