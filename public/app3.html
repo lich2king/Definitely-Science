@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+{{head}}
+
+    <script src="/scram/scramjet.all.js"></script>
+    <script src="/baremux/index.js"></script>
+    <script src="/epoxy/index.js"></script>
+    <script src="/sj/register-sw.js"></script>
+
+
+</head>
+
+<body>
+    
+{{navbar}}
+
+    <div style="display: flex; flex-direction: column; height: 100vh;">
+        <div style="flex: 1; margin-top: 55px; overflow: hidden; background-image: url('/assets/images/icons/loading.gif'); background-size: contain; background-repeat: no-repeat; background-position: center; position: relative;">
+            <iframe class="iframeloader" id="app_frame" style="border: none; position: absolute; top: 0; left: 0; width: 100%; height: calc(100vh - 55px); z-index: 2; overflow: hidden;" src=""></iframe>
+        </div>
+    </div>
+
+    <!--<p style="text-align: center; color: whitesmoke; font-size: 15pt;">powered by <a target="_blank" href="https://github.com/titaniumnetwork-dev/Ultraviolet">Ultraviolet,</a> a Titanium Network proxy</p>-->
+
+    <script src="/assets/scripts/main.js"></script>
+    <script>
+        window.appNameT = "{{appName}}";
+
+        document.getElementById("appsnav").classList.add("selected");
+
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        let appName = urlParams.get('app');
+        if (!appName)
+        {
+          appName = window.appNameT;
+        }
+
+        const { ScramjetController } = $scramjetLoadController();
+
+        const scramjet = new ScramjetController({
+          files: {
+            wasm: '/scram/scramjet.wasm.wasm',
+            all: '/scram/scramjet.all.js',
+            sync: '/scram/scramjet.sync.js',
+          },
+        });
+        scramjet.init();
+
+        
+
+        //document.getElementsByTagName('title')[0].innerHTML = `Definitely Science - ${appName} Unblocked`;
+
+        window.addEventListener('load', async () => {
+            const connection = new BareMux.BareMuxConnection("/baremux/worker.js");
+
+            document.getElementsByTagName('body')[0].style = 'overflow: hidden';
+
+            //let appsRes = await fetcher(`/apps`);
+			      let appsRes = await fetch('/assets/ts_apps2.json');
+            let apps = await appsRes.json();
+            
+            const appData = apps.find(app => app.name == appName);
+            const appFrame = document.getElementById('app_frame');
+
+            appFrame.setAttribute('allow', 'fullscreen');
+
+            if (appData == null) window.location.href = '/apps/';
+			
+        
+			  try {
+				  await registerSW();
+			  } catch (err) {
+				console.error("Failed to register service worker. " + err.toString());
+			  }
+
+        
+				function delay(ms) {
+				  return new Promise(resolve => setTimeout(resolve, ms));
+				}
+				
+			  //await waitForConfig();
+			  await delay(500);
+			  
+			  let wispUrl =
+          (location.protocol === "https:" ? "wss" : "ws") +
+          "://" +
+          location.host +
+          "/wisp/";
+        if ((await connection.getTransport()) !== "/epoxy/index.mjs") {
+          await connection.setTransport("/epoxy/index.mjs", [{ wisp: wispUrl }]);
+        }
+        const sjEncode = scramjet.encodeUrl.bind(scramjet);
+
+			  appFrame.src = sjEncode(appData.url);
+		  
+		  
+
+            /*if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.register('uv-sw.js', {
+                    scope: __uv$config.prefix
+                }).then(() => {
+                    if (appData.type == 'proxy') appFrame.src = (__uv$config.prefix + __uv$config.encodeUrl(appData.url));
+                    else appFrame.src = appData.url;
+               }, (err) => {
+                    console.log(err);
+               });
+            } else {
+                document.querySelector('.lds-dual-ring').remove();
+                document.querySelector('.info').textContent = 'Your browser appears to be in private browsing mode or is not compatabile. Try swapping or updating your browser.';
+            };*/
+
+            /*let response = await fetcher(`/auth/check`);
+            if (response.status == 200) {
+                // display points count in navbar
+                let json = await response.json();
+                setPointsDisplay(json.points || 0, json.username || "");
+            }*/
+        });
+    </script>
+</body>
+
+</html>

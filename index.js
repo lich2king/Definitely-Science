@@ -20,10 +20,25 @@ import { fileURLToPath } from 'url';
 
 import validator from 'validator';
 
+import { createRequire } from "node:module";
+
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
+const require = createRequire(import.meta.url);
+// const scramjetDistPath = path.join(
+//   path.dirname(require.resolve("@mercuryworkshop/scramjet/package.json")),
+//   "dist"
+// );
+// Resolve the exported entry file, then find the nearest "dist" folder
+const scramjetEntry = require.resolve("@mercuryworkshop/scramjet");
+let probe = dirname(scramjetEntry);
+const root = path.parse(probe).root;
+while (probe !== root && !fs.existsSync(path.join(probe, "dist", "scramjet.all.js"))) {
+  probe = dirname(probe);
+}
+const scramjetDistPath = path.join(probe, "dist");
 
 const app = express();
 const bareServer = createBareServer("/bare/")
@@ -194,6 +209,35 @@ app.get('/app2/:appName', async (req, res) => {
     }
   });
 
+app.get('/app3/:appName', async (req, res) => {
+    const appName = validator.escape(req.params.appName);
+    try {
+        const filePath = path.join(__dirname, 'public', 'app3.html');
+        const headPath = path.join(__dirname, 'src', 'head.html');
+        const footerPath = path.join(__dirname, 'src', 'footer.html');
+        const navbarPath = path.join(__dirname, 'src', 'navbar.html');
+  
+        const [htmlContent, headContent, footerContent, navbarContent] = await Promise.all([
+          readFileContent(filePath),
+          readFileContent(headPath),
+          readFileContent(footerPath),
+          readFileContent(navbarPath)
+      ]);
+  
+        // Replace placeholders with actual content
+        let modifiedData = htmlContent
+            .replace(/{{appName}}/g, appName)
+            .replace(/{{head}}/g, headContent)
+            .replace(/{{footer}}/g, footerContent)
+            .replace(/{{navbar}}/g, navbarContent);
+  
+        res.send(modifiedData);
+    } catch (error) {
+      console.error(`Error reading file: ${error}`);
+      res.status(500).send('Server error');
+    }
+  });
+
 
 // Middleware to handle template replacements
 app.use(async (req, res, next) => {
@@ -263,6 +307,7 @@ app.use("/epoxy/", express.static(epoxyPath));
 app.use("/libcurl/", express.static(libcurlPath));
 app.use("/bareasmodule/", express.static(bareModulePath));
 app.use("/baremux/", express.static(baremuxPath));
+app.use("/scram/", express.static(scramjetDistPath));
 
 app.use("/bare", cors({ origin: true }));
 
