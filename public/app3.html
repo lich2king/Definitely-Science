@@ -5,12 +5,11 @@
     
 {{head}}
 
-    <script src="/scram/scramjet.all.js"></script>
-    <script src="/baremux/index.js"></script>
-    <script src="/epoxy/index.js"></script>
-    <script src="/sj/register-sw.js"></script>
 
-
+    <script src="/baremux/index.js" defer></script>
+    <script src="/uv/uv.bundle.js" defer></script>
+    <script src="/uv/uv.config.js" defer></script>
+    <script src="/enigma/register-sw.js" defer></script>
 </head>
 
 <body>
@@ -39,24 +38,9 @@
           appName = window.appNameT;
         }
 
-        const { ScramjetController } = $scramjetLoadController();
-
-        const scramjet = new ScramjetController({
-          files: {
-            wasm: '/scram/scramjet.wasm.wasm',
-            all: '/scram/scramjet.all.js',
-            sync: '/scram/scramjet.sync.js',
-          },
-        });
-        scramjet.init();
-
-        
-
         //document.getElementsByTagName('title')[0].innerHTML = `Definitely Science - ${appName} Unblocked`;
 
         window.addEventListener('load', async () => {
-            const connection = new BareMux.BareMuxConnection("/baremux/worker.js");
-
             document.getElementsByTagName('body')[0].style = 'overflow: hidden';
 
             //let appsRes = await fetcher(`/apps`);
@@ -71,31 +55,41 @@
             if (appData == null) window.location.href = '/apps/';
 			
         
+        
 			  try {
 				  await registerSW();
 			  } catch (err) {
 				console.error("Failed to register service worker. " + err.toString());
 			  }
 
+        try {
+				  await setTransport("epoxy");
+			  } catch (err) {
+				console.error("Failed to setTransport. " + err.toString());
+			  }
         
+			  
+			  async function waitForConfig() {
+				  return new Promise((resolve) => {
+					const interval = setInterval(() => {
+					  if (__uv$config !== null && __uv$config !== undefined) {
+						clearInterval(interval);
+						resolve();
+					  }
+					}, 100); // Check every 100 milliseconds
+				  });
+				}
+				
 				function delay(ms) {
 				  return new Promise(resolve => setTimeout(resolve, ms));
 				}
 				
-			  //await waitForConfig();
+			  await waitForConfig();
 			  await delay(500);
 			  
-			  let wispUrl =
-          (location.protocol === "https:" ? "wss" : "ws") +
-          "://" +
-          location.host +
-          "/wisp/";
-        if ((await connection.getTransport()) !== "/epoxy/index.mjs") {
-          await connection.setTransport("/epoxy/index.mjs", [{ wisp: wispUrl }]);
-        }
-        const sjEncode = scramjet.encodeUrl.bind(scramjet);
+			  
 
-			  appFrame.src = sjEncode(appData.url);
+			  appFrame.src = __uv$config.prefix + __uv$config.encodeUrl(appData.url);
 		  
 		  
 
