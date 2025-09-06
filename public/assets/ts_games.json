@@ -3029,6 +3029,19 @@
       "enabled": "1"
    },
    {
+      "name": "Google",
+      "description": "The Google Search website is accessible at www.google.com. This is the main page for Google's search engine, where users can enter queries to search the web for information, images, news, videos, and more.",
+      "article": null,
+      "image": "/assets/images/icons/apps/google512.jpg",
+      "mobileimage": null,
+      "controls": "Mouse and keyboard",
+      "tags": "app",
+      "date_added": "2022-01-13 03:19:02",
+      "developer": "Alphabet",
+      "iframe_url": "https://www.google.com",
+      "enabled": "1"
+   },
+   {
       "name": "DuckDuckGo",
       "description": "Ducks",
       "article": null,
