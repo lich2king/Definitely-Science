@@ -15,10 +15,10 @@ async function registerSW()
 		throw new Error("Your browser doesn't support service workers.");
 	}
 
-	// navigator.serviceWorker.getRegistrations().then(regs => {
-	// 	regs.forEach(r => r.unregister());
-	// 	console.warn("All service workers unregistered");
-	// });
+	navigator.serviceWorker.getRegistrations().then(regs => {
+	 	regs.forEach(r => r.unregister());
+	 	console.warn("All service workers unregistered");
+	});
 
 	await navigator.serviceWorker.register("/sw.js");
 }
