@@ -58,5 +58,11 @@
       "image":"/assets/images/icons/apps/a8.png",
       "type":"proxy",
       "url":"https://d11jzht7mj96rr.cloudfront.net/"
+   },
+   {
+      "name":"Youtube",
+      "image":"/assets/images/icons/apps/a9.png",
+      "type":"proxy",
+      "url":"https://www.youtube.com/"
    }
 ]
