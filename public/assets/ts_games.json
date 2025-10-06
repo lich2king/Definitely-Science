@@ -1,4 +1,17 @@
 [
+	{
+      "name": "AI Chat",
+      "description": "Free AI Chat",
+      "article": null,
+      "image": "/assets/images/games/2025/html2/ai-chat/ai-chat512.webp",
+      "mobileimage": null,
+      "controls": "Mouse and keyboard",
+      "tags": "featured,enigma",
+      "date_added": "2022-01-13 03:19:02",
+      "developer": "FreezeNova",
+      "iframe_url": "/assets/games/2025/html2/ai-chat/index.html",
+      "enabled": "1"
+   },
    {
       "name": "Football King",
       "description": "Football King is an unblocked two-player game in which you can enjoy the thrill of a soccer match with a friend. Choose from quick, friendly matches, tournament options, and a variety of stadiums. Your new favorite soccer game will be Football King!",
