@@ -334,32 +334,45 @@ window.addEventListener('load', async () => {
 	}
 	else
 	{
-        if (typeof registerEclipseSW === 'function') {
-            try {
-                await registerEclipseSW();
-            } catch (err) {
-                console.error("Failed to register service worker. " + err.toString());
-            }
-        }
-		else
-        {
-            // epoxy
+        const { ScramjetController } = $scramjetLoadController();
+
+            const scramjet = new ScramjetController({
+            files: {
+                wasm: '/scram/scramjet.wasm.wasm',
+                all: '/scram/scramjet.all.js',
+                sync: '/scram/scramjet.sync.js',
+            },
+            });
+            scramjet.init();
+
+        const connection = new BareMux.BareMuxConnection("/baremux/worker.js");
+        
+
+
+        // epoxy
             try {
                 await registerSW();
             } catch (err) {
               console.error("Failed to register service worker. " + err.toString());
             }
 
-            try {
-                await setTransport("epoxy");
-            } catch (err) {
-              console.error("Failed to setTransport. " + err.toString());
-            }
+            let wispUrl =
+          (location.protocol === "https:" ? "wss" : "ws") +
+          "://" +
+          location.host +
+          "/wisp/";
+        if ((await connection.getTransport()) !== "/epoxy/index.mjs") {
+          await connection.setTransport("/epoxy/index.mjs", [{ wisp: wispUrl }]);
         }
+        const sjEncode = scramjet.encodeUrl.bind(scramjet);
+
+			  
+
 
 		const url = gameData.iframe_url; //search(address.value, searchEngine.value);
 
-		iframe.src = __uv$config.prefix + __uv$config.encodeUrl(url);
+        iframe.src = sjEncode(url);
+		//iframe.src = __uv$config.prefix + __uv$config.encodeUrl(url);
 		
 		
 	}
